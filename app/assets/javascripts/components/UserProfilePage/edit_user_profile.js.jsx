@@ -5,7 +5,7 @@ window.EditUserProfile = React.createClass({
     return (
       <div>
         <CustomTabs tabList={tabList} activeTab={0}/>
-        <EditProfile user={JSON.parse(sessionStorage.getItem("current_user"))}/>
+        <EditProfile edit_user={JSON.parse(sessionStorage.getItem("current_user"))}/>
       </div>
     );
   }

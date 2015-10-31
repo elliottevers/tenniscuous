@@ -1,16 +1,16 @@
 window.EditProfile = React.createClass({
 
   getInitialState: function () {
-    return {user: this.props.user};
+    return {edit_user: this.props.edit_user};
   },
 
   _onChange: function () {
-    this.setState({user: UserStore.user()});
+    this.setState({edit_user: UserStore.user()});
   },
 
   componentDidMount: function () {
     UserStore.addUserShowChangeListener(this._onChange);
-    ApiUtil.fetchUser(this.props.user.id);
+    ApiUtil.fetchUser(this.props.edit_user.id);
   },
 
   componentWillUnmount: function () {
@@ -20,7 +20,7 @@ window.EditProfile = React.createClass({
   render: function() {
     return (
       <div>
-        <EditProfileObject current_user={this.state.user}/>
+        <EditProfileObject edit_current_user={this.state.edit_user}/>
       </div>
     );
   }
