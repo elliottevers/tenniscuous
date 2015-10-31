@@ -19,7 +19,7 @@ window.EditProfileObject = React.createClass({
     }.bind(this))
     user.id = this.props.current_user.id;
     ApiUtil.updateUser(user, function () {
-      this.history.pushState(null, "/discovery_queue", {});
+      this.history.pushState(null, "/profile", {});
     }.bind(this));
   },
 
@@ -46,11 +46,14 @@ window.EditProfileObject = React.createClass({
   render: function() {
     var Input = ReactBootstrap.Input;
     var Button = ReactBootstrap.Button;
-    $('#ex1').slider({
+    $('#rating').slider({
     	formatter: function(value) {
     		return 'Current value: ' + value;
     	}
     });
+    $("#ratings").slider({});
+    $("#ratings_sought").slider({ id: "ratings_sought_slider", min: 1, max: 7, range: true, value: [1, 7] });
+    $("#discovery_radius").slider({ id: "radius", min: 0, max: 20, value: 10 });
     return (
       <div>
       <Button bsStyle="info" onClick={this.updateUser}>Done Editting</Button>
@@ -63,7 +66,26 @@ window.EditProfileObject = React.createClass({
             <option value="Male">Male</option>
             <option value="Female">Female</option>
         </Input>
-        <input id="ex1" data-slider-id='ex1Slider' type="text" data-slider-min="0" data-slider-max="20" data-slider-step="1" data-slider-value="14"/>
+        <div class="btn-group" data-toggle="buttons">
+          <label className="btn btn-primary active">
+            <input type="checkbox" autocomplete="off" checked> Men's Singles  </input>
+          </label>
+          <label className="btn btn-primary">
+            <input type="checkbox" autocomplete="off"> Women's Singles </input>
+          </label>
+          <label className="btn btn-primary">
+            <input type="checkbox" autocomplete="off"> Men's Doubles </input>
+          </label>
+          <label className="btn btn-primary">
+            <input type="checkbox" autocomplete="off"> Women's Doubles </input>
+          </label>
+          <label className="btn btn-primary">
+            <input type="checkbox" autocomplete="off"> Mixed Doubles </input>
+          </label>
+        </div>
+        <input id="rating" data-slider-id='NTRP' type="text" data-slider-min="1" data-slider-max="7" data-slider-step=".5" data-slider-value="1"/><br/>
+        <input id="ratings_sought" type="text" className="span2" value="" data-slider-min="1" data-slider-max="7" data-slider-step=".5" data-slider-value="[1,7]"/><br/>
+        <input id="discovery_radius" type="text"/><br/>
       </div>
     );
   }

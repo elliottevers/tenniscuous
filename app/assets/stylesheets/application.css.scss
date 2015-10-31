@@ -87,3 +87,19 @@ div.meta {
   transform: rotate(-30deg) scale(0.8) translate(200px,200px);
   transition: 1s;
 }
+
+#ratings_sought_slider .slider-track-high {
+	background: white;
+}
+
+#ratings_sought_slider .slider-track-low {
+	background: white;
+}
+
+#ratings_sought_slider .slider-selection {
+	background: blue;
+}
+
+#radius .slider-selection {
+	background: blue;
+}
