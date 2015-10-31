@@ -8,23 +8,42 @@ window.EditProfileObject = React.createClass({
       gender: this.props.edit_current_user.gender,
       genders_sought: this.props.edit_current_user.genders_sought,
       rating: this.props.edit_current_user.rating,
-      ratings_sought: this.props.edit_current_user.ratings_sought
+      ratings_sought: this.props.edit_current_user.ratings_sought,
+      MensSingles: false,
+      WomensSingles: false,
+      MensDoubles: false,
+      WomensDoubles: false,
+      MixedDoubles: false
     };
+  },
+
+  componentDidUpdate: function () {
+    var m = (this.props.edit_current_user.genders_sought.indexOf("Men's Singles") > -1);
+    var w = (this.props.edit_current_user.genders_sought.indexOf("Women's Singles") > -1);
+    var mm = (this.props.edit_current_user.genders_sought.indexOf("Men's Doubles") > -1);
+    var ww = (this.props.edit_current_user.genders_sought.indexOf("Women's Doubles") > -1);
+    var mw = (this.props.edit_current_user.genders_sought.indexOf("Mixed Doubles") > -1);
+    if (
+      this.state.MensSingles != m ||
+      this.state.WomensSingles != w ||
+      this.state.MensDoubles != mm ||
+      this.state.WomensDoubles != ww ||
+      this.state.MixedDoubles != mw
+    ) {
+      this.setState({
+        MensSingles: m,
+        WomensSingles: w,
+        MensDoubles: mm,
+        WomensDoubles: ww,
+        MixedDoubles: mw
+      });
+    }
   },
 
 
   handleClick: function (event) {
+    console.log(event.target);
     console.log(event.target.className);
-    console.log(this.props.edit_current_user);
-  },
-
-  componentDidMount: function(){
-    console.log(this.props.edit_current_user);
-    this.setState({MensSingles: true,
-    WomensSingles: false,
-    MensDoubles: false,
-    WomensDoubles: false,
-    MixedDoubles: false});
   },
 
   updateUser: function (event) {
@@ -87,20 +106,20 @@ window.EditProfileObject = React.createClass({
         </Input>
 
         <div className="btn-group">
-          <label className="btn btn-primary mens-singles">
-            <input checked={this.state.MensSingles} onChange= {this.handleClick} type="checkbox"> Men's Singles </input>
+          <label onChange= {this.handleClick}  className="btn btn-primary">
+            <input className="mens_singles" checked={this.state.MensSingles}  type="checkbox"> Men's Singles </input>
           </label>
-          <label className="btn btn-primary womens-singles">
-            <input checked={this.state.WomensSingles} onChange= {this.handleClick} type="checkbox"> Women's Singles </input>
+          <label className="btn btn-primary">
+            <input className="womens_singles" checked={this.state.WomensSingles} onChange= {this.handleClick} type="checkbox"> Women's Singles </input>
           </label>
-          <label className="btn btn-primary mens-doubles">
-            <input checked={this.state.MensDoubles} onChange= {this.handleClick} type="checkbox"> Men's Doubles </input>
+          <label className="btn btn-primary">
+            <input className="mens_doubles" checked={this.state.MensDoubles} onChange= {this.handleClick} type="checkbox"> Men's Doubles </input>
           </label>
-          <label className="btn btn-primary womens-doubles" >
-            <input checked={this.state.WomensDoubles} onChange= {this.handleClick} type="checkbox"> Women's Doubles </input>
+          <label className="btn btn-primary" >
+            <input className="womens_doubles" checked={this.state.WomensDoubles} onChange= {this.handleClick} type="checkbox"> Women's Doubles </input>
           </label>
-          <label className="btn btn-primary mixed-doubles">
-            <input checked={this.state.MixedDoubles} onChange= {this.handleClick} type="checkbox"> Mixed Doubles </input>
+          <label className="btn btn-primary">
+            <input className="mixed_doubles" checked={this.state.MixedDoubles} onChange= {this.handleClick} type="checkbox"> Mixed Doubles </input>
           </label>
         </div>
 
