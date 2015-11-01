@@ -41,14 +41,10 @@
     },
 
     addUsersIndexChangeListener: function (callback) {
-      window.change_listener_is_on = true;
-      console.log(window.change_listener_is_on);
       this.on(USERS_INDEX_CHANGE_EVENT, callback);
     },
 
     removeUsersIndexChangeListener: function (callback) {
-      window.change_listener_is_on = false;
-      console.log(window.change_listener_is_on);
       this.removeListener(USERS_INDEX_CHANGE_EVENT, callback);
     },
 

@@ -9,9 +9,6 @@ var CustomTabs = React.createClass({
   mixins: [ReactRouter.History],
 
   handleSelect: function (key) {
-    console.log(this.props.tabList);
-    console.log(key);
-    console.log(this.props.tabList[key].url);
     this.history.pushState(null, this.props.tabList[key].url, {});
   },
 

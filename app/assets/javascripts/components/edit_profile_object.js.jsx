@@ -9,41 +9,33 @@ window.EditProfileObject = React.createClass({
       genders_sought: this.props.edit_current_user.genders_sought,
       rating: this.props.edit_current_user.rating,
       ratings_sought: this.props.edit_current_user.ratings_sought,
-      MensSingles: false,
-      WomensSingles: false,
-      MensDoubles: false,
-      WomensDoubles: false,
-      MixedDoubles: false
+      MensSingles: (this.props.edit_current_user.genders_sought.indexOf("Men's Singles") > -1),
+      WomensSingles: (this.props.edit_current_user.genders_sought.indexOf("Women's Singles") > -1),
+      MensDoubles: (this.props.edit_current_user.genders_sought.indexOf("Men's Doubles") > -1),
+      WomensDoubles: (this.props.edit_current_user.genders_sought.indexOf("Women's Doubles") > -1),
+      MixedDoubles: (this.props.edit_current_user.genders_sought.indexOf("Mixed Doubles") > -1)
     };
   },
 
-  componentDidUpdate: function () {
-    var m = (this.props.edit_current_user.genders_sought.indexOf("Men's Singles") > -1);
-    var w = (this.props.edit_current_user.genders_sought.indexOf("Women's Singles") > -1);
-    var mm = (this.props.edit_current_user.genders_sought.indexOf("Men's Doubles") > -1);
-    var ww = (this.props.edit_current_user.genders_sought.indexOf("Women's Doubles") > -1);
-    var mw = (this.props.edit_current_user.genders_sought.indexOf("Mixed Doubles") > -1);
-    if (
-      this.state.MensSingles != m ||
-      this.state.WomensSingles != w ||
-      this.state.MensDoubles != mm ||
-      this.state.WomensDoubles != ww ||
-      this.state.MixedDoubles != mw
-    ) {
-      this.setState({
-        MensSingles: m,
-        WomensSingles: w,
-        MensDoubles: mm,
-        WomensDoubles: ww,
-        MixedDoubles: mw
-      });
+  handleChange: function (event) {
+    target = event.target;
+    var name_of_class = target.className;
+    console.log(name_of_class);
+    console.log(name_of_class === "womens_singles");
+    console.log(this.state.WomensSingles);
+    console.log(!this.state.WomensSingles);
+    if (name_of_class === "mens_singles") {
+      this.setState({MensSingles: !this.state.MensSingles});
+    } else if (name_of_class === "womens_singles") {
+      console.log("state set");
+      this.setState({WomensSingles: !this.state.WomensSingles});
+    } else if (name_of_class === "mens_doubles") {
+      this.setState({MensDoubles: !this.state.MensDoubles});
+    } else if (name_of_class === "womens_doubles") {
+      this.setState({WomensDoubles: !this.state.WomensDoubles});
+    } else if (name_of_class === "mixed_doubles") {
+      this.setState({MixedDoubles: !this.state.MixedDoubles});
     }
-  },
-
-
-  handleClick: function (event) {
-    console.log(event.target);
-    console.log(event.target.className);
   },
 
   updateUser: function (event) {
@@ -66,10 +58,6 @@ window.EditProfileObject = React.createClass({
     this.setState({gender: event.target.value});
   },
 
-  handleGendersSoughtChange: function(event) {
-
-  },
-
   handleRatingChange: function(event) {
     this.setState({rating: event.target.value});
   },
@@ -79,16 +67,24 @@ window.EditProfileObject = React.createClass({
   },
 
   render: function() {
+    var ratingsSought = [this.state.ratings_sought[0],this.state.ratings_sought[1]];
+    var ratings_sought_array = "[" + this.state.ratings_sought[0].toString() + "," + this.state.ratings_sought[1].toString() + "]";
     var Input = ReactBootstrap.Input;
     var Button = ReactBootstrap.Button;
-    $('#rating').slider({
-    	formatter: function(value) {
-    		return 'Current value: ' + value;
-    	}
+    console.log(this.state);
+
+    $(function(){
+      $("#rating").slider();
+
+      $("#ratings_sought").slider();
+
+      $("#discovery_radius").slider();
+
+      $("#discovery_radius").on("slide", function(slideEvt) {
+      	$("#discovery_radiusSliderVal").text(slideEvt.value);
+      });
     });
-    $("#ratings").slider({value: this.props.edit_current_user.rating});
-    $("#ratings_sought").slider({ id: "ratings_sought_slider", min: 1, max: 7, range: true, value: [1, 7] });
-    $("#discovery_radius").slider({ id: "radius", min: 0, max: 20, value: 10 });
+
     return (
       <div>
 
@@ -106,28 +102,30 @@ window.EditProfileObject = React.createClass({
         </Input>
 
         <div className="btn-group">
-          <label onChange= {this.handleClick}  className="btn btn-primary">
-            <input className="mens_singles" checked={this.state.MensSingles}  type="checkbox"> Men's Singles </input>
+          <label className="btn btn-primary">
+            <input className="mens_singles" checked={this.state.MensSingles} onChange= {this.handleChange} type="checkbox"> Men's Singles </input>
           </label>
           <label className="btn btn-primary">
-            <input className="womens_singles" checked={this.state.WomensSingles} onChange= {this.handleClick} type="checkbox"> Women's Singles </input>
+            <input className="womens_singles" checked={this.state.WomensSingles} onChange= {this.handleChange} type="checkbox"> Women's Singles </input>
           </label>
           <label className="btn btn-primary">
-            <input className="mens_doubles" checked={this.state.MensDoubles} onChange= {this.handleClick} type="checkbox"> Men's Doubles </input>
+            <input className="mens_doubles" checked={this.state.MensDoubles} onChange= {this.handleChange} type="checkbox"> Men's Doubles </input>
           </label>
           <label className="btn btn-primary" >
-            <input className="womens_doubles" checked={this.state.WomensDoubles} onChange= {this.handleClick} type="checkbox"> Women's Doubles </input>
+            <input className="womens_doubles" checked={this.state.WomensDoubles} onChange= {this.handleChange} type="checkbox"> Women's Doubles </input>
           </label>
           <label className="btn btn-primary">
-            <input className="mixed_doubles" checked={this.state.MixedDoubles} onChange= {this.handleClick} type="checkbox"> Mixed Doubles </input>
+            <input className="mixed_doubles" checked={this.state.MixedDoubles} onChange= {this.handleChange} type="checkbox"> Mixed Doubles </input>
           </label>
         </div>
 
-        <input onChange={this.handleRatingChange} id="rating" data-slider-id='NTRP' type="text" data-slider-min="1" data-slider-max="7" data-slider-step=".5"/><br/>
+        <input onChange={this.handleRatingChange} id="rating" data-slider-id="NTRP" type="text" data-slider-value={this.state.rating} data-slider-min={1} data-slider-max={7} data-slider-step={.5}/><br/>
 
-        <input id="ratings_sought" type="text" className="span2" value="" data-slider-min="1" data-slider-max="7" data-slider-step=".5" data-slider-value="[1,7]"/><br/>
+        <input id="ratings_sought" type="text" className="span2" value="" data-slider-min={1} data-slider-max={7} data-slider-step={.5} data-slider-value={ratings_sought_array}/><br/>
 
-        <input id="discovery_radius" type="text"/><br/>
+        <input id="discovery_radius" type="text" data-slider-min={0} data-slider-max={20} data-slider-step={1} data-slider-value={10}/><br/>
+
+        <span id="inMiles">Miles: <span id="discovery_radiusSliderVal"></span></span>
 
       </div>
     );
