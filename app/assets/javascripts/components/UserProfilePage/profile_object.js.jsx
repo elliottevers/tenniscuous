@@ -12,6 +12,7 @@ window.ProfileObject = React.createClass({
         <Panel>Genders Sought: {this.props.current_user.genders_sought}</Panel>
         <Panel>Rating: {this.props.current_user.rating}</Panel>
         <Panel>Ratings Sought: {this.props.current_user.ratings_sought}</Panel>
+        <Panel>Discovery Radius: {this.props.current_user.discovery_radius}</Panel>
       </div>
     );
   }
