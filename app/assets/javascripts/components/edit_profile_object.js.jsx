@@ -9,6 +9,7 @@ window.EditProfileObject = React.createClass({
       genders_sought: this.props.edit_current_user.genders_sought,
       rating: this.props.edit_current_user.rating,
       ratings_sought: this.props.edit_current_user.ratings_sought,
+      discovery_radius: this.props.edit_current_user.discovery_radius,
       MensSingles: (this.props.edit_current_user.genders_sought.indexOf("Men's Singles") > -1),
       WomensSingles: (this.props.edit_current_user.genders_sought.indexOf("Women's Singles") > -1),
       MensDoubles: (this.props.edit_current_user.genders_sought.indexOf("Men's Doubles") > -1),
@@ -76,7 +77,7 @@ window.EditProfileObject = React.createClass({
     $(function(){
       $("#rating").slider();
 
-      $("#ratings_sought").slider();
+      $("#ratings_sought").slider({id: "ratings_sought"});
 
       $("#discovery_radius").slider();
 
@@ -123,7 +124,7 @@ window.EditProfileObject = React.createClass({
 
         <input id="ratings_sought" type="text" className="span2" value="" data-slider-min={1} data-slider-max={7} data-slider-step={.5} data-slider-value={ratings_sought_array}/><br/>
 
-        <input id="discovery_radius" type="text" data-slider-min={0} data-slider-max={20} data-slider-step={1} data-slider-value={10}/><br/>
+        <input id="discovery_radius" type="text" data-slider-min={0} data-slider-max={20} data-slider-step={1} data-slider-value={this.state.discovery_radius}/><br/>
 
         <span id="inMiles">Miles: <span id="discovery_radiusSliderVal"></span></span>
 
