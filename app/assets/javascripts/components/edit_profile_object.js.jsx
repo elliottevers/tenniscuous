@@ -4,6 +4,7 @@ window.EditProfileObject = React.createClass({
   getInitialState: function () {
 
     return {
+      profile_picture_url: this.props.edit_current_user.profile_picture_url,
       profile_description: this.props.edit_current_user.profile_description,
       gender: this.props.edit_current_user.gender,
       genders_sought: this.props.edit_current_user.genders_sought,
@@ -64,13 +65,48 @@ window.EditProfileObject = React.createClass({
   updateUser: function (event) {
     event.preventDefault();
     var user = {};
+    var genders_sought = [];
     Object.keys(this.state).forEach(function (key) {
       user[key] = this.state[key];
-    }.bind(this))
+    }.bind(this));
+    if (this.state.MensSingles){
+      genders_sought.push("Men's Singles");
+    }
+    if (this.state.WomensSingles){
+      genders_sought.push("Women's Singles");
+    }
+    if (this.state.MensDoubles){
+      genders_sought.push("Men's Doubles");
+    }
+    if (this.state.WomensDoubles){
+      genders_sought.push("Women's Doubles");
+    }
+    if (this.state.MixedDoubles){
+      genders_sought.push("Mixed Doubles");
+    }
+    delete user['MensSingles'];
+    delete user['WomensSingles'];
+    delete user['MensDoubles'];
+    delete user['WomensDoubles'];
+    delete user['MixedDoubles'];
+    
     user.id = this.props.edit_current_user.id;
+    user.genders_sought = genders_sought;
+    console.log(user.ratings_sought);
+
+
     ApiUtil.updateUser(user, function () {
       this.history.pushState(null, "/profile", {});
     }.bind(this));
+  },
+
+  uploadPicture: function(event){
+    event.preventDefault();
+    var that = this;
+    cloudinary.openUploadWidget(CLOUDINARY_OPTIONS, function(error, result){
+      var data = result[0];
+      that.setState({profile_picture_url: data.url});
+    });
   },
 
   handleDescriptionChange: function(event) {
@@ -91,6 +127,7 @@ window.EditProfileObject = React.createClass({
 
     var Input = ReactBootstrap.Input;
     var Button = ReactBootstrap.Button;
+    var Image = ReactBootstrap.Image;
 
 
     return (
@@ -98,6 +135,9 @@ window.EditProfileObject = React.createClass({
 
         <Button bsStyle="info" onClick={this.updateUser}>Done Editting</Button>
         <Button bsStyle="danger" onClick={this.testUser}>Test User</Button>
+
+        <Image src={this.state.profile_picture_url} ></Image>
+        <Button bsStyle="primary" onClick={this.uploadPicture}>Change Profile Picture</Button>
         <Input
           type="textarea"
           value={this.state.profile_description}

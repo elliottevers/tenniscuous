@@ -1,5 +1,9 @@
 source 'https://rubygems.org'
 
+gem 'figaro'
+
+gem 'cloudinary'
+
 gem 'react-rails', '1.3.0'
 
 gem 'flux-rails-assets'

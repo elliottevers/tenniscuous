@@ -23,6 +23,7 @@ class Api::UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
 
+
     if @user
       @user.update(user_params)
       render json: @user
@@ -83,6 +84,6 @@ class Api::UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:username, :password, :id, :profile_description, :gender, :genders_sought, :rating, :ratings_sought, :position, :discovery_radius, :profile_picture_url)
+    params.require(:user).permit(:username, :password, :id, :profile_description, :gender, {:genders_sought => []}, :rating, {:ratings_sought => []}, :position, :discovery_radius, :profile_picture_url)
   end
 end

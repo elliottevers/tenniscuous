@@ -1,4 +1,7 @@
 Rails.application.configure do
+  config.secret_token = ENV['SECRET_TOKEN']
+
+
   config.react.addons = true # defaults to false
   # Settings specified here will take precedence over those in config/application.rb.
 
