@@ -3,25 +3,35 @@ class User < ActiveRecord::Base
 
   after_initialize :ensure_session_token, :init_fields
 
+  validates :session_token, presence: true, uniqueness: true
+
+  validates :username, presence: true, uniqueness: true
+
   validates :password_digest, presence: true
 
   validates(
     :password,
     length: { minimum: 6, allow_nil: true }
   )
-  validates :session_token, presence: true, uniqueness: true
-  validates :username, presence: true, uniqueness: true
 
   has_many :conversations, :foreign_key => :sender_id
 
+  def add_to_matches(user_id)
+    self.update_attributes(matches: self[:matches] << user_id)
+    logger.debug "MY ID IS #{self[:id]}"
+    logger.debug "MATCHES #{self[:matches]}"
+  end
+
+  def they_accepted_you?(user_id)
+    User.find(user_id)[:accepted_users].include?(self[:id])
+  end
+
   def add_to_seen_users(user_id)
-    logger.debug "SEEN USERS"
     self.update_attributes(seen_users: self[:seen_users] << user_id)
     logger.debug "SEEN USERS #{self[:seen_users]}"
   end
 
   def add_to_accepted_users(user_id)
-    logger.debug "ACCEPTED USERS"
     self.update_attributes(seen_users: self[:seen_users] << user_id, accepted_users: self[:accepted_users] << user_id)
     logger.debug "ACCEPTED USERS #{self[:accepted_users]}"
     logger.debug "SEEN USERS #{self[:seen_users]}"

@@ -1,7 +1,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
-
   private
 
   def current_user
@@ -23,10 +22,10 @@ class ApplicationController < ActionController::Base
   end
 
   def require_user!
-    redirect_to root_url if current_user.nil?
+    render json: {message: "Sign in to continue"} if current_user.nil?
   end
 
   def require_no_user!
-    redirect_to root_url unless current_user.nil?
+    render json: {message: "Sign in to continue"} unless current_user.nil?
   end
 end

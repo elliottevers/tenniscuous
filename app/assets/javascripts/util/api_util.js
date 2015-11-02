@@ -7,6 +7,7 @@ window.ApiUtil = {
       method: "DELETE",
 
       success: function(user){
+        sessionStorage.setItem("current_user", null);
         callback();
       }
     })
@@ -51,6 +52,7 @@ window.ApiUtil = {
       url: "api/session",
       method: "DELETE",
       success: function (message) {
+        sessionStorage.setItem("current_user", null);
         ApiActions.setCurrentUser(null);
         callback();
       }

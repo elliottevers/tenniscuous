@@ -1,9 +1,14 @@
 window.DeleteAccount = React.createClass({
 
+  mixins: [ReactRouter.History],
+
   handleClick: function(event){
     event.preventDefault();
-    var current_user = UserStore.current_user();
-    ApiUtil.destroyUser(current_user[0].id);
+    var that = this;
+    var user = JSON.parse(sessionStorage.getItem("current_user"));
+    ApiUtil.destroyUser(user.id, function () {
+      this.history.pushState(null, "/", {});
+    }.bind(that));
   },
 
   render: function () {

@@ -1,5 +1,4 @@
 class Api::UsersController < ApplicationController
-  # before_action :require_no_user!
 
   def create
 
@@ -9,7 +8,6 @@ class Api::UsersController < ApplicationController
       login_user!(@user)
       render json: @user.id
     else
-      #this always invokes error callback
       render json: "username or password is invalid"
     end
 
@@ -33,7 +31,11 @@ class Api::UsersController < ApplicationController
     elsif (params[:message] == "acceptance")
       if @user
         @user.update(user_params)
-        @user.add_to_accepted_users(user_params[:last_accepted_user])
+        last_user_id = user_params[:last_accepted_user]
+        @user.add_to_accepted_users(last_user_id)
+        if @user.they_accepted_you?(last_user_id)
+          @user.add_to_matches(last_user_id)
+        end
         render json: @user
       else
         render json: { message: 'not found', status: 404}

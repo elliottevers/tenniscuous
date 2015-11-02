@@ -51,7 +51,6 @@ window.DiscoveryQueue = React.createClass({
   },
 
   handleReject: function() {
-
     var $photo = $("div.photo:last");
     var user_id = $photo.attr('id');
     $photo.addClass('rotate-left');
