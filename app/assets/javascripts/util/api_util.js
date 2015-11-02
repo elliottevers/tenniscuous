@@ -70,6 +70,34 @@ window.ApiUtil = {
     })
   },
 
+  updateUserAccept: function(user){
+    var message = "acceptance";
+    $.ajax({
+      url: "api/users/" + user.id,
+      method: "PATCH",
+      data: {user: user, message: message},
+      success: function(returned_user){
+        if(user.last_accepted_user === returned_user.last_accepted_user){
+
+        }
+      }
+    })
+  },
+
+  updateUserReject: function(user){
+    var message = "rejection";
+    $.ajax({
+      url: "api/users/" + user.id,
+      method: "PATCH",
+      data: {user: user, message: message},
+      success: function(returned_user){
+        if(user.last_seen_user === returned_user.last_seen_user){
+
+        }
+      }
+    })
+  },
+
   fetchAllUsers: function(){
     $.ajax({
       url: "api/users",

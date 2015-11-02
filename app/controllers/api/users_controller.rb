@@ -22,13 +22,30 @@ class Api::UsersController < ApplicationController
 
   def update
     @user = User.find(params[:id])
-
-
-    if @user
-      @user.update(user_params)
-      render json: @user
+    if (params[:message] == "rejection")
+      if @user
+        @user.update(user_params)
+        @user.add_to_seen_users(user_params[:last_seen_user])
+        render json: @user
+      else
+        render json: { message: 'not found', status: 404}
+      end
+    elsif (params[:message] == "acceptance")
+      if @user
+        @user.update(user_params)
+        @user.add_to_seen_users(user_params[:last_accepted_user])
+        @user.add_to_accepted_users(user_params[:last_accepted_user])
+        render json: @user
+      else
+        render json: { message: 'not found', status: 404}
+      end
     else
-      render json: { message: 'not found', status: 404}
+      if @user
+        @user.update(user_params)
+        render json: @user
+      else
+        render json: { message: 'not found', status: 404}
+      end
     end
   end
 
@@ -76,7 +93,12 @@ class Api::UsersController < ApplicationController
       }
     end
 
-    render json: filtered_users_identifiers
+    this_user = User.find(current_user.id)
+    filtered_by_previously_seen = filtered_users_identifiers.reject do |user|
+      this_user[:seen_users].include?(user[:id])
+    end
+
+    render json: filtered_by_previously_seen
 
   end
 
@@ -84,6 +106,6 @@ class Api::UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:username, :password, :id, :profile_description, :gender, {:genders_sought => []}, :rating, {:ratings_sought => []}, :position, :discovery_radius, :profile_picture_url)
+    params.require(:user).permit(:username, :password, :id, :profile_description, :gender, {:genders_sought => []}, :rating, {:ratings_sought => []}, :position, :discovery_radius, :profile_picture_url, :last_seen_user, :last_accepted_user)
   end
 end

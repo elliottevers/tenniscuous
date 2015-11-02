@@ -14,6 +14,21 @@ class User < ActiveRecord::Base
 
   has_many :conversations, :foreign_key => :sender_id
 
+  def add_to_seen_users(user_id)
+    logger.debug "SEEN USERS"
+    logger.debug self[:seen_users]
+    self.update_attributes(seen_users: self[:seen_users] << user_id)
+    logger.debug self[:seen_users]
+  end
+
+  def add_to_accepted_users(user_id)
+    logger.debug "ACCEPTED USERS"
+    logger.debug self[:accepted_users]
+    logger.debug self[:seen_users]
+    self.update_attributes(seen_users: self[:seen_users] << user_id, accepted_users: self[:accepted_users] << user_id)
+    logger.debug self[:accepted_users]
+    logger.debug self[:seen_users]
+  end
 
   def self.find_by_credentials(username, password)
     user = User.find_by(username: username)

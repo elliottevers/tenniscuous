@@ -14,7 +14,7 @@ window.DiscoveryCard = React.createClass({
 
     return(
       <div>
-        <div className={'photo'}  style={divImage} onClick={this.handlePictureClick}>
+        <div className={'photo'}  id={this.props.id} style={divImage} onClick={this.handlePictureClick}>
         	<div className={'meta'}>
           	<p>{this.props.username}</p>
         	</div>

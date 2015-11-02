@@ -6,7 +6,7 @@ window.DiscoveryQueue = React.createClass({
   },
 
   getStateFromStore: function () {
-    return { users: UserStore.all(), new_discovery_radius: ""};
+    return { users: UserStore.all()};
   },
 
   _onChange: function () {
@@ -38,18 +38,26 @@ window.DiscoveryQueue = React.createClass({
   },
 
   handleAccept: function() {
-
     var $photo = $("div.photo:last");
+    var user_id = $photo.attr('id');
     $photo.addClass('rotate-right');
+    var user = JSON.parse(sessionStorage.getItem("current_user"));
+    user.last_accepted_user = user_id;
+    ApiUtil.updateUserAccept(user);
     window.setTimeout(function(){
       $photo.remove();
     }, 1000);
+
   },
 
   handleReject: function() {
 
     var $photo = $("div.photo:last");
+    var user_id = $photo.attr('id');
     $photo.addClass('rotate-left');
+    var user = JSON.parse(sessionStorage.getItem("current_user"));
+    user.last_seen_user = user_id;
+    ApiUtil.updateUserReject(user);
     window.setTimeout(function(){
       $photo.remove();
     }, 1000);
