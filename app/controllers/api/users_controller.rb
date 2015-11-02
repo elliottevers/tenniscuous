@@ -33,7 +33,6 @@ class Api::UsersController < ApplicationController
     elsif (params[:message] == "acceptance")
       if @user
         @user.update(user_params)
-        @user.add_to_seen_users(user_params[:last_accepted_user])
         @user.add_to_accepted_users(user_params[:last_accepted_user])
         render json: @user
       else
