@@ -89,7 +89,7 @@ window.EditProfileObject = React.createClass({
     delete user['MensDoubles'];
     delete user['WomensDoubles'];
     delete user['MixedDoubles'];
-    
+
     user.id = this.props.edit_current_user.id;
     user.genders_sought = genders_sought;
     console.log(user.ratings_sought);
@@ -136,7 +136,7 @@ window.EditProfileObject = React.createClass({
         <Button bsStyle="info" onClick={this.updateUser}>Done Editting</Button>
         <Button bsStyle="danger" onClick={this.testUser}>Test User</Button>
 
-        <Image src={this.state.profile_picture_url} ></Image>
+        <Image src={this.state.profile_picture_url} className={"img-circle"} alt={"Cinque Terre"} width={250} height={250}></Image>
         <Button bsStyle="primary" onClick={this.uploadPicture}>Change Profile Picture</Button>
         <Input
           type="textarea"

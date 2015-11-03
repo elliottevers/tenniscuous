@@ -5,7 +5,7 @@ window.ProfileObject = React.createClass({
     var Image = ReactBootstrap.Image;
     return(
       <div>
-        <Image src={this.props.current_user.profile_picture_url}></Image>
+        <Image src={this.props.current_user.profile_picture_url} className={"img-circle"} alt={"Cinque Terre"} width={250} height={250}></Image>
         <Panel>Username: {this.props.current_user.username}</Panel>
         <Panel>Description: {this.props.current_user.profile_description}</Panel>
         <Panel>Gender: {this.props.current_user.gender}</Panel>
