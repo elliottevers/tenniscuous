@@ -35,9 +35,9 @@ ActiveRecord::Base.transaction do
     ratings_sought: [1.0, 7.0],
     position: [37.781824,-122.433014],
     discovery_radius: 3,
-    accepted_users: [],
+    accepted_users: [1],
     last_accepted_user: nil,
-    seen_users: [],
+    seen_users: [1],
     last_seen_user: nil,
     matches: []
   }, {
@@ -51,9 +51,9 @@ ActiveRecord::Base.transaction do
     ratings_sought: [1.0, 7.0],
     position: [37.761487,-122.387695],
     discovery_radius: 3,
-    accepted_users: [],
+    accepted_users: [1],
     last_accepted_user: nil,
-    seen_users: [],
+    seen_users: [1],
     last_seen_user: nil,
     matches: []
   }, {
@@ -69,7 +69,7 @@ ActiveRecord::Base.transaction do
     discovery_radius: 3,
     accepted_users: [1],
     last_accepted_user: nil,
-    seen_users: [],
+    seen_users: [1],
     last_seen_user: nil,
     matches: []
   }, {

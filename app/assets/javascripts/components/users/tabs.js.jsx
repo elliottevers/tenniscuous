@@ -1,7 +1,8 @@
 var tabList = [
     {'id':1, 'name':'Profile', 'url':'/profile' },
     {'id':2, 'name':'Discovery Queue', 'url':'/discovery_queue' },
-    {'id':3, 'name':'Account', 'url':'/account' }
+    {'id':3, 'name':'Matches', 'url':'/matches' },
+    {'id':4, 'name':'Account', 'url':'/account' }
 ];
 
 var CustomTabs = React.createClass({
@@ -23,6 +24,7 @@ var CustomTabs = React.createClass({
         <Tab eventKey={0} title={tabList[0].name}></Tab>
         <Tab eventKey={1} title={tabList[1].name}></Tab>
         <Tab eventKey={2} title={tabList[2].name}></Tab>
+        <Tab eventKey={3} title={tabList[3].name}></Tab>
       </Tabs>
     );
   }

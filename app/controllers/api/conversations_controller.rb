@@ -22,14 +22,20 @@ class Api::ConversationsController < ApplicationController
   end
 
   def index
-  end
-
-  private
-  def conversation_params
-    params.permit(:sender_id, :recipient_id)
+    @conversations = Conversation.involving(current_user.id)
+    @self = self
+    render ('api/conversation/index.json.jbuilder')
   end
 
   def interlocutor(conversation)
     current_user == conversation.recipient ? conversation.sender : conversation.recipient
   end
+
+  private
+  
+  def conversation_params
+    params.permit(:sender_id, :recipient_id)
+  end
+
+
 end

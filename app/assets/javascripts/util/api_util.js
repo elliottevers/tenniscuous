@@ -100,7 +100,7 @@ window.ApiUtil = {
     })
   },
 
-  fetchAllUsers: function(){
+  fetchAllUsers: function(callback){
     $.ajax({
       url: "api/users",
       method: "GET",
@@ -116,6 +116,17 @@ window.ApiUtil = {
       method: "GET",
       success: function (user) {
         ApiActions.UserFetched(user);
+      }
+    })
+  },
+
+  fetchAllConversations: function(callback){
+    $.ajax({
+      url: "api/conversations",
+      method: "GET",
+      success: function (conversations_identifiers) {
+        console.log(conversations_identifiers);
+        ApiActions.allConversationsFetched(conversations_identifiers);
       }
     })
   }

@@ -1,0 +1,3 @@
+window.ConversationConstants = {
+  ALL_CONVERSATIONS_FETCHED: "ALL_CONVERSATIONS_FETCHED"
+};

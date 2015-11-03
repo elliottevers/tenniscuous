@@ -19,6 +19,13 @@ window.ApiActions = {
       actionType: UserConstants.ALL_USERS_FETCHED,
       users_identifiers: users_identifiers
     });
+  },
+
+  allConversationsFetched: function(conversations_identifiers){
+    AppDispatcher.dispatch({
+      actionType: ConversationConstants.ALL_CONVERSATIONS_FETCHED,
+      conversations_identifiers: conversations_identifiers
+    });
   }
 
 }
