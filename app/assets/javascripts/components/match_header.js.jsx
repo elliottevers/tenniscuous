@@ -1,11 +1,6 @@
-window.MatchPane = React.createClass({
+window.MatchHeader = React.createClass({
 
   mixins: [ReactRouter.History],
-
-  handlePictureClick: function(){
-    var id = this.props.conversation_id;
-    this.history.pushState(null, "/matches/" + id, {});
-  },
 
   render: function () {
 

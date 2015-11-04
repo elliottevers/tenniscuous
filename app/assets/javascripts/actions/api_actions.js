@@ -26,6 +26,13 @@ window.ApiActions = {
       actionType: ConversationConstants.ALL_CONVERSATIONS_FETCHED,
       conversations_identifiers: conversations_identifiers
     });
+  },
+
+  ConversationFetched: function(conversation_information){
+    AppDispatcher.dispatch({
+      actionType: ConversationConstants.CONVERSATION_FETCHED,
+      conversation_information: conversation_information
+    });
   }
 
 }

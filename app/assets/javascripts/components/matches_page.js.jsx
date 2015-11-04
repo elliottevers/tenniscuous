@@ -30,6 +30,7 @@ window.MatchesPage = React.createClass({
         <CustomTabs className={'text-center'} tabList={tabList} activeTab={2}/>
         {this.state.conversations.map(function (conversation) {
           return <MatchPane
+                  conversation_id={conversation.conversation_id}
                   other_user_id={conversation.other_user_id}
                   other_user_username={conversation.other_user_username}
                   other_user_picture_url={conversation.other_user_profile_picture_url}

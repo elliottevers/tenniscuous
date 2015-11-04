@@ -25,7 +25,7 @@ $(function(){
         <Route path="/discovery_queue" component={DiscoveryQueue} />
           <Route path="/discovery_queue/:id" component={FellowUserProfile}/>
         <Route path="/matches" component={MatchesPage}/>
-          <Route path="/matches/:id" component={FellowUserProfile}/>
+          <Route path="/matches/:id" component={ChatPage}/>
         <Route path="/account" component={LogOutPage}/>
       </Route>
   );

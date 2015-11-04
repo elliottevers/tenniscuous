@@ -16,6 +16,8 @@ class Api::ConversationsController < ApplicationController
     @reciever = interlocutor(@conversation)
     @messages = @conversation.messages
     @message = Message.new
+    @self = self
+    render ('api/conversation/show.json.jbuilder')
   end
 
   def destroy
@@ -32,7 +34,7 @@ class Api::ConversationsController < ApplicationController
   end
 
   private
-  
+
   def conversation_params
     params.permit(:sender_id, :recipient_id)
   end

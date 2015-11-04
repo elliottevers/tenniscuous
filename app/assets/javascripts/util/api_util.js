@@ -125,8 +125,18 @@ window.ApiUtil = {
       url: "api/conversations",
       method: "GET",
       success: function (conversations_identifiers) {
-        console.log(conversations_identifiers);
         ApiActions.allConversationsFetched(conversations_identifiers);
+      }
+    })
+  },
+
+  fetchConversation: function(id, callback){
+    $.ajax({
+      url: "api/conversations/" + id,
+      method: "GET",
+      success: function (conversation_information) {
+        console.log(conversation_information);
+        ApiActions.ConversationFetched(conversation_information);
       }
     })
   }
