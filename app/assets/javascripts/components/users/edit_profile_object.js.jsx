@@ -89,10 +89,8 @@ window.EditProfileObject = React.createClass({
     delete user['MensDoubles'];
     delete user['WomensDoubles'];
     delete user['MixedDoubles'];
-
-    user.id = this.props.edit_current_user.id;
     user.genders_sought = genders_sought;
-    console.log(user.ratings_sought);
+    user.id = this.props.edit_current_user.id;
 
 
     ApiUtil.updateUser(user, function () {

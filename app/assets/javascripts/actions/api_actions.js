@@ -33,6 +33,12 @@ window.ApiActions = {
       actionType: ConversationConstants.CONVERSATION_FETCHED,
       conversation_information: conversation_information
     });
+  },
+
+  messageCreated: function(){
+    AppDispatcher.dispatch({
+      actionType: ConversationConstants.MESSAGE_CREATED
+    });
   }
 
 }

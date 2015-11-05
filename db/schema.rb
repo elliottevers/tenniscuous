@@ -31,7 +31,6 @@ ActiveRecord::Schema.define(version: 20151010022715) do
     t.integer "last_accepted_user"
     t.integer "seen_users", array: true
     t.integer "last_seen_user"
-    t.integer "matches", array: true
     t.string   "profile_picture_url"
     t.datetime "created_at"
     t.datetime "updated_at"

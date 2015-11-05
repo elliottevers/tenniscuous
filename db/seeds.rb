@@ -22,8 +22,7 @@ ActiveRecord::Base.transaction do
     accepted_users: [],
     last_accepted_user: nil,
     seen_users: [],
-    last_seen_user: nil,
-    matches: []
+    last_seen_user: nil
   }, {
     username: "Rafael Nadal",
     profile_picture_url: "http://res.cloudinary.com/dax4cembx/image/upload/v1445717904/v1h5cqsrq7txzwqfg4l2.jpg",
@@ -38,8 +37,7 @@ ActiveRecord::Base.transaction do
     accepted_users: [1],
     last_accepted_user: nil,
     seen_users: [1],
-    last_seen_user: nil,
-    matches: []
+    last_seen_user: nil
   }, {
     username: "Novak Djokovic",
     profile_picture_url: "http://res.cloudinary.com/dax4cembx/image/upload/v1445718433/pagmwd4e5qjfe3vl0lfx.jpg",
@@ -54,8 +52,7 @@ ActiveRecord::Base.transaction do
     accepted_users: [1],
     last_accepted_user: nil,
     seen_users: [1],
-    last_seen_user: nil,
-    matches: []
+    last_seen_user: nil
   }, {
     username: "Andy Murray",
     profile_picture_url: "http://res.cloudinary.com/dax4cembx/image/upload/v1445841273/andy_murray_f94lfq.jpg",
@@ -70,8 +67,7 @@ ActiveRecord::Base.transaction do
     accepted_users: [1],
     last_accepted_user: nil,
     seen_users: [1],
-    last_seen_user: nil,
-    matches: []
+    last_seen_user: nil
   }, {
     username: "Stanislas Wawrinka",
     profile_picture_url: "http://res.cloudinary.com/dax4cembx/image/upload/v1445841309/stanislas_wawrinka_h9gi5a.jpg",
@@ -86,8 +82,7 @@ ActiveRecord::Base.transaction do
     accepted_users: [],
     last_accepted_user: nil,
     seen_users: [],
-    last_seen_user: nil,
-    matches: []
+    last_seen_user: nil
   }, {
     username: "Tomas Berdych",
     profile_picture_url: "http://res.cloudinary.com/dax4cembx/image/upload/v1445841300/tomas_berdych_gsioo0.jpg",
@@ -102,8 +97,7 @@ ActiveRecord::Base.transaction do
     accepted_users: [],
     last_accepted_user: nil,
     seen_users: [],
-    last_seen_user: nil,
-    matches: []
+    last_seen_user: nil
   }, {
     username: "Richard Gasquet",
     profile_picture_url: "http://res.cloudinary.com/dax4cembx/image/upload/v1445841295/richard_gasquet_xofhha.jpg",
@@ -118,8 +112,7 @@ ActiveRecord::Base.transaction do
     accepted_users: [],
     last_accepted_user: nil,
     seen_users: [],
-    last_seen_user: nil,
-    matches: []
+    last_seen_user: nil
   }, {
     username: "Marin Cilic",
     profile_picture_url: "http://res.cloudinary.com/dax4cembx/image/upload/v1445841285/marin_cilic_aztmvh.jpg",
@@ -134,8 +127,7 @@ ActiveRecord::Base.transaction do
     accepted_users: [],
     last_accepted_user: nil,
     seen_users: [],
-    last_seen_user: nil,
-    matches: []
+    last_seen_user: nil
   }, {
     username: "Grigor Dimitrov",
     profile_picture_url: "http://res.cloudinary.com/dax4cembx/image/upload/v1445841275/grigor_dimitrov_m5erdl.jpg",
@@ -150,8 +142,7 @@ ActiveRecord::Base.transaction do
     accepted_users: [],
     last_accepted_user: nil,
     seen_users: [],
-    last_seen_user: nil,
-    matches: []
+    last_seen_user: nil
   }, {
     username: "Kei Nishikori",
     profile_picture_url: "http://res.cloudinary.com/dax4cembx/image/upload/v1445841265/kei_nishikori_h6wxf4.jpg",
@@ -166,8 +157,7 @@ ActiveRecord::Base.transaction do
     accepted_users: [],
     last_accepted_user: nil,
     seen_users: [],
-    last_seen_user: nil,
-    matches: []
+    last_seen_user: nil
   }]
 
   User.create!(professional_players)

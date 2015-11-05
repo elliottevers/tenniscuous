@@ -31,10 +31,12 @@
     },
 
     addConversationShowChangeListener: function (callback) {
+      console.log("change listener is on");
       this.on(CONVERSATION_SHOW_CHANGE_EVENT, callback);
     },
 
     removeConversationShowChangeListener: function (callback) {
+      console.log("change listener is off");
       this.removeListener(CONVERSATION_SHOW_CHANGE_EVENT, callback);
     },
 
@@ -46,6 +48,10 @@
           break;
         case ConversationConstants.CONVERSATION_FETCHED:
           resetConversation(payload.conversation_information);
+          ConversationStore.emit(CONVERSATION_SHOW_CHANGE_EVENT);
+          break;
+        case ConversationConstants.MESSAGE_CREATED:
+          console.log("emitting");
           ConversationStore.emit(CONVERSATION_SHOW_CHANGE_EVENT);
           break;
       }

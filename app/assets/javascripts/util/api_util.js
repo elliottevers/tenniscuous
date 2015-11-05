@@ -139,5 +139,16 @@ window.ApiUtil = {
         ApiActions.ConversationFetched(conversation_information);
       }
     })
+  },
+
+  sendMessage: function(conversation_id, message) {
+    $.ajax({
+      url: "api/conversations/" + conversation_id + "/messages",
+      method: "POST",
+      data: {body: message, conversation_id: conversation_id},
+      success: function (message) {
+        ApiActions.messageCreated();
+      }
+    })
   }
 }
