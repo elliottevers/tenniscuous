@@ -39,6 +39,11 @@ var ChatPage = React.createClass({
     ApiUtil.fetchConversation(parseInt(that.props.params.id));
   },
 
+  unmatchUser: function(event){
+    var that = this;
+    ApiUtil.deleteConversation(parseInt(that.props.params.id), that.history.pushState(null, "/matches", {}));
+  },
+
   render: function () {
     var Button = ReactBootstrap.Button;
     var Input = ReactBootstrap.Input;
@@ -49,6 +54,7 @@ var ChatPage = React.createClass({
       <div>
       <CustomTabs className={'text-center'} tabList={tabList} activeTab={2}/>
       <Button onClick={this.handleClick} bsStyle="warning">Back to Matches</Button>
+      <Button onClick={this.unmatchUser} bsStyle="danger">Unmatch User</Button>
       <MatchHeader
       other_user_id={this.state.conversation.other_user_id}
       other_user_username={this.state.conversation.other_user_username}

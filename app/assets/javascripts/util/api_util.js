@@ -150,5 +150,15 @@ window.ApiUtil = {
         ApiActions.messageCreated();
       }
     })
+  },
+
+  deleteConversation: function(conversation_id, callback) {
+    $.ajax({
+      url: "api/conversations/" + conversation_id,
+      method: "DELETE",
+      success: function (conversation) {
+        callback();
+      }
+    })
   }
 }
