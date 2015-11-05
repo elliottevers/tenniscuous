@@ -32,10 +32,6 @@ class Api::ConversationsController < ApplicationController
     render ('api/conversation/index.json.jbuilder')
   end
 
-  def interlocutor(conversation)
-    current_user == conversation.recipient ? conversation.sender : conversation.recipient
-  end
-
   private
 
   def conversation_params

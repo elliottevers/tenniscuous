@@ -20,5 +20,7 @@
 //= require ReactRouter.min
 //= require ReactBootstrap.min
 //= require bootstrap-slider
+//= require faye
+//= require comments
 //= require_tree .
 //= require tenniscuous

@@ -36,7 +36,6 @@ var ChatPage = React.createClass({
   handleMessageSubmit: function(event) {
     var that = this;
     ApiUtil.sendMessage(parseInt(that.props.params.id), that.state.newMessage);
-    ApiUtil.fetchConversation(parseInt(that.props.params.id));
   },
 
   unmatchUser: function(event){

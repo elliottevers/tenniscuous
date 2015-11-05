@@ -146,8 +146,11 @@ window.ApiUtil = {
       url: "api/conversations/" + conversation_id + "/messages",
       method: "POST",
       data: {body: message, conversation_id: conversation_id},
-      success: function (message) {
-        ApiActions.messageCreated();
+      success: function (conversation_information) {
+        publisher = client.publish('/conversation', {
+          conversation: conversation_information
+        });
+
       }
     })
   },

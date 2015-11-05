@@ -1,6 +1,11 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
+  def interlocutor(conversation)
+    current_user == conversation.recipient ? conversation.sender : conversation.recipient
+  end
+
+
   private
 
   def current_user

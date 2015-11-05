@@ -1,6 +1,9 @@
 source 'https://rubygems.org'
 
 gem 'figaro'
+gem 'faye-rails'
+gem 'thin'
+gem 'responders', '~> 2.0'
 
 gem 'cloudinary'
 
