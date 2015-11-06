@@ -2,6 +2,11 @@ class Api::MessagesController < ApplicationController
   # before_filter :authenticate_user!
 
   def create
+    if params[:numMessages]
+      num_messages = params[:numMessages]
+    else
+      num_messages = 10
+    end
     @message = Message.create(:body => params[:body], :conversation_id => params[:conversation_id], :user_id => current_user.id)
     @conversation = Conversation.find(params[:conversation_id])
     @messages = @conversation.messages
@@ -18,7 +23,7 @@ class Api::MessagesController < ApplicationController
       }
     end
 
-    new_conversation[:messages] = new_messages
+    new_conversation[:messages] = new_messages.last(num_messages.to_i)
     @conversation = new_conversation
     render json: @conversation
 

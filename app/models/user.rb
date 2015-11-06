@@ -68,6 +68,7 @@ class User < ActiveRecord::Base
     self.rating ||= nil
     self.ratings_sought ||= []
     self.discovery_radius ||= 25
+    self.num_displayed_messages ||= 10
   end
 
   def ensure_session_token

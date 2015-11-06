@@ -130,10 +130,11 @@ window.ApiUtil = {
     })
   },
 
-  fetchConversation: function(id, callback){
+  fetchConversation: function(id, loadMoreMessages){
     $.ajax({
       url: "api/conversations/" + id,
       method: "GET",
+      data: {loadMoreMessages: loadMoreMessages},
       success: function (conversation_information) {
         console.log(conversation_information);
         ApiActions.ConversationFetched(conversation_information);
@@ -141,11 +142,11 @@ window.ApiUtil = {
     })
   },
 
-  sendMessage: function(conversation_id, message) {
+  sendMessage: function(conversation_id, message, numMessages) {
     $.ajax({
       url: "api/conversations/" + conversation_id + "/messages",
       method: "POST",
-      data: {body: message, conversation_id: conversation_id},
+      data: {body: message, conversation_id: conversation_id, numMessages: numMessages},
       success: function (conversation_information) {
         publisher = client.publish('/conversation', {
           conversation: conversation_information

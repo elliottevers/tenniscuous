@@ -8,7 +8,7 @@ var ChatPage = React.createClass({
 
   getStateFromStore: function () {
 
-    return { conversation: ConversationStore.conversation(), newMessage: "" };
+    return { conversation: ConversationStore.conversation(), newMessage: ""};
   },
 
   _onChange: function () {
@@ -35,12 +35,19 @@ var ChatPage = React.createClass({
 
   handleMessageSubmit: function(event) {
     var that = this;
-    ApiUtil.sendMessage(parseInt(that.props.params.id), that.state.newMessage);
+    ApiUtil.sendMessage(parseInt(that.props.params.id), that.state.newMessage, that.state.numMessages);
   },
 
   unmatchUser: function(event){
     var that = this;
     ApiUtil.deleteConversation(parseInt(that.props.params.id), that.history.pushState(null, "/matches", {}));
+  },
+
+  loadMessages: function(event){
+    var that = this;
+    var conversation_id = parseInt(this.props.params.id);
+    ApiUtil.fetchConversation(conversation_id, true);
+
   },
 
   render: function () {
@@ -59,6 +66,7 @@ var ChatPage = React.createClass({
       other_user_username={this.state.conversation.other_user_username}
       other_user_picture_url={this.state.conversation.other_user_profile_picture_url}
       />
+      <Button onClick={this.loadMessages} bsStyle="primary">Load Previous Messages</Button>
       <ul>
         {this.state.conversation.messages.map(function (message) {
           return <TestComponent body={message.body}/>;

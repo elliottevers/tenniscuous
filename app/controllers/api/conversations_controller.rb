@@ -12,9 +12,16 @@ class Api::ConversationsController < ApplicationController
   end
 
   def show
+    if params[:loadMoreMessages]
+      current_user[:num_displayed_messages] = current_user[:num_displayed_messages] + 10
+      current_user.save
+    else
+      current_user[:num_displayed_messages] = 10
+      current_user.save
+    end
     @conversation = Conversation.find(params[:id])
     @reciever = interlocutor(@conversation)
-    @messages = @conversation.messages
+    @messages = @conversation.messages.last(current_user[:num_displayed_messages])
     @message = Message.new
     @self = self
     render ('api/conversation/show.json.jbuilder')

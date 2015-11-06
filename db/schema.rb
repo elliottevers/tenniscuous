@@ -32,6 +32,7 @@ ActiveRecord::Schema.define(version: 20151010022715) do
     t.integer "seen_users", array: true
     t.integer "last_seen_user"
     t.string   "profile_picture_url"
+    t.integer "num_displayed_messages"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
