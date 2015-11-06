@@ -36,13 +36,11 @@ window.ApiUtil = {
       method: "POST",
       data: {user: user},
       success: function (user) {
-        var user_identifiers = {id: user.id, username: user.username, profile_picture_url: user.profile_picture_url};
-        sessionStorage.setItem("current_user", JSON.stringify(user_identifiers));
-        ApiActions.setCurrentUser(user_identifiers);
+        sessionStorage.setItem("current_user", JSON.stringify(user));
         callback();
       },
       error: function (message) {
-        alert("incorrect credentials");
+        alert("Your username or password are incorrect");
       }
     })
   },
@@ -136,7 +134,6 @@ window.ApiUtil = {
       method: "GET",
       data: {loadMoreMessages: loadMoreMessages},
       success: function (conversation_information) {
-        console.log(conversation_information);
         ApiActions.ConversationFetched(conversation_information);
       }
     })
