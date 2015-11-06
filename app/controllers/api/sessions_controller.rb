@@ -7,7 +7,7 @@ class Api::SessionsController < ApplicationController
     )
 
     if @user.nil?
-      render json: {error_message: "error"}
+      render nothing: true, status: :unauthorized
     else
       @user.update_attribute(:position, params[:user][:position])
       login_user!(@user)
