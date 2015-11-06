@@ -35,8 +35,8 @@ window.CreateAccount = React.createClass({
       user.position = user_position;
 
       ApiUtil.createUser(user, function () {
-        this.history.pushState(null, "/profile", {});
-      }.bind(that));
+        that.history.pushState(null, "/profile", {});
+      });
     });
 
   },

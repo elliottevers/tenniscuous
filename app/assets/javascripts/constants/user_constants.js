@@ -11,4 +11,4 @@ window.CloudinaryConstants = {
   CARD: "upload/h_300,w_230,c_fill,r_40"
 };
 
-window.change_listener_is_on = false;
+window.root_url = "localhost:3000"

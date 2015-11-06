@@ -5,10 +5,12 @@ window.ApiUtil = {
     $.ajax({
       url: "api/users/" + id,
       method: "DELETE",
-
       success: function(user){
         sessionStorage.setItem("current_user", null);
         callback();
+      },
+      error: function(){
+        history.pushState(null, "/", {});
       }
     })
 
@@ -19,12 +21,12 @@ window.ApiUtil = {
       url: "api/users",
       method: "POST",
       data: {user: user},
-      success: function(user_id){
-        // ApiActions.setCurrentUser(user_id);
+      success: function(user){
+        sessionStorage.setItem("current_user", JSON.stringify(user));
         callback();
       },
-      error: function(message){
-        alert("username or password is invalid");
+      error: function(){
+        history.pushState(null, "/", {});
       }
     })
   },
@@ -51,7 +53,6 @@ window.ApiUtil = {
       method: "DELETE",
       success: function (message) {
         sessionStorage.setItem("current_user", null);
-        // ApiActions.setCurrentUser(null);
         callback();
       }
     })
@@ -66,6 +67,9 @@ window.ApiUtil = {
       success: function (user) {
         ApiActions.setCurrentUser(user);
         callback();
+      },
+      error: function(){
+        history.pushState(null, "/", {});
       }
     })
   },
@@ -80,6 +84,9 @@ window.ApiUtil = {
         if(user.last_accepted_user === returned_user.last_accepted_user){
 
         }
+      },
+      error: function(){
+        history.pushState(null, "/", {});
       }
     })
   },
@@ -94,6 +101,9 @@ window.ApiUtil = {
         if(user.last_seen_user === returned_user.last_seen_user){
 
         }
+      },
+      error: function(){
+        history.pushState(null, "/", {});
       }
     })
   },
@@ -104,6 +114,9 @@ window.ApiUtil = {
       method: "GET",
       success: function (users_identifiers) {
         ApiActions.AllUsersFetched(users_identifiers);
+      },
+      error: function(){
+        history.pushState(null, "/", {});
       }
     })
   },
@@ -114,6 +127,9 @@ window.ApiUtil = {
       method: "GET",
       success: function (user) {
         ApiActions.UserFetched(user);
+      },
+      error: function(){
+        history.pushState(null, "/", {});
       }
     })
   },
@@ -124,6 +140,9 @@ window.ApiUtil = {
       method: "GET",
       success: function (conversations_identifiers) {
         ApiActions.allConversationsFetched(conversations_identifiers);
+      },
+      error: function(){
+        history.pushState(null, "/", {});
       }
     })
   },
@@ -135,6 +154,9 @@ window.ApiUtil = {
       data: {loadMoreMessages: loadMoreMessages},
       success: function (conversation_information) {
         ApiActions.ConversationFetched(conversation_information);
+      },
+      error: function(){
+        history.pushState(null, "/", {});
       }
     })
   },
@@ -149,6 +171,9 @@ window.ApiUtil = {
           conversation: conversation_information
         });
 
+      },
+      error: function(){
+        history.pushState(null, "/", {});
       }
     })
   },
@@ -159,6 +184,9 @@ window.ApiUtil = {
       method: "DELETE",
       success: function (conversation) {
         callback();
+      },
+      error: function(){
+        history.pushState(null, "/", {});
       }
     })
   }

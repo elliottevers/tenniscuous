@@ -1,15 +1,19 @@
 class Api::UsersController < ApplicationController
-  before_action :require_user!
+  before_action :require_user!, :except => :create
 
   def create
+    user = User.new(user_params)
 
-    @user = User.new(user_params)
-
-    if @user.save
-      login_user!(@user)
-      render json: @user.id
+    if user.save
+      login_user!(user)
+      @initial_user= {
+        :id => current_user[:id],
+        :username => current_user[:username],
+        :profile_picture_url => current_user[:profile_picture_url]
+      }
+      render ("api/user/create.json.jbuilder")
     else
-      render json: "username or password is invalid"
+      render json: { message: 'not found', status: 404}
     end
 
   end
@@ -70,14 +74,14 @@ class Api::UsersController < ApplicationController
     end
 
     users_distances = Hash.new
-
+    logger.debug current_user[:position]
     users_positions.each do |user|
       haversine_arguments = [current_user[:position][0], current_user[:position][1]]
       haversine_arguments << user[:position][0]
       haversine_arguments << user[:position][1]
       users_distances[user[:id]] = haversine_arguments
     end
-
+    logger.debug users_distances
     users_distances.keys.each do |key|
       users_distances[key] = Haversine.distance(*users_distances[key]).to_miles
     end
@@ -111,6 +115,6 @@ class Api::UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:username, :password, :id, :profile_description, :gender, {:genders_sought => []}, :rating, {:ratings_sought => []}, :position, :discovery_radius, :profile_picture_url, :last_seen_user, :last_accepted_user)
+    params.require(:user).permit(:username, :password, :id, :profile_description, :gender, {:genders_sought => []}, :rating, {:ratings_sought => []}, {:position => []}, :discovery_radius, :profile_picture_url, :last_seen_user, :last_accepted_user)
   end
 end

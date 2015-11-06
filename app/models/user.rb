@@ -63,12 +63,17 @@ class User < ActiveRecord::Base
 
   def init_fields
     self.profile_description ||= ""
+    self.profile_picture_url ||= ""
     self.gender ||= ""
     self.genders_sought ||= []
     self.rating ||= nil
-    self.ratings_sought ||= []
+    self.ratings_sought ||= [1,7]
     self.discovery_radius ||= 25
     self.num_displayed_messages ||= 10
+    self.accepted_users ||= []
+    self.accepted_users ||= nil
+    self.seen_users ||= []
+    self.last_seen_user ||= nil
   end
 
   def ensure_session_token

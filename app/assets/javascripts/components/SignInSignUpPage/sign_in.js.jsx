@@ -37,13 +37,7 @@ window.SignIn = React.createClass({
       ApiUtil.createSession(user, function () {
         this.history.pushState(null, "/discovery_queue", {});
       }.bind(that));
-    },function(){
-        var user_position = [37.7691,-122.4449];
-        user.position = user_position;
-        ApiUtil.createSession(user, function () {
-          this.history.pushState(null, "/discovery_queue", {});
-        }.bind(that));
-      }, {timeout:3000});
+    });
 
   },
 
