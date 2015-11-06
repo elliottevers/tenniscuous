@@ -27,10 +27,10 @@ class ApplicationController < ActionController::Base
   end
 
   def require_user!
-    render json: {message: "Sign in to continue"} if current_user.nil?
+    render nothing: true, status: :unauthorized if current_user.nil?
   end
 
   def require_no_user!
-    render json: {message: "Sign in to continue"} unless current_user.nil?
+    render nothing: true, status: :unauthorized unless current_user.nil?
   end
 end

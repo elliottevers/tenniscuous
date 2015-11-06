@@ -20,7 +20,7 @@ window.ApiUtil = {
       method: "POST",
       data: {user: user},
       success: function(user_id){
-        ApiActions.setCurrentUser(user_id);
+        // ApiActions.setCurrentUser(user_id);
         callback();
       },
       error: function(message){
@@ -51,7 +51,7 @@ window.ApiUtil = {
       method: "DELETE",
       success: function (message) {
         sessionStorage.setItem("current_user", null);
-        ApiActions.setCurrentUser(null);
+        // ApiActions.setCurrentUser(null);
         callback();
       }
     })
