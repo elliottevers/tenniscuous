@@ -21,6 +21,6 @@
 //= require ReactBootstrap.min
 //= require bootstrap-slider
 //= require faye
-//= require comments
+//= require conversation
 //= require_tree .
 //= require tenniscuous
