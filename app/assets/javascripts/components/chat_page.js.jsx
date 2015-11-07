@@ -67,11 +67,13 @@ var ChatPage = React.createClass({
       other_user_picture_url={this.state.conversation.other_user_profile_picture_url}
       />
       <Button onClick={this.loadMessages} bsStyle="primary">Load Previous Messages</Button>
+      <div className={"messages-wrapper"}>
       <ul>
         {this.state.conversation.messages.map(function (message) {
-          return <TestComponent body={message.body}/>;
+          return <Message body={message.body} user_id={message.user_id}/>;
         })}
       </ul>
+      </div>
       <Input type="text" value={this.state.newMessage} placeholder="New Message" onChange={this.handleMessageChange} labelClassName="col-xs-2" wrapperClassName="col-xs-10" />
       <Button onClick={this.handleMessageSubmit} bsStyle="primary">Send Message</Button>
       </div>

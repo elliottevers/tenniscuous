@@ -15,6 +15,28 @@
  *= require bootstrap-slider
  *= require_self
  */
+ .messages-wrapper {
+   padding-top: 10px;
+   position: relative;
+   border: 1px solid #ddd;
+   border-top: 0 none;
+ }
+ .message {
+     border-radius: 20px 20px 20px 20px;
+     margin: 0 15px 10px;
+     padding: 15px 20px;
+     position: relative;
+ }
+ .message.current_user {
+     background-color: #2095FE;
+     color: #fff;
+     margin-left: 80px;
+ }
+ .message.other_user {
+     background-color: #E5E4E9;
+     color: #363636;
+     margin-right: 80px;
+ }
 
 div.photo {
 	position:absolute;

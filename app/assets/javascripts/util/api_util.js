@@ -167,8 +167,9 @@ window.ApiUtil = {
       method: "POST",
       data: {body: message, conversation_id: conversation_id, numMessages: numMessages},
       success: function (conversation_information) {
+        console.log(conversation_information);
         publisher = client.publish('/conversation', {
-          conversation: conversation_information
+          conversation_information: conversation_information
         });
 
       },

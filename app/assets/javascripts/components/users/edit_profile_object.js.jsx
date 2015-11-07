@@ -114,11 +114,7 @@ window.EditProfileObject = React.createClass({
   handleGenderChange: function(event) {
     this.setState({gender: event.target.value});
   },
-
-  testUser: function () {
-    console.log(this.state);
-  },
-
+  
   render: function() {
     var ratingsSought = [this.state.ratings_sought[0],this.state.ratings_sought[1]];
     var ratings_sought_array = "[" + this.state.ratings_sought[0].toString() + "," + this.state.ratings_sought[1].toString() + "]";
@@ -132,7 +128,6 @@ window.EditProfileObject = React.createClass({
       <div>
 
         <Button bsStyle="info" onClick={this.updateUser}>Done Editting</Button>
-        <Button bsStyle="danger" onClick={this.testUser}>Test User</Button>
 
         <Image src={this.state.profile_picture_url} className={"img-circle"} alt={"Cinque Terre"} width={250} height={250}></Image>
         <Button bsStyle="primary" onClick={this.uploadPicture}>Change Profile Picture</Button>
