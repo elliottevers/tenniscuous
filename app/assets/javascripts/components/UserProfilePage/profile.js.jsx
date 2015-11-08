@@ -18,6 +18,9 @@ window.Profile = React.createClass({
   },
 
   render: function () {
+      var Grid = ReactBootstrap.Grid;
+      var Row = ReactBootstrap.Row;
+      var Col = ReactBootstrap.Col;
       return(
         <div>
           <ProfileObject current_user={this.state.user}/>

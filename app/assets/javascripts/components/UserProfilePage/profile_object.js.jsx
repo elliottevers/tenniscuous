@@ -2,6 +2,8 @@ window.ProfileObject = React.createClass({
 
   render: function () {
     var Panel = ReactBootstrap.Panel;
+    var Well = ReactBootstrap.Well;
+    var Button = ReactBootstrap.Button;
     var Image = ReactBootstrap.Image;
     var Grid = ReactBootstrap.Grid;
     var Row = ReactBootstrap.Row;
@@ -13,8 +15,25 @@ window.ProfileObject = React.createClass({
           <Col xs={4} xsOffset={4}>
             <Image src={this.props.current_user.profile_picture_url} className={"img-responsive"} circle></Image>
           </Col>
+          <Col xs={1}>
+            <Button onClick={this.handleClick} bsStyle="info" className={"btn-circle"}> Edit Information </Button>
+          </Col>
+        </Row>
+        <Row>
+          <Col xs={2} xsOffset={5}>
+            <h4>{this.props.current_user.username}</h4>
+          </Col>
+        </Row>
+        <Row>
+          <Col xs={1}>
+            <h4>Description</h4>
+          </Col>
+        </Row>
+        <Row>
+            <Well>{this.props.current_user.profile_description}</Well>
         </Row>
       </Grid>
+
         <Panel>Username: {this.props.current_user.username}</Panel>
         <Panel>Description: {this.props.current_user.profile_description}</Panel>
         <Panel>Gender: {this.props.current_user.gender}</Panel>
