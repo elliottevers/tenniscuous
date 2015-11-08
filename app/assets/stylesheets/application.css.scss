@@ -15,20 +15,11 @@
  *= require bootstrap-slider
  *= require_self
  */
- .row {
-	 position: relative;
+
+ .img-responsive {
+   height: 100px;
  }
- #navi,
- #infoi {
-   width: 100%;
-   height: 100%;
-   position: absolute;
-   top: 0;
-   left: 0;
- }
- #infoi {
-   z-index: 10;
- }
+
  .tennis-ball {
    position: absolute;
    overflow: hidden;

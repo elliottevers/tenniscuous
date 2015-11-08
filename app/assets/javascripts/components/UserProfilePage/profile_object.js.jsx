@@ -3,9 +3,18 @@ window.ProfileObject = React.createClass({
   render: function () {
     var Panel = ReactBootstrap.Panel;
     var Image = ReactBootstrap.Image;
+    var Grid = ReactBootstrap.Grid;
+    var Row = ReactBootstrap.Row;
+    var Col = ReactBootstrap.Col;
     return(
       <div>
-        <Image src={this.props.current_user.profile_picture_url} className={"img-circle"} alt={"Cinque Terre"} width={250} height={250}></Image>
+      <Grid>
+        <Row>
+          <Col xs={4} xsOffset={4}>
+            <Image src={this.props.current_user.profile_picture_url} className={"img-responsive"} circle></Image>
+          </Col>
+        </Row>
+      </Grid>
         <Panel>Username: {this.props.current_user.username}</Panel>
         <Panel>Description: {this.props.current_user.profile_description}</Panel>
         <Panel>Gender: {this.props.current_user.gender}</Panel>

@@ -11,8 +11,8 @@ window.UserProfile = React.createClass({
     var Button = ReactBootstrap.Button;
     return (
       <div>
-        <Button onClick={this.handleClick} bsStyle="info"> Edit Information </Button>
         <CustomTabs tabList={tabList} activeTab={0}/>
+        <Button onClick={this.handleClick} bsStyle="info"> Edit Information </Button>
         <Profile user={JSON.parse(sessionStorage.getItem("current_user"))}/>
       </div>
     );
