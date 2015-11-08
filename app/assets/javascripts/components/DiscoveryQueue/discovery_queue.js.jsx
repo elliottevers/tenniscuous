@@ -86,6 +86,7 @@ window.DiscoveryQueue = React.createClass({
           {this.state.users.map(function (user) {
             return <DiscoveryCard id={user.id} username={user.username} picture={user.picture}/>;
           })}
+        <div className={"tennis-ball"}></div>
         </Row>
         <Row>
             <LikeDislikeBar onChange={this.handleCardChange} />
