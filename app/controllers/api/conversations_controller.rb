@@ -20,6 +20,7 @@ class Api::ConversationsController < ApplicationController
       current_user.save
     end
     @conversation = Conversation.find(params[:id])
+    @current_user = current_user
     @reciever = interlocutor(@conversation)
     @messages = @conversation.messages.last(current_user[:num_displayed_messages])
     @message = Message.new

@@ -48,6 +48,7 @@ var ChatPage = React.createClass({
     var Row = ReactBootstrap.Row;
     var Col = ReactBootstrap.Col;
     var that = this;
+
     if (this.state.conversation.messages){
       return (
 

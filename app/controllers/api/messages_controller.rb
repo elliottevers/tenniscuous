@@ -24,6 +24,9 @@ class Api::MessagesController < ApplicationController
     end
 
     new_conversation[:messages] = new_messages.last(num_messages.to_i)
+    new_conversation[:current_user_id] = current_user[:id]
+    new_conversation[:current_user_username] = current_user[:username]
+    new_conversation[:current_user_profile_picture_url] = current_user[:profile_picture_url]
     @conversation = new_conversation
     render json: @conversation
 

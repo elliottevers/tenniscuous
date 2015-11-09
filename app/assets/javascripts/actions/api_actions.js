@@ -29,6 +29,15 @@ window.ApiActions = {
   },
 
   ConversationFetched: function(conversation_information){
+    if (conversation_information.current_user_id === JSON.parse(sessionStorage.getItem("current_user")).id){
+      conversation_information.other_user_id = conversation_information.other_user_id;
+      conversation_information.other_user_username = conversation_information.other_user_username;
+      conversation_information.other_user_profile_picture_url = conversation_information.other_user_profile_picture_url;
+    } else {
+      conversation_information.other_user_id = conversation_information.current_user_id;
+      conversation_information.other_user_username = conversation_information.current_user_username;
+      conversation_information.other_user_profile_picture_url = conversation_information.current_user_profile_picture_url;
+    }
     AppDispatcher.dispatch({
       actionType: ConversationConstants.CONVERSATION_FETCHED,
       conversation_information: conversation_information
