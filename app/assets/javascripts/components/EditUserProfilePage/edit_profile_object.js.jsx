@@ -113,6 +113,7 @@ window.EditProfileObject = React.createClass({
 
   handleGenderChange: function(event) {
     this.setState({gender: event.target.value});
+    console.log(this.state);
   },
 
   render: function() {
@@ -148,7 +149,7 @@ window.EditProfileObject = React.createClass({
               onChange={this.handleDescriptionChange} />
           </Row>
           <Row>
-            <Input type="select" ref="select" onChange={this.handleGenderChange} value={this.props.edit_current_user.gender}>
+            <Input type="select" ref="select" onChange={this.handleGenderChange} value={this.state.gender}>
                 <option value="Male">Male</option>
                 <option value="Female">Female</option>
             </Input>
