@@ -114,7 +114,7 @@ window.EditProfileObject = React.createClass({
   handleGenderChange: function(event) {
     this.setState({gender: event.target.value});
   },
-  
+
   render: function() {
     var ratingsSought = [this.state.ratings_sought[0],this.state.ratings_sought[1]];
     var ratings_sought_array = "[" + this.state.ratings_sought[0].toString() + "," + this.state.ratings_sought[1].toString() + "]";
@@ -122,55 +122,101 @@ window.EditProfileObject = React.createClass({
     var Input = ReactBootstrap.Input;
     var Button = ReactBootstrap.Button;
     var Image = ReactBootstrap.Image;
-
+    var Grid = ReactBootstrap.Grid;
+    var Row = ReactBootstrap.Row;
+    var Col = ReactBootstrap.Col;
 
     return (
       <div>
-
-        <Button bsStyle="info" onClick={this.updateUser}>Done Editting</Button>
-
-        <Image src={this.state.profile_picture_url} className={"img-circle"} alt={"Cinque Terre"} width={250} height={250}></Image>
-        <Button bsStyle="primary" onClick={this.uploadPicture}>Change Profile Picture</Button>
-        <Input
-          type="textarea"
-          value={this.state.profile_description}
-          placeholder={this.props.edit_current_user.profile_description}
-          onChange={this.handleDescriptionChange} />
-
-          <Input type="select" ref="select" onChange={this.handleGenderChange} value={this.props.edit_current_user.gender}>
-              <option value="Male">Male</option>
-              <option value="Female">Female</option>
-          </Input>
-
-          <div className="btn-group">
-            <label className="btn btn-primary">
-              <input className="mens_singles" checked={this.state.MensSingles} onChange= {this.handleChange} type="checkbox"> Men's Singles </input>
-            </label>
-            <label className="btn btn-primary">
-              <input className="womens_singles" checked={this.state.WomensSingles} onChange= {this.handleChange} type="checkbox"> Women's Singles </input>
-            </label>
-            <label className="btn btn-primary">
-              <input className="mens_doubles" checked={this.state.MensDoubles} onChange= {this.handleChange} type="checkbox"> Men's Doubles </input>
-            </label>
+       <Grid>
+         <Row>
+           <Col xs={1} xsOffset={1}>
+             <Button bsStyle="info" onClick={this.updateUser}>Done Editting</Button>
+           </Col>
+           <Col xs={4} xsOffset={2}>
+             <Image src={this.state.profile_picture_url} className={"img-responsive"} circle></Image>
+           </Col>
+           <Col xs={1} xsOffset={1}>
+             <Button bsStyle="primary" onClick={this.uploadPicture}>Change Profile Picture</Button>
+           </Col>
+          </Row>
+          <Row>
+            <Input
+              type="textarea"
+              value={this.state.profile_description}
+              placeholder={this.props.edit_current_user.profile_description}
+              onChange={this.handleDescriptionChange} />
+          </Row>
+          <Row>
+            <Input type="select" ref="select" onChange={this.handleGenderChange} value={this.props.edit_current_user.gender}>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+            </Input>
+          </Row>
+          <Row>
+           <Col xs={2}>
+            <div className="btn-group">
+              <label className="btn btn-primary">
+                <input className="mens_singles" checked={this.state.MensSingles} onChange= {this.handleChange} type="checkbox"> Men's Singles </input>
+              </label>
+            </div>
+           </Col>
+           <Col xs={2}>
+            <div className="btn-group">
+              <label className="btn btn-primary">
+                <input className="womens_singles" checked={this.state.WomensSingles} onChange= {this.handleChange} type="checkbox"> Women's Singles </input>
+              </label>
+            </div>
+           </Col>
+           <Col xs={2}>
+            <div className="btn-group">
+              <label className="btn btn-primary">
+                <input className="mens_doubles" checked={this.state.MensDoubles} onChange= {this.handleChange} type="checkbox"> Men's Doubles </input>
+              </label>
+            </div>
+           </Col>
+           <Col xs={2}>
+            <div className="btn-group">
             <label className="btn btn-primary" >
               <input className="womens_doubles" checked={this.state.WomensDoubles} onChange= {this.handleChange} type="checkbox"> Women's Doubles </input>
             </label>
-            <label className="btn btn-primary">
-              <input className="mixed_doubles" checked={this.state.MixedDoubles} onChange= {this.handleChange} type="checkbox"> Mixed Doubles </input>
-            </label>
-          </div>
+            </div>
+           </Col>
+           <Col xs={2}>
+            <div className="btn-group">
+              <label className="btn btn-primary">
+                <input className="mixed_doubles" checked={this.state.MixedDoubles} onChange= {this.handleChange} type="checkbox"> Mixed Doubles </input>
+              </label>
+            </div>
+           </Col>
+          </Row>
+          <Row>
+            <Col xs={1}>
+              <span id="NTRP">NTRP Level: <span id="ratingSliderVal">{this.state.rating}</span></span><br/>
+            </Col>
+            <Col xs={4}>
+              <input onChange={this.handleRatingChange} id="rating" data-slider-id="NTRP" type="text" data-slider-value={this.state.rating} data-slider-min={1} data-slider-max={7} data-slider-step={.5}/>
+            </Col>
+          </Row>
+          <Row>
+            <Col xs={1}>
+              <span id="NTRP">NTRP Levels Sought: <span id="ratings_soughtSliderVal">{this.state.ratings_sought[0] + '-' + this.state.ratings_sought[1]}</span></span><br/>
+            </Col>
+            <Col xs={4}>
+              <input id="ratings_sought" type="text" className="span2" value="" data-slider-min={1} data-slider-max={7} data-slider-step={.5} data-slider-value={ratings_sought_array}/>
+            </Col>
+          </Row>
+          <Row>
+            <Col xs={1}>
+              <span id="inMiles">Miles: <span id="discovery_radiusSliderVal">{this.state.discovery_radius}</span></span>
+            </Col>
+            <Col xs={4}>
+              <input id="discovery_radius" type="text" data-slider-min={0} data-slider-max={20} data-slider-step={1} data-slider-value={this.state.discovery_radius}/>
+            </Col>
+          </Row>
 
-          <input onChange={this.handleRatingChange} id="rating" data-slider-id="NTRP" type="text" data-slider-value={this.state.rating} data-slider-min={1} data-slider-max={7} data-slider-step={.5}/><br/>
 
-          <span id="NTRP">NTRP Level: <span id="ratingSliderVal">{this.state.rating}</span></span><br/>
-
-          <input id="ratings_sought" type="text" className="span2" value="" data-slider-min={1} data-slider-max={7} data-slider-step={.5} data-slider-value={ratings_sought_array}/><br/>
-
-          <span id="NTRP">NTRP Levels Sought: <span id="ratings_soughtSliderVal">{this.state.ratings_sought[0] + '-' + this.state.ratings_sought[1]}</span></span><br/>
-
-          <input id="discovery_radius" type="text" data-slider-min={0} data-slider-max={20} data-slider-step={1} data-slider-value={this.state.discovery_radius}/><br/>
-
-          <span id="inMiles">Miles: <span id="discovery_radiusSliderVal">{this.state.discovery_radius}</span></span>
+        </Grid>
 
         </div>
     );
