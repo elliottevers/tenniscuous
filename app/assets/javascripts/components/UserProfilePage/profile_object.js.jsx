@@ -72,8 +72,15 @@ window.ProfileObject = React.createClass({
           <Row>
               <Well>{this.props.current_user.ratings_sought}</Well>
           </Row>
+          <Row>
+            <Col xs={1}>
+              <h4>Discovery Radius</h4>
+            </Col>
+          </Row>
+          <Row>
+              <Well>{this.props.current_user.discovery_radius}</Well>
+          </Row>
         </Grid>
-        <Panel>Discovery Radius: {this.props.current_user.discovery_radius}</Panel>
       </div>
     );
   }

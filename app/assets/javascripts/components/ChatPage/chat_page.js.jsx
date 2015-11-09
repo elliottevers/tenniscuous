@@ -25,10 +25,6 @@ var ChatPage = React.createClass({
     ConversationStore.removeConversationShowChangeListener(this._onChange);
   },
 
-  handleClick: function(){
-    this.history.pushState(null, "/matches", {});
-  },
-
   handleMessageChange: function(event) {
     this.setState({newMessage: event.target.value});
   },
@@ -36,11 +32,6 @@ var ChatPage = React.createClass({
   handleMessageSubmit: function(event) {
     var that = this;
     ApiUtil.sendMessage(parseInt(that.props.params.id), that.state.newMessage, that.state.numMessages);
-  },
-
-  unmatchUser: function(event){
-    var that = this;
-    ApiUtil.deleteConversation(parseInt(that.props.params.id), that.history.pushState(null, "/matches", {}));
   },
 
   loadMessages: function(event){
@@ -53,29 +44,44 @@ var ChatPage = React.createClass({
   render: function () {
     var Button = ReactBootstrap.Button;
     var Input = ReactBootstrap.Input;
+    var Grid = ReactBootstrap.Grid;
+    var Row = ReactBootstrap.Row;
+    var Col = ReactBootstrap.Col;
     var that = this;
     if (this.state.conversation.messages){
       return (
 
       <div>
-      <CustomTabs className={'text-center'} tabList={tabList} activeTab={2}/>
-      <Button onClick={this.handleClick} bsStyle="warning">Back to Matches</Button>
-      <Button onClick={this.unmatchUser} bsStyle="danger">Unmatch User</Button>
-      <MatchHeader
-      other_user_id={this.state.conversation.other_user_id}
-      other_user_username={this.state.conversation.other_user_username}
-      other_user_picture_url={this.state.conversation.other_user_profile_picture_url}
-      />
-      <Button onClick={this.loadMessages} bsStyle="primary">Load Previous Messages</Button>
-      <div className={"messages-wrapper"}>
-      <ul>
-        {this.state.conversation.messages.map(function (message) {
-          return <Message body={message.body} user_id={message.user_id}/>;
-        })}
-      </ul>
-      </div>
-      <Input type="text" value={this.state.newMessage} placeholder="New Message" onChange={this.handleMessageChange} labelClassName="col-xs-2" wrapperClassName="col-xs-10" />
-      <Button onClick={this.handleMessageSubmit} bsStyle="primary">Send Message</Button>
+        <CustomTabs className={'text-center'} tabList={tabList} activeTab={2}/>
+        <ChatMatchHeader
+        other_user_id={this.state.conversation.other_user_id}
+        other_user_username={this.state.conversation.other_user_username}
+        other_user_picture_url={this.state.conversation.other_user_profile_picture_url}
+        />
+        <Grid>
+          <Row>
+            <Col xs={4} xsOffset={4}>
+              <Button onClick={this.loadMessages} bsStyle="primary">Load Previous Messages</Button>
+            </Col>
+          </Row>
+        </Grid>
+        <div className={"messages-wrapper"}>
+          <ul>
+            {this.state.conversation.messages.map(function (message) {
+              return <Message body={message.body} user_id={message.user_id}/>;
+            })}
+          </ul>
+        </div>
+        <Grid>
+          <Row>
+            <Col xs={7}>
+              <Input type="text" value={this.state.newMessage} placeholder="New Message" onChange={this.handleMessageChange} labelClassName="col-xs-2" wrapperClassName="col-xs-10" />
+            </Col>
+            <Col xs={3}>
+              <Button onClick={this.handleMessageSubmit} bsStyle="primary">Send Message</Button>
+            </Col>
+          </Row>
+        </Grid>
       </div>
 
       );

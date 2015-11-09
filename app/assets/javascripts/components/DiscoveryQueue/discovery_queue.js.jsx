@@ -82,10 +82,12 @@ window.DiscoveryQueue = React.createClass({
             <CustomTabs className={'text-center'} tabList={tabList} activeTab={1}/>
             <Grid>
         <Row>
-          {this.state.users.map(function (user) {
-            return <DiscoveryCard id={user.id} username={user.username} picture={user.picture}/>;
-          })}
-        <div className={"tennis-ball"}></div>
+          <Col xs={6} xsOffset={3}>
+            {this.state.users.map(function (user) {
+              return <DiscoveryCard id={user.id} username={user.username} picture={user.picture}/>;
+            })}
+            <div className={"tennis-ball"}></div>
+          </Col>
         </Row>
         <Row>
             <LikeDislikeBar onChange={this.handleCardChange} />

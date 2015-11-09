@@ -191,33 +191,36 @@ window.EditProfileObject = React.createClass({
            </Col>
           </Row>
           <Row>
-            <Col xs={1}>
-              <span id="NTRP">NTRP Level: <span id="ratingSliderVal">{this.state.rating}</span></span><br/>
+            <Col xs={2}>
+              <span id="NTRP">My NTRP Level: <span id="ratingSliderVal">{this.state.rating}</span></span><br/>
             </Col>
-            <Col xs={4}>
+          </Row>
+          <Row>
+            <Col xs={4} xsOffset={4}>
               <input onChange={this.handleRatingChange} id="rating" data-slider-id="NTRP" type="text" data-slider-value={this.state.rating} data-slider-min={1} data-slider-max={7} data-slider-step={.5}/>
             </Col>
           </Row>
           <Row>
-            <Col xs={1}>
+            <Col xs={2}>
               <span id="NTRP">NTRP Levels Sought: <span id="ratings_soughtSliderVal">{this.state.ratings_sought[0] + '-' + this.state.ratings_sought[1]}</span></span><br/>
             </Col>
-            <Col xs={4}>
+          </Row>
+          <Row>
+            <Col xs={4} xsOffset={4}>
               <input id="ratings_sought" type="text" className="span2" value="" data-slider-min={1} data-slider-max={7} data-slider-step={.5} data-slider-value={ratings_sought_array}/>
             </Col>
           </Row>
           <Row>
-            <Col xs={1}>
+            <Col xs={2}>
               <span id="inMiles">Miles: <span id="discovery_radiusSliderVal">{this.state.discovery_radius}</span></span>
             </Col>
-            <Col xs={4}>
+          </Row>
+          <Row>
+            <Col xs={4} xsOffset={4}>
               <input id="discovery_radius" type="text" data-slider-min={0} data-slider-max={20} data-slider-step={1} data-slider-value={this.state.discovery_radius}/>
             </Col>
           </Row>
-
-
         </Grid>
-
         </div>
     );
   }
