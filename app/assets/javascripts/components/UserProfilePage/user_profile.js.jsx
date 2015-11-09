@@ -4,7 +4,7 @@ window.UserProfile = React.createClass({
     return (
       <div>
         <CustomTabs tabList={tabList} activeTab={0}/>
-        <Profile user={JSON.parse(sessionStorage.getItem("current_user"))}/>
+        <Profile isCurrentUser={true} user={JSON.parse(sessionStorage.getItem("current_user"))}/>
       </div>
     );
   }

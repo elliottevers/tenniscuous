@@ -13,7 +13,7 @@ var FellowUserProfile = React.createClass({
     return (
         <div>
         <Button onClick={this.handleClick} bsStyle="warning">Back</Button>
-        <Profile user={user} />
+        <Profile isCurrentUser={false} user={user} />
         </div>
     );
   }

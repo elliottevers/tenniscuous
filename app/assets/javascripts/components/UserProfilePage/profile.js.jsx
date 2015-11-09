@@ -1,5 +1,7 @@
 window.Profile = React.createClass({
 
+  mixins: [ReactRouter.History],
+
   getInitialState: function () {
     return {user: this.props.user};
   },
@@ -23,6 +25,13 @@ window.Profile = React.createClass({
       var Col = ReactBootstrap.Col;
       return(
         <div>
+        <Grid>
+         <Row>
+          <Col xs={1} xsOffset={7}>
+            <EditButton isCurrentUser={this.props.isCurrentUser}/>
+          </Col>
+         </Row>
+         </Grid>
           <ProfileObject current_user={this.state.user}/>
         </div>
       );

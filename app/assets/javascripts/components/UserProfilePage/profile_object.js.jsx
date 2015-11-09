@@ -1,17 +1,9 @@
 window.ProfileObject = React.createClass({
 
-  mixins: [ReactRouter.History],
-
-  handleClick: function(event){
-    event.preventDefault;
-    this.history.pushState(null, '/profile/edit', {});
-  },
-
 
   render: function () {
     var Panel = ReactBootstrap.Panel;
     var Well = ReactBootstrap.Well;
-    var Button = ReactBootstrap.Button;
     var Image = ReactBootstrap.Image;
     var Grid = ReactBootstrap.Grid;
     var Row = ReactBootstrap.Row;
@@ -22,9 +14,6 @@ window.ProfileObject = React.createClass({
           <Row>
             <Col xs={4} xsOffset={4}>
               <Image src={this.props.current_user.profile_picture_url} className={"img-responsive"} circle></Image>
-            </Col>
-            <Col xs={1}>
-              <Button onClick={this.handleClick} bsStyle="info" className={"btn-circle"}> Edit Information </Button>
             </Col>
           </Row>
           <Row>
