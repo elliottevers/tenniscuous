@@ -33,7 +33,7 @@
  //   box-sizing: border-box;
  //   transform: translate(-50%, -50%) rotate(30deg);
  //   box-shadow: 10px 20px 25px 10px rgba(#000, .2);
- // 
+ //
  //   &:before,
  //   &:after {
  //     content: '';
@@ -150,6 +150,10 @@ div.meta {
   transition: 1s;
 }
 
+#NTRP .slider-selection {
+  background: blue;
+}
+
 #ratings_sought .slider-track-high {
 	background: white;
 }
@@ -162,6 +166,6 @@ div.meta {
 	background: blue;
 }
 
-#radius .slider-selection {
+#discovery_radius_ .slider-selection {
 	background: blue;
 }

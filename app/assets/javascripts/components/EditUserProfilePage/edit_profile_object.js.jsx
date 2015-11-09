@@ -207,7 +207,7 @@ window.EditProfileObject = React.createClass({
           </Row>
           <Row>
             <Col xs={4} xsOffset={4}>
-              <input id="ratings_sought" type="text" className="span2" value="" data-slider-min={1} data-slider-max={7} data-slider-step={.5} data-slider-value={ratings_sought_array}/>
+              <input id="ratings_sought" data-slider-id={"ratings_sought_"} ype="text" className="span2" value="" data-slider-min={1} data-slider-max={7} data-slider-step={.5} data-slider-value={ratings_sought_array}/>
             </Col>
           </Row>
           <Row>
@@ -217,7 +217,7 @@ window.EditProfileObject = React.createClass({
           </Row>
           <Row>
             <Col xs={4} xsOffset={4}>
-              <input id="discovery_radius" type="text" data-slider-min={0} data-slider-max={20} data-slider-step={1} data-slider-value={this.state.discovery_radius}/>
+              <input id="discovery_radius" data-slider-id={"discovery_radius_"} type="text" data-slider-min={0} data-slider-max={20} data-slider-step={1} data-slider-value={this.state.discovery_radius}/>
             </Col>
           </Row>
         </Grid>
