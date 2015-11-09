@@ -82,6 +82,8 @@ GEM
     erubis (2.7.0)
     eventmachine (1.0.3)
     execjs (2.6.0)
+    faker (1.4.3)
+      i18n (~> 0.5)
     faye (1.1.2)
       cookiejar (>= 0.3.0)
       em-http-request (>= 0.3.0)
@@ -221,6 +223,7 @@ DEPENDENCIES
   byebug
   cloudinary
   coffee-rails (~> 4.1.0)
+  faker
   faye-rails
   figaro
   flux-rails-assets

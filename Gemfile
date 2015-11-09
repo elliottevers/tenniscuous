@@ -1,15 +1,12 @@
 source 'https://rubygems.org'
 
+gem 'faker'
 gem 'figaro'
 gem 'faye-rails'
 gem 'thin'
-
 gem 'cloudinary'
-
 gem 'react-rails', '1.3.0'
-
 gem 'flux-rails-assets'
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.4'
 # Use sqlite3 as the database for Active Record

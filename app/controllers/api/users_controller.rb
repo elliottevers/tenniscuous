@@ -74,14 +74,14 @@ class Api::UsersController < ApplicationController
     end
 
     users_distances = Hash.new
-    logger.debug current_user[:position]
+
     users_positions.each do |user|
       haversine_arguments = [current_user[:position][0], current_user[:position][1]]
       haversine_arguments << user[:position][0]
       haversine_arguments << user[:position][1]
       users_distances[user[:id]] = haversine_arguments
     end
-    logger.debug users_distances
+
     users_distances.keys.each do |key|
       users_distances[key] = Haversine.distance(*users_distances[key]).to_miles
     end
@@ -90,11 +90,26 @@ class Api::UsersController < ApplicationController
       value < current_user[:discovery_radius]
     end
 
+
     filtered_users = filtered_users_distances.keys.map do |key|
       User.find(key)
     end
 
-    filtered_users_identifiers = filtered_users.map do |user|
+    filtered_users_by_rating = filtered_users.select do |user|
+      (user[:rating] >= current_user[:ratings_sought][0]) && (user[:rating] <= current_user[:ratings_sought][1])
+    end
+
+    logger.debug filtered_users_by_rating.map{|u| u[:genders_sought]  }
+
+    filtered_users_by_genders_sought = filtered_users_by_rating.select do |user|
+      if current_user[:gender] == "Male"
+        user[:genders_sought].include?("Men's Singles") || user[:genders_sought].include?("Men's Doubles") || user[:genders_sought].include?("Mixed Doubles")
+      elsif current_user[:gender] == "Female"
+        user[:genders_sought].include?("Wommen's Singles") || user[:genders_sought].include?("Women's Doubles") || user[:genders_sought].include?("Mixed Doubles")
+      end
+    end
+
+    filtered_users_identifiers = filtered_users_by_genders_sought.map do |user|
       {
         :id => user.id,
         :username => user.username,
@@ -103,6 +118,7 @@ class Api::UsersController < ApplicationController
     end
 
     this_user = User.find(current_user.id)
+
     filtered_by_previously_seen = filtered_users_identifiers.reject do |user|
       this_user[:seen_users].include?(user[:id])
     end

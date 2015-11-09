@@ -217,7 +217,7 @@ window.EditProfileObject = React.createClass({
           </Row>
           <Row>
             <Col xs={4} xsOffset={4}>
-              <input id="discovery_radius" data-slider-id={"discovery_radius_"} type="text" data-slider-min={0} data-slider-max={20} data-slider-step={1} data-slider-value={this.state.discovery_radius}/>
+              <input id="discovery_radius" data-slider-id={"discovery_radius_"} type="text" data-slider-min={0} data-slider-max={25} data-slider-step={1} data-slider-value={this.state.discovery_radius}/>
             </Col>
           </Row>
         </Grid>
