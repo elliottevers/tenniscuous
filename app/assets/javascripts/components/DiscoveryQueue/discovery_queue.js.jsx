@@ -63,6 +63,14 @@ window.DiscoveryQueue = React.createClass({
 
   },
 
+  handleBallClick: function(){
+    var $ball = $(".ball");
+    $ball.removeClass('ball').addClass('bouncy-ball');
+    window.setTimeout(function(){
+      $ball.removeClass('bouncy-ball').addClass('ball');
+    }, 3000);
+  },
+
   handleCardChange: function(type){
     if (type === "accept") {
       this.handleAccept();
@@ -78,21 +86,24 @@ window.DiscoveryQueue = React.createClass({
 
     return(
 
-     <div>
-            <CustomTabs className={'text-center'} tabList={tabList} activeTab={1}/>
-            <Grid>
-        <Row>
-          <Col xs={6} xsOffset={3}>
-            {this.state.users.map(function (user) {
-              return <DiscoveryCard id={user.id} username={user.username} picture={user.picture}/>;
-            })}
-            <div className={"tennis-ball"}></div>
-          </Col>
-        </Row>
-        <Row>
+      <div>
+        <CustomTabs className={'text-center'} tabList={tabList} activeTab={1}/>
+        <Grid>
+          <Row>
+            <Col xs={6} xsOffset={3}>
+              {this.state.users.map(function (user) {
+                return <DiscoveryCard id={user.id} username={user.username} picture={user.picture}/>;
+              })}
+              <div className="ballWrapper">
+                <div className={"ball"} onClick={this.handleBallClick}></div>
+                <div className={"ballShadow"}></div>
+              </div>
+            </Col>
+          </Row>
+          <Row>
             <LikeDislikeBar onChange={this.handleCardChange} />
-        </Row>
-      </Grid>
+          </Row>
+        </Grid>
       </div>
 
     );
