@@ -34,7 +34,7 @@ var CustomTabs = React.createClass({
               </img>
           </Col>
           <Col xs={3}>
-              <img className={"nav"} id={2} onClick={this.handleSelect} src={"http://res.cloudinary.com/dax4cembx/image/upload/v1447309303/chat_icons_poivie.png"}>
+              <img className={"nav"} id={2} data-pulse={false} onClick={this.handleSelect} src={"http://res.cloudinary.com/dax4cembx/image/upload/v1447309303/chat_icons_poivie.png"}>
               </img>
           </Col>
           <Col xs={3}>

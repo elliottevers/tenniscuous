@@ -578,12 +578,6 @@
   // }
 
 
-  @-webkit-keyframes pulse {
-  from { background-color: #ffffff;}
-  50% { background-color: #ffa500; }
-  to { background-color: #ffffff;}
-  }
-
   img {
     height: 45vw;
     width: 45vw;
@@ -730,5 +724,23 @@
   }
 
   textarea {
-  resize: none;
-}
+    resize: none;
+  }
+
+  #tabs .row .col-xs-3:nth-child(3) [data-pulse = true]{
+    -webkit-animation-name: pulse;
+    -webkit-animation-duration: 3s;
+    -webkit-animation-iteration-count: infinite;
+  }
+
+  @-webkit-keyframes pulse {
+    from {
+      background-color: #ffffff;
+    }
+    50% {
+      background-color: #ffa500;
+    }
+    to {
+      background-color: #ffffff;
+    }
+  }

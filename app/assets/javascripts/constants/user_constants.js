@@ -11,4 +11,13 @@ window.CloudinaryConstants = {
   CARD: "upload/h_300,w_230,c_fill,r_40"
 };
 
-window.root_url = "localhost:3000"
+window.root_url = "localhost:3000";
+
+window.notifyNewMatch = function () {
+  if (window.hasNewMatch) {
+    $('[data-pulse="false"]').attr('data-pulse', true);
+  } else {
+    $('[data-pulse="true"]').attr('data-pulse', false);
+  }
+  console.log("this is being run");
+};

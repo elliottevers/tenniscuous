@@ -25,6 +25,7 @@ class Api::UsersController < ApplicationController
 
   def update
     @user = User.find(params[:id])
+    @has_new_match = false
     if (params[:message] == "rejection")
       if @user
         @user.update(user_params)
@@ -43,8 +44,10 @@ class Api::UsersController < ApplicationController
           :sender_id => current_user.id,
           :recipient_id => last_user_id
           )
+          @has_new_match = true
         end
-        render json: @user
+        render json: @has_new_match
+        # render ('api/user/show.json.jbuilder')
       else
         render json: { message: 'not found', status: 404}
       end
