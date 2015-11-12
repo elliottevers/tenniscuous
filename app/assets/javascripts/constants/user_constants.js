@@ -13,11 +13,12 @@ window.CloudinaryConstants = {
 
 window.root_url = "localhost:3000";
 
+sessionStorage.setItem('hasNewMatch', false);
+
 window.notifyNewMatch = function () {
-  if (window.hasNewMatch) {
+  if (sessionStorage.getItem('hasNewMatch')) {
     $('[data-pulse="false"]').attr('data-pulse', true);
   } else {
     $('[data-pulse="true"]').attr('data-pulse', false);
   }
-  console.log("this is being run");
 };

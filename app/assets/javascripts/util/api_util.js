@@ -82,7 +82,6 @@ window.ApiUtil = {
       data: {user: user, message: message},
       success: function(has_new_match){
         if (has_new_match) {
-          console.log("apiutil conditional works");
           publisher = client.publish('/hasNewMatch', {
             has_new_match: has_new_match
           });

@@ -36,6 +36,7 @@ class Api::ConversationsController < ApplicationController
 
   def index
     @conversations = Conversation.involving(current_user.id)
+    @conversations = @conversations.reverse_order
     @self = self
     render ('api/conversation/index.json.jbuilder')
   end

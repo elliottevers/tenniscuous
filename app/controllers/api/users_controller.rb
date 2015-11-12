@@ -126,6 +126,8 @@ class Api::UsersController < ApplicationController
       this_user[:seen_users].include?(user[:id])
     end
 
+    filtered_by_previously_seen
+
     render json: filtered_by_previously_seen
 
   end
