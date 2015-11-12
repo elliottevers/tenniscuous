@@ -17,7 +17,7 @@ window.MatchPane = React.createClass({
     return(
       <div>
         <Panel>
-          <Image onClick={this.handlePictureClick} src={this.props.other_user_picture_url} className={"img-circle"} alt={"Cinque Terre"} width={50} height={50}></Image>
+          <Image onClick={this.handlePictureClick} src={this.props.other_user_picture_url} className={"match-image"} alt={"Cinque Terre"}></Image>
           <p>{this.props.other_user_username}</p>
         </Panel>
       </div>

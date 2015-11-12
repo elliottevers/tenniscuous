@@ -611,7 +611,6 @@
   }
 
   #goToProfileButton:hover {
-
     background-color: orange;
   }
 
@@ -625,12 +624,10 @@
   }
 
   #goToEditProfileButton:hover {
-
     background-color: orange;
   }
 
   #changeProfilePicture:hover {
-
     background-color: orange;
   }
 
@@ -678,4 +675,29 @@
 
   img.nav {
     border-radius: 0;
+  }
+
+  .panel {
+    position: relative;
+    height: 25vw;
+    background-color: #d3d3d3;
+  }
+
+  .match-image {
+    position: absolute;
+    top: 2vw;
+    float: left;
+    height: 20vw;
+    width: 20vw;
+  }
+
+  #tabs {
+    margin-bottom: 5vw;
+  }
+
+  .panel p {
+    position: absolute;
+    left: 45vw;
+    top: 9vw;
+    font-size: 5vw
   }
