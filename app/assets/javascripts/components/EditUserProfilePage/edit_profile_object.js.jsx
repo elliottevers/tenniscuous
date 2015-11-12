@@ -47,8 +47,7 @@ window.EditProfileObject = React.createClass({
   },
 
   handleChange: function (event) {
-    target = event.target;
-    var name_of_class = target.className;
+    var name_of_class = $(event.target).parent().attr('class');
     if (name_of_class === "mens_singles") {
       this.setState({MensSingles: !this.state.MensSingles});
     } else if (name_of_class === "womens_singles") {
@@ -116,11 +115,13 @@ window.EditProfileObject = React.createClass({
   },
 
   toggleButton: function(event){
+
     $target = $(event.target);
-    if ($target.attr('id') === 'clicked') {
-      $target.attr('id', 'not-clicked');
-    } else if ($target.attr('id') === 'not-clicked'){
-      $target.attr('id', 'clicked');
+    $parent = $target.parent();
+    if ($parent.attr('id') === 'clicked') {
+      $parent.attr('id', 'not-clicked');
+    } else if ($parent.attr('id') === 'not-clicked'){
+      $parent.attr('id', 'clicked');
     }
     this.handleChange(event);
   },
@@ -191,19 +192,19 @@ window.EditProfileObject = React.createClass({
           </Row>
           <Row>
             <Col xs={2}>
-              <div id={mens_singles_state} className={"mens_singles"} onClick={this.toggleButton}><p>test</p></div>
+              <div id={mens_singles_state} className={"mens_singles"}><p onClick={this.toggleButton}>test</p></div>
             </Col>
             <Col xs={2}>
-              <div id={womens_singles_state} className={"womens_singles"} onClick={this.toggleButton}><p>test</p></div>
+              <div id={womens_singles_state} className={"womens_singles"}><p onClick={this.toggleButton}>test</p></div>
             </Col>
             <Col xs={2}>
-              <div id={mens_doubles_state} className={"mens_doubles"} onClick={this.toggleButton}><p>test</p></div>
+              <div id={mens_doubles_state} className={"mens_doubles"}><p onClick={this.toggleButton}>test</p></div>
             </Col>
             <Col xs={2}>
-              <div id={womens_doubles_state} className={"womens_doubles"} onClick={this.toggleButton}><p>test</p></div>
+              <div id={womens_doubles_state} className={"womens_doubles"}><p onClick={this.toggleButton}>test</p></div>
             </Col>
             <Col xs={2}>
-              <div id={mixed_doubles_state} className={"mixed_doubles"} onClick={this.toggleButton}><p>test</p></div>
+              <div id={mixed_doubles_state} className={"mixed_doubles"}><p onClick={this.toggleButton}>test</p></div>
             </Col>
           </Row>
           <Row>
