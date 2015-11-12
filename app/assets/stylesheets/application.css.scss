@@ -15,7 +15,7 @@
  *= require bootstrap-slider
  *= require_self
  */
-@media (max-width: 550px) {
+@media (max-width: 750px) {
  .img-responsive {
    height: 100px;
  }
@@ -559,5 +559,74 @@
   from { background-color: #ffffff;}
   50% { background-color: #ffa500; }
   to { background-color: #ffffff;}
+  }
+
+  img {
+    height: 45vw;
+    width: 45vw;
+    border-radius: 50%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  #editProfilePicture {
+    height: 35vw;
+    width: 35vw;
+    border-radius: 50%;
+    display: inline-block;
+  }
+
+  #goToProfileButton {
+    height: 15vw;
+    width: 15vw;
+    font-size: 3vw;
+    white-space: normal;
+    background-color: black;
+    border-radius: 50%;
+    display: inline-block;
+  }
+
+  #goToProfileButton:hover {
+
+    background-color: orange;
+  }
+
+  #goToEditProfileButton {
+    height: 15vw;
+    width: 15vw;
+    font-size: 3vw;
+    white-space: normal;
+    background-color: black;
+    border-radius: 50%;
+  }
+
+  #goToEditProfileButton:hover {
+
+    background-color: orange;
+  }
+
+  #changeProfilePicture:hover {
+
+    background-color: orange;
+  }
+
+  #changeProfilePicture {
+    height: 15vw;
+    width: 15vw;
+    font-size: 2.5vw;
+    white-space: normal;
+    background-color: black;
+    border-radius: 50%;
+    display: inline-block;
+  }
+
+  #editWrapper {
+    text-align:center;
+  }
+
+  .btn-group > .btn {
+    background-color: black;
+    white-space: normal;
   }
 }

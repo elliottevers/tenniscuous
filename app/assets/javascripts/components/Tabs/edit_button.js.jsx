@@ -12,7 +12,7 @@ var EditButton = React.createClass({
     if (this.props.isCurrentUser) {
       return (
         <div>
-          <Button bsStyle="info" onClick={this.handleClick}>Edit Profile</Button>
+          <Button bsStyle="info" id={"goToEditProfileButton"} onClick={this.handleClick}>Edit Profile</Button>
         </div>
       );
     } else {

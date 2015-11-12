@@ -12,9 +12,7 @@ window.ProfileObject = React.createClass({
       <div>
         <Grid>
           <Row>
-            <Col xs={4} xsOffset={4}>
-              <Image src={this.props.current_user.profile_picture_url} className={"img-responsive"} circle></Image>
-            </Col>
+              <Image src={this.props.current_user.profile_picture_url}></Image>
           </Row>
           <Row>
             <Col xs={2} xsOffset={5}>

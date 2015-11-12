@@ -116,6 +116,7 @@ window.EditProfileObject = React.createClass({
     console.log(this.state);
   },
 
+
   render: function() {
     var ratingsSought = [this.state.ratings_sought[0],this.state.ratings_sought[1]];
     var ratings_sought_array = "[" + this.state.ratings_sought[0].toString() + "," + this.state.ratings_sought[1].toString() + "]";
@@ -130,17 +131,11 @@ window.EditProfileObject = React.createClass({
     return (
       <div>
        <Grid>
-         <Row>
-           <Col xs={1} xsOffset={1}>
-             <Button bsStyle="info" onClick={this.updateUser}>Done Editting</Button>
-           </Col>
-           <Col xs={4} xsOffset={2}>
-             <Image src={this.state.profile_picture_url} className={"img-responsive"} circle></Image>
-           </Col>
-           <Col xs={1} xsOffset={1}>
-             <Button bsStyle="primary" onClick={this.uploadPicture}>Change Profile Picture</Button>
-           </Col>
-          </Row>
+         <div id={"editWrapper"}>
+             <Button bsStyle="info" onClick={this.updateUser} id={"goToProfileButton"}>Done Editting</Button>
+             <Image src={this.state.profile_picture_url} id={"editProfilePicture"}></Image>
+             <Button bsStyle="primary" onClick={this.uploadPicture} id={"changeProfilePicture"}>Change Profile Picture</Button>
+          </div>
           <Row>
             <Input
               type="textarea"

@@ -96,7 +96,7 @@ window.DiscoveryQueue = React.createClass({
               })}
               <div className="ballWrapper">
                 <div className={"ball"} onClick={this.handleBallClick}></div>
-                <div className={"ballShadow"}></div>
+                <div className={"ballContent"}></div>
               </div>
             </Col>
           </Row>
