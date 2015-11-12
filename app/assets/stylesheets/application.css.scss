@@ -701,3 +701,30 @@
     top: 9vw;
     font-size: 5vw
   }
+
+  #clicked {
+    height: 15vw;
+    width: 15vw;
+    border-radius: 50%;
+    background-color: black;
+    position: relative;
+    border: .25vw solid grey;
+  }
+
+  #not-clicked {
+    height: 15vw;
+    width: 15vw;
+    border-radius: 50%;
+    background-color: grey;
+    position: relative;
+    border: .25vw solid grey;
+  }
+
+
+  #clicked p, #not-clicked p {
+    position: absolute;
+    top: 3vw;
+    left: 3vw;
+    color: white;
+    font-size: 5vw;
+  }

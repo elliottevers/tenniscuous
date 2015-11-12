@@ -113,7 +113,16 @@ window.EditProfileObject = React.createClass({
 
   handleGenderChange: function(event) {
     this.setState({gender: event.target.value});
-    console.log(this.state);
+  },
+
+  toggleButton: function(event){
+    $target = $(event.target);
+    if ($target.attr('id') === 'clicked') {
+      $target.attr('id', 'not-clicked');
+    } else if ($target.attr('id') === 'not-clicked'){
+      $target.attr('id', 'clicked');
+    }
+    this.handleChange(event);
   },
 
 
@@ -127,6 +136,37 @@ window.EditProfileObject = React.createClass({
     var Grid = ReactBootstrap.Grid;
     var Row = ReactBootstrap.Row;
     var Col = ReactBootstrap.Col;
+
+    var mens_singles_state = "";
+    if (this.state.MensSingles) {
+      mens_singles_state = "clicked";
+    } else {
+      mens_singles_state = "not-clicked";
+    }
+    var womens_singles_state = "";
+    if (this.state.WomensSingles) {
+      womens_singles_state = "clicked";
+    } else {
+      womens_singles_state = "not-clicked";
+    }
+    var mens_doubles_state = "";
+    if (this.state.MensDoubles) {
+      mens_doubles_state = "clicked";
+    } else {
+      mens_doubles_state = "not-clicked";
+    }
+    var womens_doubles_state = "";
+    if (this.state.WomensDoubles) {
+      womens_doubles_state = "clicked";
+    } else {
+      womens_doubles_state = "not-clicked";
+    }
+    var mixed_doubles_state = "";
+    if (this.state.MixedDoubles) {
+      mixed_doubles_state = "clicked";
+    } else {
+      mixed_doubles_state = "not-clicked";
+    }
 
     return (
       <div>
@@ -150,41 +190,21 @@ window.EditProfileObject = React.createClass({
             </Input>
           </Row>
           <Row>
-           <Col xs={2}>
-            <div className="btn-group">
-              <label className="btn btn-primary">
-                <input className="mens_singles" checked={this.state.MensSingles} onChange= {this.handleChange} type="checkbox"> Men's Singles </input>
-              </label>
-            </div>
-           </Col>
-           <Col xs={2}>
-            <div className="btn-group">
-              <label className="btn btn-primary">
-                <input className="womens_singles" checked={this.state.WomensSingles} onChange= {this.handleChange} type="checkbox"> Women's Singles </input>
-              </label>
-            </div>
-           </Col>
-           <Col xs={2}>
-            <div className="btn-group">
-              <label className="btn btn-primary">
-                <input className="mens_doubles" checked={this.state.MensDoubles} onChange= {this.handleChange} type="checkbox"> Men's Doubles </input>
-              </label>
-            </div>
-           </Col>
-           <Col xs={2}>
-            <div className="btn-group">
-            <label className="btn btn-primary" >
-              <input className="womens_doubles" checked={this.state.WomensDoubles} onChange= {this.handleChange} type="checkbox"> Women's Doubles </input>
-            </label>
-            </div>
-           </Col>
-           <Col xs={2}>
-            <div className="btn-group">
-              <label className="btn btn-primary">
-                <input className="mixed_doubles" checked={this.state.MixedDoubles} onChange= {this.handleChange} type="checkbox"> Mixed Doubles </input>
-              </label>
-            </div>
-           </Col>
+            <Col xs={2}>
+              <div id={mens_singles_state} className={"mens_singles"} onClick={this.toggleButton}><p>test</p></div>
+            </Col>
+            <Col xs={2}>
+              <div id={womens_singles_state} className={"womens_singles"} onClick={this.toggleButton}><p>test</p></div>
+            </Col>
+            <Col xs={2}>
+              <div id={mens_doubles_state} className={"mens_doubles"} onClick={this.toggleButton}><p>test</p></div>
+            </Col>
+            <Col xs={2}>
+              <div id={womens_doubles_state} className={"womens_doubles"} onClick={this.toggleButton}><p>test</p></div>
+            </Col>
+            <Col xs={2}>
+              <div id={mixed_doubles_state} className={"mixed_doubles"} onClick={this.toggleButton}><p>test</p></div>
+            </Col>
           </Row>
           <Row>
             <Col xs={2}>
