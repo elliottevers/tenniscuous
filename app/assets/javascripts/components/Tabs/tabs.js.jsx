@@ -9,12 +9,12 @@ var CustomTabs = React.createClass({
 
   mixins: [ReactRouter.History],
 
-  handleSelect: function (key) {
-    this.history.pushState(null, this.props.tabList[key].url, {});
+  handleSelect: function (event) {
+    this.history.pushState(null, this.props.tabList[event.target.id].url, {});
   },
 
   render: function () {
-
+    var Img = ReactBootstrap.Img;
     var tabList = this.props.tabList;
     var Tabs = ReactBootstrap.Tabs;
     var Tab = ReactBootstrap.Tab;
@@ -22,30 +22,29 @@ var CustomTabs = React.createClass({
     var Row = ReactBootstrap.Row;
     var Col = ReactBootstrap.Col;
     return (
-    <Grid>
-      <Row>
-        <Col xs={3}>
-          <Tabs activeKey={this.props.activeTab} onSelect={this.handleSelect}>
-            <Tab eventKey={0} title={tabList[0].name}></Tab>
-          </Tabs>
-        </Col>
-        <Col xs={3}>
-          <Tabs activeKey={this.props.activeTab} onSelect={this.handleSelect}>
-            <Tab eventKey={1} title={tabList[1].name}></Tab>
-          </Tabs>
-        </Col>
-        <Col xs={3}>
-          <Tabs activeKey={this.props.activeTab} onSelect={this.handleSelect}>
-            <Tab eventKey={2} title={tabList[2].name}></Tab>
-          </Tabs>
-        </Col>
-        <Col xs={3}>
-          <Tabs activeKey={this.props.activeTab} onSelect={this.handleSelect}>
-            <Tab eventKey={3} title={tabList[3].name}></Tab>
-          </Tabs>
-        </Col>
-     </Row>
-    </Grid>
+    <div>
+      <Grid id={"tabs"}>
+        <Row>
+          <Col xs={3}>
+              <img className={"nav"} id={0} onClick={this.handleSelect} src={"http://res.cloudinary.com/dax4cembx/image/upload/v1447309312/profile_generic_pubnvf.png"}>
+              </img>
+          </Col>
+          <Col xs={3}>
+              <img className={"nav"} id={1} onClick={this.handleSelect} src={"http://res.cloudinary.com/dax4cembx/image/upload/v1447309276/queue_heads_t9b4lg.png"}>
+              </img>
+          </Col>
+          <Col xs={3}>
+              <img className={"nav"} id={2} onClick={this.handleSelect} src={"http://res.cloudinary.com/dax4cembx/image/upload/v1447309303/chat_icons_poivie.png"}>
+              </img>
+          </Col>
+          <Col xs={3}>
+              <img className={"nav"} id={3} onClick={this.handleSelect} src={"http://res.cloudinary.com/dax4cembx/image/upload/v1447303709/cog_cxunjv.png"}>
+              </img>
+          </Col>
+        </Row>
+      </Grid>
+    </div>
+
     );
   }
 });

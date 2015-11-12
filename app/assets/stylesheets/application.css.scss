@@ -15,7 +15,7 @@
  *= require bootstrap-slider
  *= require_self
  */
-@media (max-width: 750px) {
+
  .img-responsive {
    height: 100px;
  }
@@ -46,6 +46,7 @@
  div.photo {
    position: absolute;
    display: block;
+   margin-top: 8vw;
    margin-left: auto;
    margin-right: auto;
    width: 50vw;
@@ -130,7 +131,7 @@
 
 #swipe_dislike {
   float: left;
-  margin-top: 75vw;
+  margin-top: 55vw;
   margin-left: 15vw;
   background-color: #EE2C2C;
   background-size: 0vw;
@@ -142,7 +143,7 @@
 #swipe_like {
   float: right;
   margin-right: 15vw;
-  margin-top: 75vw;
+  margin-top: 55vw;
   background-color: #458B00;
   background-size: 0vw;
   background-position: center;
@@ -150,13 +151,13 @@
 }
 
 .rotate-left {
-  transform: rotate(30deg) scale(0.8) translate(-200px, 200px);
-  transition: 1s;
+  transform: scale(0.8) translate(-200px, 0px);
+  transition: .5s;
 }
 
 .rotate-right {
-  transform: rotate(-30deg) scale(0.8) translate(200px, 200px);
-  transition: 1s;
+  transform: scale(0.8) translate(200px, 0px);
+  transition: .5s;
 }
 
 #NTRP .slider-selection {
@@ -204,7 +205,8 @@
   -moz-animation: jump 1s infinite;
   -o-animation: jump 1s infinite;
   -ms-animation: jump 1s infinite;
-  animation: jump 1s infinite;
+  animation: rise 1s, jump 1s infinite, descend 1s;
+  animation-delay: 0s, 1s, 4.05s;
 }
 .ball {
   overflow: hidden;
@@ -260,7 +262,7 @@
   right: 75%;
 }
 
-.ball:after, .bouncy-ball:before {
+.ball:after, .bouncy-ball:after {
   left: 75%;
 }
 // @-webkit-keyframes jump {
@@ -350,7 +352,17 @@
 // 		-ms-animation-timing-function: ease-in;
 // 	}
 // }
+@keyframes rise {
+  0% {
+    top: 50vw;
+    animation-timing-function: ease-out;
+  }
 
+  100% {
+    top: 20vw;
+    animation-timing-function: ease-in;
+  }
+}
 @keyframes jump {
   0% {
     top: 20vw;
@@ -379,6 +391,16 @@
   }
   100% {
     top: 20vw;
+    animation-timing-function: ease-in;
+  }
+}
+@keyframes descend {
+  0% {
+    top: 20vw;
+    animation-timing-function: cubic-bezier;
+  }
+  100% {
+    top: 50vw;
     animation-timing-function: ease-in;
   }
 }
@@ -549,11 +571,12 @@
 // 		animation-timing-function: ease-in;
 // 	}
 // }
-  .col-xs-3:nth-child(3) div nav {
-  -webkit-animation-name: pulse;
-  -webkit-animation-duration: 3s;
-  -webkit-animation-iteration-count: infinite;
-  }
+  // .col-xs-3:nth-child(3) div nav a {
+  // -webkit-animation-name: pulse;
+  // -webkit-animation-duration: 3s;
+  // -webkit-animation-iteration-count: infinite;
+  // }
+
 
   @-webkit-keyframes pulse {
   from { background-color: #ffffff;}
@@ -628,5 +651,31 @@
   .btn-group > .btn {
     background-color: black;
     white-space: normal;
+    height: 15vw;
+    width: 15vw;
+    border-radius: 50%;
+    font-size: 2.5vw;
   }
-}
+
+
+  #tabs:nth-child(1) {
+    background-color: green;
+  }
+
+  .nav {
+    height: 20vw;
+    max-width: 100%;
+    max-height: 100%;
+  }
+
+  .nav:hover {
+    background-color: yellow;
+  }
+
+  #tabs .row .col-xs-3:hover {
+    background-color: yellow;
+  }
+
+  img.nav {
+    border-radius: 0;
+  }

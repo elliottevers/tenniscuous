@@ -16,29 +16,29 @@ ActiveRecord::Base.transaction do
     gender: "Male",
     genders_sought: ["Men's Singles","Men's Doubles"],
     rating: 7.0,
-    ratings_sought: [3.0, 6.0],
+    ratings_sought: [3.0, 7.0],
     position: [0, 0],
     discovery_radius: 20,
     accepted_users: [],
     last_accepted_user: nil,
     seen_users: [],
     last_seen_user: nil
+  }, {
+    username: "Rafael Nadal",
+    profile_picture_url: "http://res.cloudinary.com/dax4cembx/image/upload/v1445717904/v1h5cqsrq7txzwqfg4l2.jpg",
+    password_digest: BCrypt::Password.create("Rafael Nadal"),
+    session_token: SecureRandom.urlsafe_base64(16),
+    gender: "Male",
+    genders_sought: ["Men's Singles"],
+    rating: 6.5,
+    ratings_sought: [1.0, 7.0],
+    position: [37.781824,-122.433014],
+    discovery_radius: 3,
+    accepted_users: [1],
+    last_accepted_user: nil,
+    seen_users: [1],
+    last_seen_user: nil
   }]
-  #   username: "Rafael Nadal",
-  #   profile_picture_url: "http://res.cloudinary.com/dax4cembx/image/upload/v1445717904/v1h5cqsrq7txzwqfg4l2.jpg",
-  #   password_digest: BCrypt::Password.create("Rafael Nadal"),
-  #   session_token: SecureRandom.urlsafe_base64(16),
-  #   gender: "Male",
-  #   genders_sought: ["Men's Singles"],
-  #   rating: 6.5,
-  #   ratings_sought: [1.0, 7.0],
-  #   position: [37.781824,-122.433014],
-  #   discovery_radius: 3,
-  #   accepted_users: [1],
-  #   last_accepted_user: nil,
-  #   seen_users: [1],
-  #   last_seen_user: nil
-  # }, {
   #   username: "Novak Djokovic",
   #   profile_picture_url: "http://res.cloudinary.com/dax4cembx/image/upload/v1445718433/pagmwd4e5qjfe3vl0lfx.jpg",
   #   password_digest: BCrypt::Password.create("Novak Djokovic"),
@@ -164,7 +164,7 @@ ActiveRecord::Base.transaction do
 
   test_players = []
   (1..20).each do |index|
-
+    random_like = Random.rand(1..3)
     player = {
       username: "user#{index}",
       profile_picture_url: Faker::Avatar.image,
@@ -175,9 +175,9 @@ ActiveRecord::Base.transaction do
       ratings_sought: [Random.rand(2..14)/2, Random.rand(2..14)/2].sort,
       position: [37.760367,-122.450867],
       discovery_radius: 25,
-      accepted_users: [],
+      accepted_users: [random_like],
       last_accepted_user: nil,
-      seen_users: [],
+      seen_users: [random_like],
       last_seen_user: nil
     }
     test_players << player

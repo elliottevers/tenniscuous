@@ -46,7 +46,7 @@ window.DiscoveryQueue = React.createClass({
     ApiUtil.updateUserAccept(user);
     window.setTimeout(function(){
       $photo.remove();
-    }, 1000);
+    }, 500);
 
   },
 
@@ -59,7 +59,7 @@ window.DiscoveryQueue = React.createClass({
     ApiUtil.updateUserReject(user);
     window.setTimeout(function(){
       $photo.remove();
-    }, 1000);
+    }, 500);
 
   },
 
@@ -68,7 +68,7 @@ window.DiscoveryQueue = React.createClass({
     $ball.removeClass('ball').addClass('bouncy-ball');
     window.setTimeout(function(){
       $ball.removeClass('bouncy-ball').addClass('ball');
-    }, 3000);
+    }, 5050);
   },
 
   handleCardChange: function(type){
