@@ -80,10 +80,16 @@ window.ApiUtil = {
       url: "api/users/" + user.id,
       method: "PATCH",
       data: {user: user, message: message},
-      success: function(has_new_match){
-        if (has_new_match) {
+      success: function(payload){
+        console.log(payload);
+        user_id = JSON.parse(sessionStorage.getItem("current_user")).id;
+        console.log("user id is " + user_id);
+        console.log(payload.payload.has_new_match + "that there is a new match; that it involves current user is " + ((user_id === payload.current_user_id) || (user_id === payload.other_user_id)));
+        if (payload.payload.has_new_match) {
           publisher = client.publish('/hasNewMatch', {
-            has_new_match: has_new_match
+            has_new_match: payload.payload.has_new_match,
+            current_user_id: payload.payload.current_user_id,
+            other_user_id: payload.payload.other_user_id
           });
         }
       },
@@ -141,7 +147,6 @@ window.ApiUtil = {
       url: "api/conversations",
       method: "GET",
       success: function (conversations_identifiers) {
-        console.log(conversations_identifiers);
         ApiActions.allConversationsFetched(conversations_identifiers);
       },
       error: function(){

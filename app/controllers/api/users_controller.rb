@@ -45,9 +45,11 @@ class Api::UsersController < ApplicationController
           :recipient_id => last_user_id
           )
           @has_new_match = true
+          @current_user_id = current_user.id
+          @other_user_id = last_user_id.to_i
         end
-        render json: @has_new_match
-        # render ('api/user/show.json.jbuilder')
+        # render json: @has_new_match
+        render ('api/user/show.json.jbuilder')
       else
         render json: { message: 'not found', status: 404}
       end
