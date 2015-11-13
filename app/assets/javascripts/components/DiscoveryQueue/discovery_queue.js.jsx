@@ -64,11 +64,27 @@ window.DiscoveryQueue = React.createClass({
   },
 
   handleBallClick: function(){
+
     var $ball = $(".ball");
+
     $ball.removeClass('ball').addClass('bouncy-ball');
+
     window.setTimeout(function(){
       $ball.removeClass('bouncy-ball').addClass('ball');
     }, 5050);
+
+    var user = {};
+
+    user.id = JSON.parse(sessionStorage.getItem("current_user")).id;
+
+    navigator.geolocation.getCurrentPosition(function(position) {
+
+      var user_position = [position.coords.latitude, position.coords.longitude];
+
+      user.position = user_position;
+
+      $.when(ApiUtil.updateUser(user)).then(ApiUtil.fetchAllUsers());
+    });
   },
 
   handleCardChange: function(type){

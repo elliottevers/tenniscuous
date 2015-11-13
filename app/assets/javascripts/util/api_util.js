@@ -65,7 +65,7 @@ window.ApiUtil = {
       method: "PATCH",
       data: {user: user},
       success: function (user) {
-        ApiActions.setCurrentUser(user);
+        sessionStorage.setItem("current_user", JSON.stringify(user));
         callback();
       },
       error: function(){
@@ -81,10 +81,7 @@ window.ApiUtil = {
       method: "PATCH",
       data: {user: user, message: message},
       success: function(payload){
-        console.log(payload);
         user_id = JSON.parse(sessionStorage.getItem("current_user")).id;
-        console.log("user id is " + user_id);
-        console.log(payload.payload.has_new_match + "that there is a new match; that it involves current user is " + ((user_id === payload.current_user_id) || (user_id === payload.other_user_id)));
         if (payload.payload.has_new_match) {
           publisher = client.publish('/hasNewMatch', {
             has_new_match: payload.payload.has_new_match,
