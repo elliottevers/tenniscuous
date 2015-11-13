@@ -18,16 +18,8 @@ window.ProfileObject = React.createClass({
     }
     return(
       <div>
-        <Grid>
-          <Row>
-              <Image src={this.props.current_user.profile_picture_url}></Image>
-          </Row>
-          <Row>
-            <Col xs={2} xsOffset={5}>
-              <h4>{this.props.current_user.username}</h4>
-            </Col>
-          </Row>
-        </Grid>
+        <img src={this.props.current_user.profile_picture_url}></img>
+        <h4>{this.props.current_user.username}</h4>
         <div className={"profile_container"}>
           <div className={"user_datum_container"}>
             <div className={"user_datum"}>

@@ -2,18 +2,17 @@ var FellowUserProfile = React.createClass({
 
   mixins: [ReactRouter.History],
 
-  handleClick: function(){
-    this.history.pushState(null, "/discovery_queue", {});
-  },
-
   render: function () {
     var user_id = parseInt(this.props.params.id);
     var user = {id: user_id};
     var Button = ReactBootstrap.Button;
     return (
         <div>
-        <Button onClick={this.handleClick} bsStyle="warning">Back</Button>
+        <CustomTabs className={'text-center'} tabList={tabList} activeTab={1}/>
+        <div id={"fellow_user_profile_wrapper"}>
+        <BackToQueue/>
         <Profile isCurrentUser={false} user={user} />
+        </div>
         </div>
     );
   }

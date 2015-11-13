@@ -20,18 +20,9 @@ window.Profile = React.createClass({
   },
 
   render: function () {
-      var Grid = ReactBootstrap.Grid;
-      var Row = ReactBootstrap.Row;
-      var Col = ReactBootstrap.Col;
       return(
-        <div>
-        <Grid>
-         <Row>
-          <Col xs={1} xsOffset={7}>
-            <EditButton isCurrentUser={this.props.isCurrentUser}/>
-          </Col>
-         </Row>
-         </Grid>
+        <div id={"profile_wrapper"}>
+          <EditButton isCurrentUser={this.props.isCurrentUser}/>
           <ProfileObject current_user={this.state.user}/>
         </div>
       );

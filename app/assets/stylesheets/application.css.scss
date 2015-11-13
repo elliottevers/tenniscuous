@@ -16,9 +16,9 @@
  *= require_self
  */
 
- .img-responsive {
-   height: 100px;
- }
+ // .img-responsive {
+ //   height: 100px;
+ // }
 
  .messages-wrapper {
    padding-top: 10px;
@@ -787,4 +787,46 @@
     content: "";
     display: block;
     clear: both;
+}
+
+#goToEditProfileButton {
+  position: absolute;
+  left: 75vw;
+  top: 14vw;
+}
+
+h4 {
+  margin-left: auto;
+  margin-right: auto;
+  width: 20vw;
+  white-space: nowrap;
+  padding-bottom: 5vw;
+}
+
+#profile_wrapper {
+  position: relative;
+}
+
+#fellow_user_profile_wrapper {
+  position: relative;
+}
+
+#backToQueue {
+  height: 15vw;
+  width: 15vw;
+  font-size: 3vw;
+  white-space: normal;
+  background-color: black;
+  border-radius: 50%;
+}
+
+#backToQueue:hover {
+  background-color: orange;
+}
+
+#backToQueue {
+  position: absolute;
+  z-index: 100;
+  left: 12vw;
+  top: 14vw;
 }
