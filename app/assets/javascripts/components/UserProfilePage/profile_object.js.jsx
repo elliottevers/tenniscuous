@@ -2,12 +2,20 @@ window.ProfileObject = React.createClass({
 
 
   render: function () {
-    var Panel = ReactBootstrap.Panel;
-    var Well = ReactBootstrap.Well;
     var Image = ReactBootstrap.Image;
     var Grid = ReactBootstrap.Grid;
     var Row = ReactBootstrap.Row;
     var Col = ReactBootstrap.Col;
+    if (!this.props.current_user.ratings_sought) {
+      ratings_sought = [" "," "];
+    } else {
+      ratings_sought = this.props.current_user.ratings_sought;
+    }
+    if (!this.props.current_user.genders_sought) {
+      genders_sought = "";
+    } else {
+      genders_sought = this.props.current_user.genders_sought.join(", ");
+    }
     return(
       <div>
         <Grid>
@@ -19,55 +27,46 @@ window.ProfileObject = React.createClass({
               <h4>{this.props.current_user.username}</h4>
             </Col>
           </Row>
-          <Row>
-            <Col xs={1}>
-              <h4>Description</h4>
-            </Col>
-          </Row>
-          <Row>
-              <Well>{this.props.current_user.profile_description}</Well>
-          </Row>
-          <Row>
-            <Col xs={1}>
-              <h4>Gender</h4>
-            </Col>
-          </Row>
-          <Row>
-              <Well>{this.props.current_user.gender}</Well>
-          </Row>
-          <Row>
-            <Col xs={1}>
-              <h4>Genders Sought</h4>
-            </Col>
-          </Row>
-          <Row>
-              <Well>{this.props.current_user.genders_sought}</Well>
-          </Row>
-          <Row>
-            <Col xs={1}>
-              <h4>Rating</h4>
-            </Col>
-          </Row>
-          <Row>
-              <Well>{this.props.current_user.rating}</Well>
-          </Row>
-          <Row>
-            <Col xs={1}>
-              <h4>Ratings Sought</h4>
-            </Col>
-          </Row>
-          <Row>
-              <Well>{this.props.current_user.ratings_sought}</Well>
-          </Row>
-          <Row>
-            <Col xs={1}>
-              <h4>Discovery Radius</h4>
-            </Col>
-          </Row>
-          <Row>
-              <Well>{this.props.current_user.discovery_radius}</Well>
-          </Row>
         </Grid>
+        <div className={"profile_container"}>
+          <div className={"user_datum_container"}>
+            <div className={"user_datum"}>
+              <p>Gender:</p>
+              <p>{this.props.current_user.gender}</p>
+            </div>
+            <div className={"bottom_border"}></div>
+          </div>
+          <div className={"user_datum_container"}>
+            <div className={"user_datum"}>
+              <p>Genders Sought:</p>
+              <p>{genders_sought}</p>
+            </div>
+            <div className={"bottom_border"}></div>
+          </div>
+          <div className={"user_datum_container"}>
+            <div className={"user_datum"}>
+              <p>My NTRP Level:</p>
+              <p>{this.props.current_user.rating}</p>
+            </div>
+            <div className={"bottom_border"}></div>
+          </div>
+          <div className={"user_datum_container"}>
+            <div className={"user_datum"}>
+              <p>NTRP Levels Sought:</p>
+              <p>{ratings_sought[0]}</p>
+              <p> - </p>
+              <p>{ratings_sought[1]}</p>
+            </div>
+            <div className={"bottom_border"}></div>
+          </div>
+          <div className={"user_datum_container"}>
+            <div className={"user_datum"}>
+              <p>Discovery Radius:</p>
+              <p>{this.props.current_user.discovery_radius}</p>
+            </div>
+            <div className={"bottom_border"}></div>
+          </div>
+        </div>
       </div>
     );
   }

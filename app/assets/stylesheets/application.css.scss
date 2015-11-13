@@ -744,3 +744,47 @@
       background-color: #ffffff;
     }
   }
+
+  .profile_container {
+    background-color: #d3d3d3;
+    margin-left: 15vw;
+    margin-right: 15vw;
+    border-radius: 5vw
+  }
+
+  .bottom_border {
+    border-bottom: thin solid black;
+    margin-left: 3vw;
+    margin-right: 3vw;
+  }
+
+  .user_datum {
+  padding-top: 2vw;
+  padding-bottom: 2vw;
+}
+
+.user_datum:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.user_datum p:nth-child(1){
+  padding-left: 5vw;
+  padding-top: 4vw;
+  height: 10vw;
+  float: left;
+}
+
+.user_datum p:nth-child(n+1){
+  padding-top: 4vw;
+  padding-left: 3vw;
+  height: 10vw;
+  float: left;
+}
+
+.user_datum_container:after {
+    content: "";
+    display: block;
+    clear: both;
+}
