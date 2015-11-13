@@ -23,26 +23,83 @@ window.EditProfileObject = React.createClass({
 
       var that = this;
 
-      $("#rating").slider();
+      var updateSlider = document.getElementById('slider-update'),
+    	updateSliderValue = document.getElementById('slider-update-value'),
+    	settings = {
+    		range: {
+    			'min': 1,
+    			'max': 7
+    		},
+    		start: that.state.rating,
+    		margin: 1,
+    		step: .5
+    	};
 
-      $("#ratings_sought").slider({id: "ratings_sought"});
+      function bindValue ( ) {
+      	updateSlider.noUiSlider.on('update', function( values, handle ) {
+      		updateSliderValue.innerHTML = values[handle];
+          that.setState({rating: values[handle]});
+      	});
+      }
 
-      $("#discovery_radius").slider();
+      noUiSlider.create(updateSlider, settings);
+      bindValue();
 
-      $("#rating").on("slide", function(slideEvt) {
-        that.setState({rating: slideEvt.value})
-        $("#ratingSliderVal").text(slideEvt.value);
+      var slider = document.getElementById('range');
+
+      noUiSlider.create(slider, {
+      	start: [ that.state.ratings_sought[0], that.state.ratings_sought[1] ], // Handle start position
+      	step: .5, // Slider moves in increments of '10'
+      	margin: .5, // Handles must be more than '20' apart
+      	connect: true, // Display a colored bar between the handles
+      	orientation: 'horizontal', // Orient the slider vertically
+      	behaviour: 'tap-drag', // Move handle on tap, bar is draggable
+      	range: { // Slider can select '0' to '100'
+      		'min': 1,
+      		'max': 7
+      	}
       });
 
-      $("#ratings_sought").on("slide", function(slideEvt) {
-        that.setState({ratings_sought: slideEvt.value})
-        $("#ratings_soughtSliderVal").text(slideEvt.value[0] + '-' + slideEvt.value[1]);
+      var valueInput = document.getElementById('value-input'),
+      	valueSpan = document.getElementById('value-span');
+
+      slider.noUiSlider.on('update', function( values, handle ) {
+        var new_range = that.state.ratings_sought;
+      	if ( handle ) {
+      		valueInput.innerHTML = values[handle];
+          new_range[1] = values[handle];
+      	} else {
+      		valueSpan.innerHTML = values[handle];
+          new_range[0] = values[handle];
+      	}
+        that.setState({ratings_sought: new_range});
       });
 
-      $("#discovery_radius").on("slide", function(slideEvt) {
-        that.setState({discovery_radius: slideEvt.value})
-        $("#discovery_radiusSliderVal").text(slideEvt.value);
+      valueInput.addEventListener('change', function(){
+      	slider.noUiSlider.set([null, this.value]);
       });
+
+      var discovery = document.getElementById('discovery_radius_update'),
+      discoveryValue = document.getElementById('discovery_radius_update_value'),
+      settings = {
+        range: {
+          'min': 1,
+          'max': 50
+        },
+        start: that.state.discovery_radius,
+        margin: 1,
+        step: 1
+      };
+
+      function bindDiscoveryValue ( ) {
+        discovery.noUiSlider.on('update', function( values, handle ) {
+          discoveryValue.innerHTML = values[handle];
+          that.setState({discovery_radius: values[handle]});
+        });
+      }
+
+      noUiSlider.create(discovery, settings);
+      bindDiscoveryValue();
 
   },
 
@@ -128,9 +185,6 @@ window.EditProfileObject = React.createClass({
 
 
   render: function() {
-    var ratingsSought = [this.state.ratings_sought[0],this.state.ratings_sought[1]];
-    var ratings_sought_array = "[" + this.state.ratings_sought[0].toString() + "," + this.state.ratings_sought[1].toString() + "]";
-
     var Input = ReactBootstrap.Input;
     var Button = ReactBootstrap.Button;
     var Image = ReactBootstrap.Image;
@@ -192,52 +246,32 @@ window.EditProfileObject = React.createClass({
           </Row>
           <Row>
             <Col xs={2}>
-              <div id={mens_singles_state} className={"mens_singles"}><p onClick={this.toggleButton}>test</p></div>
+              <div id={mens_singles_state} className={"mens_singles"}><p onClick={this.toggleButton}>Men's Singles</p></div>
             </Col>
             <Col xs={2}>
-              <div id={womens_singles_state} className={"womens_singles"}><p onClick={this.toggleButton}>test</p></div>
+              <div id={womens_singles_state} className={"womens_singles"}><p onClick={this.toggleButton}>Women's Singles</p></div>
             </Col>
             <Col xs={2}>
-              <div id={mens_doubles_state} className={"mens_doubles"}><p onClick={this.toggleButton}>test</p></div>
+              <div id={mens_doubles_state} className={"mens_doubles"}><p onClick={this.toggleButton}>Men's Doubles</p></div>
             </Col>
             <Col xs={2}>
-              <div id={womens_doubles_state} className={"womens_doubles"}><p onClick={this.toggleButton}>test</p></div>
+              <div id={womens_doubles_state} className={"womens_doubles"}><p onClick={this.toggleButton}>Women's Doubles</p></div>
             </Col>
             <Col xs={2}>
-              <div id={mixed_doubles_state} className={"mixed_doubles"}><p onClick={this.toggleButton}>test</p></div>
+              <div id={mixed_doubles_state} className={"mixed_doubles"}><p onClick={this.toggleButton}>Mixed Doubles</p></div>
             </Col>
           </Row>
-          <Row>
-            <Col xs={2}>
-              <span id="NTRP">My NTRP Level: <span id="ratingSliderVal">{this.state.rating}</span></span><br/>
-            </Col>
-          </Row>
-          <Row>
-            <Col xs={4} xsOffset={4}>
-              <input onChange={this.handleRatingChange} id="rating" data-slider-id="NTRP" type="text" data-slider-value={this.state.rating} data-slider-min={1} data-slider-max={7} data-slider-step={.5}/>
-            </Col>
-          </Row>
-          <Row>
-            <Col xs={2}>
-              <span id="NTRP">NTRP Levels Sought: <span id="ratings_soughtSliderVal">{this.state.ratings_sought[0] + '-' + this.state.ratings_sought[1]}</span></span><br/>
-            </Col>
-          </Row>
-          <Row>
-            <Col xs={4} xsOffset={4}>
-              <input id="ratings_sought" data-slider-id={"ratings_sought_"} ype="text" className="span2" value="" data-slider-min={1} data-slider-max={7} data-slider-step={.5} data-slider-value={ratings_sought_array}/>
-            </Col>
-          </Row>
-          <Row>
-            <Col xs={2}>
-              <span id="inMiles">Miles: <span id="discovery_radiusSliderVal">{this.state.discovery_radius}</span></span>
-            </Col>
-          </Row>
-          <Row>
-            <Col xs={4} xsOffset={4}>
-              <input id="discovery_radius" data-slider-id={"discovery_radius_"} type="text" data-slider-min={0} data-slider-max={25} data-slider-step={1} data-slider-value={this.state.discovery_radius}/>
-            </Col>
-          </Row>
+
         </Grid>
+
+        <div id={"slider-update"}></div>
+        <div id={"slider-update-value"}></div>
+        <div id={"range"}></div>
+        <div id={"value-span"}></div>
+        <div id={"value-input"}></div>
+        <div id={"discovery_radius_update"}></div>
+        <div id={"discovery_radius_update_value"}></div>
+
         </div>
     );
   }
