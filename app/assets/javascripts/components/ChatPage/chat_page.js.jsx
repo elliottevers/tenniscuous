@@ -66,7 +66,7 @@ var ChatPage = React.createClass({
         other_user_picture_url={this.state.conversation.other_user_profile_picture_url}
         />
 
-        <button onClick={this.loadMessages}>Load Previous Messages</button>
+        <button id={"load-messages"} onClick={this.loadMessages}>Load Previous Messages</button>
 
         <div className={"messages-wrapper"}>
           <ul>

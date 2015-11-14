@@ -1,4 +1,5 @@
 /* line 3, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/profile.css.scss */
+/* line 3, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/profile.css.scss */
 #goToEditProfileButton {
   height: 15vw;
   width: 15vw;
@@ -10,16 +11,19 @@
 }
 
 /* line 12, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/profile.css.scss */
+/* line 14, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/profile.css.scss */
 #goToEditProfileButton:hover {
   background-color: orange;
 }
 
 /* line 17, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/profile.css.scss */
+/* line 19, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/profile.css.scss */
 textarea {
   resize: none;
 }
 
 /* line 21, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/profile.css.scss */
+/* line 24, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/profile.css.scss */
 .profile_container {
   background-color: #d3d3d3;
   margin-left: 15vw;
@@ -28,6 +32,7 @@ textarea {
 }
 
 /* line 28, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/profile.css.scss */
+/* line 32, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/profile.css.scss */
 .bottom_border {
   border-bottom: thin solid black;
   margin-left: 3vw;
@@ -35,12 +40,14 @@ textarea {
 }
 
 /* line 34, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/profile.css.scss */
+/* line 39, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/profile.css.scss */
 .user_datum {
   padding-top: 0vw;
   padding-bottom: 0vw;
 }
 
 /* line 39, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/profile.css.scss */
+/* line 45, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/profile.css.scss */
 .user_datum:after {
   content: "";
   display: block;
@@ -48,6 +55,7 @@ textarea {
 }
 
 /* line 45, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/profile.css.scss */
+/* line 52, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/profile.css.scss */
 .user_datum p:nth-child(1) {
   padding-left: 5vw;
   padding-top: 2vw;
@@ -56,6 +64,7 @@ textarea {
 }
 
 /* line 52, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/profile.css.scss */
+/* line 60, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/profile.css.scss */
 .user_datum p:nth-child(n+1) {
   padding-top: 2vw;
   padding-left: 3vw;
@@ -64,6 +73,7 @@ textarea {
 }
 
 /* line 59, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/profile.css.scss */
+/* line 68, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/profile.css.scss */
 .user_datum_container:after {
   content: "";
   display: block;
@@ -71,6 +81,7 @@ textarea {
 }
 
 /* line 65, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/profile.css.scss */
+/* line 75, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/profile.css.scss */
 #goToEditProfileButton {
   position: absolute;
   left: 75vw;
@@ -78,6 +89,7 @@ textarea {
 }
 
 /* line 71, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/profile.css.scss */
+/* line 82, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/profile.css.scss */
 h4 {
   margin-left: auto;
   margin-right: auto;
@@ -87,6 +99,11 @@ h4 {
 }
 
 /* line 79, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/profile.css.scss */
+/* line 91, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/profile.css.scss */
 #profile_wrapper {
   position: relative;
+}
+
+.user_datum_container:last-child .bottom_border{
+  display: none;
 }
