@@ -7,6 +7,10 @@ window.ChatMatchHeader = React.createClass({
     this.history.pushState(null, "/matches", {});
   },
 
+  handlePictureClick: function(){
+    this.history.pushState(null, "/discovery_queue/" + this.props.other_user_id, {});
+  },
+
   unmatchUser: function(event){
     var that = this;
     ApiUtil.deleteConversation(parseInt(that.props.params.id), that.history.pushState(null, "/matches", {}));

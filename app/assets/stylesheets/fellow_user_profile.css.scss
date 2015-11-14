@@ -1,25 +1,26 @@
-
-
+/* line 3, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/fellow_user_profile.css.scss */
 #fellow_user_profile_wrapper {
   position: relative;
 }
 
-#backToQueue {
+/* line 7, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/fellow_user_profile.css.scss */
+#toPreviousPage {
   height: 15vw;
   width: 15vw;
+  border: thin solid black;
   font-size: 3vw;
   white-space: normal;
-  background-color: black;
+  background-color: #1464F4;
   border-radius: 50%;
-}
-
-#backToQueue:hover {
-  background-color: orange;
-}
-
-#backToQueue {
   position: absolute;
   z-index: 100;
   left: 12vw;
   top: 14vw;
 }
+
+/* line 16, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/fellow_user_profile.css.scss */
+#toPreviousPage:hover {
+  background-color: orange;
+}
+
+/* line 20, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/fellow_user_profile.css.scss */

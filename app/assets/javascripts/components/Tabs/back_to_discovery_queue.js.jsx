@@ -10,7 +10,7 @@ var BackToQueue = React.createClass({
   render: function (){
       return (
         <div>
-          <button bsStyle="info" id={"backToQueue"} onClick={this.handleClick}>Back</button>
+          <button id={"backToQueue"} onClick={this.handleClick}>Back</button>
         </div>
       );
     }
