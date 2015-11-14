@@ -8,11 +8,10 @@ window.LogInPage = React.createClass({
   },
 
   render: function () {
-    var Button = ReactBootstrap.Button;
       return(
         <div>
           <SignIn/>
-          <Button onClick={this.handleClick} bsStyle="primary">Create Account</Button>
+          <button onClick={this.handleClick}>Create Account</button>
         </div>
       )
   }

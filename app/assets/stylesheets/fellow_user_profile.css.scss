@@ -1,0 +1,25 @@
+
+
+#fellow_user_profile_wrapper {
+  position: relative;
+}
+
+#backToQueue {
+  height: 15vw;
+  width: 15vw;
+  font-size: 3vw;
+  white-space: normal;
+  background-color: black;
+  border-radius: 50%;
+}
+
+#backToQueue:hover {
+  background-color: orange;
+}
+
+#backToQueue {
+  position: absolute;
+  z-index: 100;
+  left: 12vw;
+  top: 14vw;
+}

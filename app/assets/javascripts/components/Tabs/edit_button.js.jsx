@@ -8,11 +8,10 @@ var EditButton = React.createClass({
   },
 
   render: function (){
-    var Button = ReactBootstrap.Button;
     if (this.props.isCurrentUser) {
       return (
         <div>
-          <Button bsStyle="info" id={"goToEditProfileButton"} onClick={this.handleClick}>Edit Profile</Button>
+          <button id={"goToEditProfileButton"} onClick={this.handleClick}>Edit Profile</button>
         </div>
       );
     } else {

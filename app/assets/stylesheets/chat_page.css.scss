@@ -1,0 +1,85 @@
+/* line 1, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/chat_page.css.scss */
+.messages-wrapper {
+  padding-top: 10px;
+  position: relative;
+  border: 1px solid #ddd;
+  border-top: 0 none;
+}
+
+/* line 7, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/chat_page.css.scss */
+
+/* line 3, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/matches_page.css.scss */
+/* line 3, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/matches_page.css.scss */
+.chat-panel {
+  position: relative;
+  height: 25vw;
+  background-color: #d3d3d3;
+  border-radius: 3vw;
+  margin: 4vw;
+}
+
+/* line 9, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/matches_page.css.scss */
+/* line 12, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/matches_page.css.scss */
+.chat-panel img {
+  position: absolute;
+  top: 2vw;
+  left: 37vw;
+  height: 15vw;
+  width: 15vw;
+}
+
+/* line 17, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/matches_page.css.scss */
+/* line 22, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/matches_page.css.scss */
+.chat-panel p {
+  position: absolute;
+  left: 35vw;
+  top: 14vw;
+  font-size: 4vw;
+}
+
+.message {
+  border-radius: 20px 20px 20px 20px;
+  margin: 0 15px 10px;
+  padding: 15px 20px;
+  position: relative;
+}
+
+/* line 13, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/chat_page.css.scss */
+.message.current_user {
+  background-color: #2095FE;
+  color: #fff;
+  margin-left: 80px;
+}
+
+/* line 18, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/chat_page.css.scss */
+.message.other_user {
+  background-color: #E5E4E9;
+  color: #363636;
+  margin-right: 80px;
+}
+
+.chat-panel :nth-child(1) {
+  position: absolute;
+  background-color: #1464F4;
+  border: thin solid black;
+  height: 15vw;
+  width: 15vw;
+  border-radius: 50%;
+  right: 65vw;
+  top: 5vw;
+}
+
+.chat-panel :nth-child(4) {
+  position: absolute;
+  background-color: #1464F4;
+  border: thin solid black;
+  height: 15vw;
+  width: 15vw;
+  border-radius: 50%;
+  right: 7vw;
+  top: 5vw;
+}
+
+.chat-panel :nth-child(1):hover, .chat-panel :nth-child(4):hover {
+  background-color: orange;
+}

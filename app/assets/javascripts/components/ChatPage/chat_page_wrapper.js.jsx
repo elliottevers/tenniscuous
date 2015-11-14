@@ -9,10 +9,9 @@ var ChatPageWrapper = React.createClass({
   render: function () {
     var conversation_id = parseInt(this.props.params.id);
     var conversation = {id: conversation_id};
-    var Button = ReactBootstrap.Button;
     return (
         <div>
-        <Button onClick={this.handleClick} bsStyle="warning">Back</Button>
+        <button onClick={this.handleClick}>Back</button>
         <ChatPage conversation={conversation} />
         </div>
     );

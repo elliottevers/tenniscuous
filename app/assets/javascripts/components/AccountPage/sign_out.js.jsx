@@ -11,10 +11,9 @@ window.SignOut = React.createClass({
   },
 
   render: function () {
-    var Button = ReactBootstrap.Button;
     return(
       <div>
-        <Button bsStyle="danger" onClick={this.handleClick}>Log Out</Button>
+        <button onClick={this.handleClick}>Log Out</button>
       </div>
     );
   }

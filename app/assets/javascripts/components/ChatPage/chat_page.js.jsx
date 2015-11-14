@@ -26,12 +26,23 @@ var ChatPage = React.createClass({
   },
 
   handleMessageChange: function(event) {
+    event.preventDefault();
     this.setState({newMessage: event.target.value});
   },
 
   handleMessageSubmit: function(event) {
+    event.preventDefault();
     var that = this;
     ApiUtil.sendMessage(parseInt(that.props.params.id), that.state.newMessage, that.state.numMessages);
+  },
+
+  handleKeyDown: function(event) {
+      var that = this;
+      var ENTER = 13;
+      if( event.keyCode == ENTER ) {
+          this.handleMessageSubmit(event);
+      }
+
   },
 
   loadMessages: function(event){
@@ -42,11 +53,6 @@ var ChatPage = React.createClass({
   },
 
   render: function () {
-    var Button = ReactBootstrap.Button;
-    var Input = ReactBootstrap.Input;
-    var Grid = ReactBootstrap.Grid;
-    var Row = ReactBootstrap.Row;
-    var Col = ReactBootstrap.Col;
     var that = this;
 
     if (this.state.conversation.messages){
@@ -59,13 +65,9 @@ var ChatPage = React.createClass({
         other_user_username={this.state.conversation.other_user_username}
         other_user_picture_url={this.state.conversation.other_user_profile_picture_url}
         />
-        <Grid>
-          <Row>
-            <Col xs={4} xsOffset={4}>
-              <Button onClick={this.loadMessages} bsStyle="primary">Load Previous Messages</Button>
-            </Col>
-          </Row>
-        </Grid>
+
+        <button onClick={this.loadMessages}>Load Previous Messages</button>
+
         <div className={"messages-wrapper"}>
           <ul>
             {this.state.conversation.messages.map(function (message) {
@@ -73,16 +75,8 @@ var ChatPage = React.createClass({
             })}
           </ul>
         </div>
-        <Grid>
-          <Row>
-            <Col xs={7}>
-              <Input type="text" value={this.state.newMessage} placeholder="New Message" onChange={this.handleMessageChange} labelClassName="col-xs-2" wrapperClassName="col-xs-10" />
-            </Col>
-            <Col xs={3}>
-              <Button onClick={this.handleMessageSubmit} bsStyle="primary">Send Message</Button>
-            </Col>
-          </Row>
-        </Grid>
+        <textarea value={this.state.newMessage} placeholder={"New Message"} onKeyDown={this.handleKeyDown} onChange={this.handleMessageChange}></textarea>
+        <button onClick={this.handleMessageSubmit}>Send Message</button>
       </div>
 
       );

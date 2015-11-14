@@ -8,10 +8,9 @@ var BackToQueue = React.createClass({
   },
 
   render: function (){
-    var Button = ReactBootstrap.Button;
       return (
         <div>
-          <Button bsStyle="info" id={"backToQueue"} onClick={this.handleClick}>Back</Button>
+          <button bsStyle="info" id={"backToQueue"} onClick={this.handleClick}>Back</button>
         </div>
       );
     }

@@ -12,10 +12,9 @@ window.DeleteAccount = React.createClass({
   },
 
   render: function () {
-    var Button = ReactBootstrap.Button;
     return(
       <div>
-        <Button bsStyle="danger" onClick={this.handleClick}>Delete Account</Button>
+        <button onClick={this.handleClick}>Delete Account</button>
       </div>
     );
   }

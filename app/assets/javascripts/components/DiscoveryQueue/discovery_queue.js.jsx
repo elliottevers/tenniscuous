@@ -96,30 +96,21 @@ window.DiscoveryQueue = React.createClass({
   },
 
   render: function () {
-    var Grid = ReactBootstrap.Grid;
-    var Col = ReactBootstrap.Col;
-    var Row = ReactBootstrap.Row;
 
     return(
 
-      <div>
+      <div id={"discovery-container"}>
         <CustomTabs className={'text-center'} tabList={tabList} activeTab={1}/>
-        <Grid>
-          <Row>
-            <Col xs={6} xsOffset={3}>
-              {this.state.users.map(function (user) {
-                return <DiscoveryCard id={user.id} username={user.username} picture={user.picture}/>;
-              })}
-              <div className="ballWrapper">
-                <div className={"ball"} onClick={this.handleBallClick}></div>
-                <div className={"ballContent"}></div>
-              </div>
-            </Col>
-          </Row>
-          <Row>
-            <LikeDislikeBar onChange={this.handleCardChange} />
-          </Row>
-        </Grid>
+        <div id={"ball-and-cards"}>
+          {this.state.users.map(function (user) {
+            return <DiscoveryCard id={user.id} username={user.username} picture={user.picture}/>;
+          })}
+          <div className="ballWrapper">
+            <div className={"ball"} onClick={this.handleBallClick}></div>
+            <div className={"ballContent"}></div>
+          </div>
+        </div>
+        <LikeDislikeBar onChange={this.handleCardChange} />
       </div>
 
     );

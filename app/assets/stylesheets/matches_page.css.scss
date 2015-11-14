@@ -1,0 +1,26 @@
+/* line 3, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/matches_page.css.scss */
+.panel {
+  position: relative;
+  height: 25vw;
+  background-color: #d3d3d3;
+  border-radius: 3vw;
+  margin: 4vw;
+}
+
+/* line 9, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/matches_page.css.scss */
+.match-image {
+  position: absolute;
+  top: 2vw;
+  left: 2vw;
+  float: left;
+  height: 20vw;
+  width: 20vw;
+}
+
+/* line 17, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/matches_page.css.scss */
+.panel p {
+  position: absolute;
+  left: 40vw;
+  top: 5vw;
+  font-size: 5vw;
+}

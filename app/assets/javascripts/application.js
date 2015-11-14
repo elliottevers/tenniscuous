@@ -17,10 +17,7 @@
 //= require eventemitter
 //= require react
 //= require react_ujs
-//= require Bootstrap.min
 //= require ReactRouter.min
-//= require ReactBootstrap.min
-//= require bootstrap-slider
 //= require faye
 //= require conversation
 //= require_tree .

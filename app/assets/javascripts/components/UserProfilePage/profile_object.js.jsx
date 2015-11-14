@@ -2,10 +2,6 @@ window.ProfileObject = React.createClass({
 
 
   render: function () {
-    var Image = ReactBootstrap.Image;
-    var Grid = ReactBootstrap.Grid;
-    var Row = ReactBootstrap.Row;
-    var Col = ReactBootstrap.Col;
     if (!this.props.current_user.ratings_sought) {
       ratings_sought = [" "," "];
     } else {

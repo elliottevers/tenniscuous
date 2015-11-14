@@ -5,7 +5,6 @@ var FellowUserProfile = React.createClass({
   render: function () {
     var user_id = parseInt(this.props.params.id);
     var user = {id: user_id};
-    var Button = ReactBootstrap.Button;
     return (
         <div>
         <CustomTabs className={'text-center'} tabList={tabList} activeTab={1}/>

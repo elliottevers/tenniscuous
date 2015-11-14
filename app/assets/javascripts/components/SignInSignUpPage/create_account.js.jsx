@@ -42,7 +42,6 @@ window.CreateAccount = React.createClass({
   },
 
   render: function () {
-    var Button = ReactBootstrap.Button;
     return(
       <div>
         <h2>Create Account</h2>
@@ -53,7 +52,7 @@ window.CreateAccount = React.createClass({
           <label>Password</label>
           <input value={this.state.password} type="password" onChange={this.handlePasswordChange}/>
           <br/>
-          <Button type="submit" bsStyle="primary">Create Account</Button>
+          <button type="submit" bsStyle="primary">Create Account</button>
         </form>
       </div>
     );

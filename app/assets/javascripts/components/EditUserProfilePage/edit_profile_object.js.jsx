@@ -185,12 +185,6 @@ window.EditProfileObject = React.createClass({
 
 
   render: function() {
-    var Input = ReactBootstrap.Input;
-    var Button = ReactBootstrap.Button;
-    var Image = ReactBootstrap.Image;
-    var Grid = ReactBootstrap.Grid;
-    var Row = ReactBootstrap.Row;
-    var Col = ReactBootstrap.Col;
 
     var mens_singles_state = "";
     if (this.state.MensSingles) {
@@ -225,45 +219,21 @@ window.EditProfileObject = React.createClass({
 
     return (
       <div>
-       <Grid>
-         <div id={"editWrapper"}>
-             <Button bsStyle="info" onClick={this.updateUser} id={"goToProfileButton"}>Done Editting</Button>
-             <Image src={this.state.profile_picture_url} id={"editProfilePicture"}></Image>
-             <Button bsStyle="primary" onClick={this.uploadPicture} id={"changeProfilePicture"}>Change Profile Picture</Button>
-          </div>
-          <Row>
-            <Input
-              type="textarea"
-              value={this.state.profile_description}
-              placeholder={this.props.edit_current_user.profile_description}
-              onChange={this.handleDescriptionChange} />
-          </Row>
-          <Row>
-            <Input type="select" ref="select" onChange={this.handleGenderChange} value={this.state.gender}>
-                <option value="Male">Male</option>
-                <option value="Female">Female</option>
-            </Input>
-          </Row>
-          <Row>
-            <Col xs={2}>
-              <div id={mens_singles_state} className={"mens_singles"}><p onClick={this.toggleButton}>Men's Singles</p></div>
-            </Col>
-            <Col xs={2}>
-              <div id={womens_singles_state} className={"womens_singles"}><p onClick={this.toggleButton}>Women's Singles</p></div>
-            </Col>
-            <Col xs={2}>
-              <div id={mens_doubles_state} className={"mens_doubles"}><p onClick={this.toggleButton}>Men's Doubles</p></div>
-            </Col>
-            <Col xs={2}>
-              <div id={womens_doubles_state} className={"womens_doubles"}><p onClick={this.toggleButton}>Women's Doubles</p></div>
-            </Col>
-            <Col xs={2}>
-              <div id={mixed_doubles_state} className={"mixed_doubles"}><p onClick={this.toggleButton}>Mixed Doubles</p></div>
-            </Col>
-          </Row>
-
-        </Grid>
-
+       <div id={"editWrapper"}>
+           <button onClick={this.updateUser} id={"goToProfileButton"}>Done Editting</button>
+           <img src={this.state.profile_picture_url} id={"editProfilePicture"}></img>
+           <button onClick={this.uploadPicture} id={"changeProfilePicture"}>Change Profile Picture</button>
+        </div>
+        <textarea value={this.state.profile_description} placeholder={this.props.edit_current_user.profile_description} onChange={this.handleDescriptionChange}></textarea>
+        <select ref="select" onChange={this.handleGenderChange} value={this.state.gender}>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+        </select>
+        <div id={mens_singles_state} className={"mens_singles"}><p onClick={this.toggleButton}>Men's Singles</p></div>
+        <div id={womens_singles_state} className={"womens_singles"}><p onClick={this.toggleButton}>Women's Singles</p></div>
+        <div id={mens_doubles_state} className={"mens_doubles"}><p onClick={this.toggleButton}>Men's Doubles</p></div>
+        <div id={womens_doubles_state} className={"womens_doubles"}><p onClick={this.toggleButton}>Women's Doubles</p></div>
+        <div id={mixed_doubles_state} className={"mixed_doubles"}><p onClick={this.toggleButton}>Mixed Doubles</p></div>
         <div id={"slider-update"}></div>
         <div id={"slider-update-value"}></div>
         <div id={"range"}></div>

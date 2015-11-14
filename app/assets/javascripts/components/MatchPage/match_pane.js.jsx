@@ -11,15 +11,13 @@ window.MatchPane = React.createClass({
 
     var url = this.props.other_user_picture_url;
     var divImage = {backgroundImage : 'url(' + url + ')'};
-    var Panel = ReactBootstrap.Panel;
-    var Image = ReactBootstrap.Image;
 
     return(
       <div>
-        <Panel>
-          <Image onClick={this.handlePictureClick} src={this.props.other_user_picture_url} className={"match-image"} alt={"Cinque Terre"}></Image>
+        <div className={"panel"}>
+          <img onClick={this.handlePictureClick} src={this.props.other_user_picture_url} className={"match-image"}></img>
           <p>{this.props.other_user_username}</p>
-        </Panel>
+        </div>
       </div>
     );
   }

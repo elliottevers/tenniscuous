@@ -1,0 +1,301 @@
+/* line 1, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/discovery_queue.css.scss */
+/* line 3, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/discovery_queue.css.scss */
+/* line 4, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/discovery_queue.css.scss */
+div.photo {
+  position: absolute;
+  display: block;
+  left: 25vw;
+  width: 50vw;
+  height: 70vw;
+  border: 0vw solid #a6a9aa;
+  border-radius: 2vw;
+  background-size: cover;
+  background-repeat: no-repeat;
+  box-shadow: 0vw 1vw 2vw 0vw #cfcfcf;
+  z-index: 1;
+}
+
+/* line 17, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/discovery_queue.css.scss */
+/* line 20, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/discovery_queue.css.scss */
+/* line 21, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/discovery_queue.css.scss */
+#swipe_like::after {
+  content: " ";
+  display: block;
+  width: 9vw;
+  height: 18vw;
+  border: solid white;
+  border-width: 0 4vw 4vw 0;
+  position: absolute;
+  margin-top: 3vw;
+  margin-left: 9vw;
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+/* line 33, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/discovery_queue.css.scss */
+/* line 37, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/discovery_queue.css.scss */
+/* line 39, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/discovery_queue.css.scss */
+#swipe_dislike::after {
+  content: " ";
+  display: block;
+  width: 10vw;
+  height: 10vw;
+  border: solid white;
+  border-width: 0 4vw 4vw 0;
+  position: absolute;
+  margin-top: 1vw;
+  margin-left: 8vw;
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+/* line 49, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/discovery_queue.css.scss */
+/* line 54, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/discovery_queue.css.scss */
+/* line 57, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/discovery_queue.css.scss */
+#swipe_dislike::before {
+  content: " ";
+  display: block;
+  width: 10vw;
+  height: 10vw;
+  border: solid white;
+  border-width: 0 4vw 4vw 0;
+  position: absolute;
+  margin-top: 15.1vw;
+  margin-left: 8vw;
+  -webkit-transform: rotate(225deg);
+  -moz-transform: rotate(225deg);
+  -o-transform: rotate(225deg);
+  transform: rotate(225deg);
+}
+
+/* line 65, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/discovery_queue.css.scss */
+/* line 71, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/discovery_queue.css.scss */
+/* line 75, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/discovery_queue.css.scss */
+div.meta {
+  /*   display: block; */
+  height: 9vw;
+  background-color: #FFF;
+  margin-top: 63vw;
+  border-radius: 0vw 0vw 2vw 2vw;
+  font-size: 5vw;
+  text-align: center;
+  box-sizing: border-box;
+  z-index: 1;
+}
+
+/* line 78, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/discovery_queue.css.scss */
+/* line 85, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/discovery_queue.css.scss */
+/* line 90, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/discovery_queue.css.scss */
+.rate {
+  width: 30vw;
+  height: 30vw;
+  border-radius: 30vw;
+  background: #FFF;
+  border: 1vw solid #f0f0f0;
+  box-shadow: .5vw .5vw .5vw 0vw #e9e9e9;
+}
+
+/* line 87, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/discovery_queue.css.scss */
+/* line 95, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/discovery_queue.css.scss */
+/* line 101, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/discovery_queue.css.scss */
+#swipe_dislike {
+  float: left;
+  margin-top: 20vw;
+  margin-left: 12vw;
+  background-color: #EE2C2C;
+  background-size: 0vw;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* line 98, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/discovery_queue.css.scss */
+/* line 106, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/discovery_queue.css.scss */
+/* line 113, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/discovery_queue.css.scss */
+#swipe_like {
+  float: right;
+  margin-right: 12vw;
+  margin-top: 20vw;
+  background-color: #458B00;
+  background-size: 0vw;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* line 108, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/discovery_queue.css.scss */
+/* line 117, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/discovery_queue.css.scss */
+/* line 125, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/discovery_queue.css.scss */
+.rotate-left {
+  transform: scale(0.8) translate(-200px, 0px);
+  transition: .5s;
+}
+
+/* line 113, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/discovery_queue.css.scss */
+/* line 123, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/discovery_queue.css.scss */
+/* line 132, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/discovery_queue.css.scss */
+.rotate-right {
+  transform: scale(0.8) translate(200px, 0px);
+  transition: .5s;
+}
+
+/* line 119, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/discovery_queue.css.scss */
+/* line 129, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/discovery_queue.css.scss */
+/* line 139, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/discovery_queue.css.scss */
+.ballWrapper {
+  width: 60vw;
+  margin-top: 30vw;
+  z-index: -10;
+}
+
+/* line 125, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/discovery_queue.css.scss */
+/* line 136, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/discovery_queue.css.scss */
+/* line 147, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/discovery_queue.css.scss */
+.bouncy-ball {
+  overflow: hidden;
+  position: absolute;
+  left: 48vw;
+  top: 40vw;
+  height: 30vw;
+  width: 30vw;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 50%;
+  background-color: #d3d3d3;
+  background: radial-gradient(ellipse at center, #ccff00 0%, #8fb300 100%);
+  box-sizing: border-box;
+  transform: translate(-50%, -50%) rotate(90deg);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#EBFA49', endColorstr='#777777',GradientType=0 );
+  box-shadow: inset 0 0px 10px rgba(255, 255, 255, 0.4), inset -2px -1px 40px rgba(0, 0, 0, 0.4), 0 0 1px #000;
+  position: absolute;
+  z-index: -1;
+  -webkit-animation: jump 1s infinite;
+  -moz-animation: jump 1s infinite;
+  -o-animation: jump 1s infinite;
+  -ms-animation: jump 1s infinite;
+  animation: rise 1s, jump 1s infinite, descend 1s;
+  animation-delay: 0s, 1s, 4.05s;
+}
+
+/* line 147, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/discovery_queue.css.scss */
+/* line 160, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/discovery_queue.css.scss */
+/* line 175, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/discovery_queue.css.scss */
+.ball {
+  overflow: hidden;
+  position: absolute;
+  left: 48vw;
+  top: 40vw;
+  height: 30vw;
+  width: 30vw;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 50%;
+  background-color: #d3d3d3;
+  background: radial-gradient(ellipse at center, #ccff00 0%, #8fb300 100%);
+  box-sizing: border-box;
+  transform: translate(-50%, -50%) rotate(90deg);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#EBFA49', endColorstr='#777777',GradientType=0 );
+  box-shadow: inset 0 0px 10px rgba(255, 255, 255, 0.4), inset -2px -1px 40px rgba(0, 0, 0, 0.4), 0 0 1px #000;
+  z-index: 0;
+}
+
+/* line 167, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/discovery_queue.css.scss */
+/* line 180, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/discovery_queue.css.scss */
+/* line 196, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/discovery_queue.css.scss */
+.ball::before, .ball::after, .bouncy-ball::after, .bouncy-ball::before {
+  content: '';
+  position: absolute;
+  display: block;
+  height: 30vw;
+  width: 12vw;
+  border: solid .5vw #fff;
+  border-radius: 50%;
+  box-sizing: border-box;
+}
+
+/* line 178, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/discovery_queue.css.scss */
+/* line 192, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/discovery_queue.css.scss */
+/* line 209, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/discovery_queue.css.scss */
+.ball:before, .bouncy-ball:before {
+  right: 75%;
+}
+
+/* line 182, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/discovery_queue.css.scss */
+/* line 197, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/discovery_queue.css.scss */
+/* line 215, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/discovery_queue.css.scss */
+.ball:after, .bouncy-ball:after {
+  left: 75%;
+}
+
+@keyframes rise {
+  0% {
+    top: 40vw;
+    animation-timing-function: ease-out;
+  }
+  100% {
+    top: 20vw;
+    animation-timing-function: ease-in;
+  }
+}
+@keyframes jump {
+  0% {
+    top: 20vw;
+    animation-timing-function: ease-in;
+  }
+  50% {
+    top: 47vw;
+    height: 30vw;
+    animation-timing-function: ease-out;
+  }
+  55% {
+    top: 50vw;
+    height: 28vw;
+    border-radius: 50%;
+    animation-timing-function: ease-in;
+  }
+  65% {
+    top: 45vw;
+    height: 30vw;
+    border-radius: 50%;
+    animation-timing-function: ease-out;
+  }
+  95% {
+    top: 20vw;
+    animation-timing-function: ease-in;
+  }
+  100% {
+    top: 20vw;
+    animation-timing-function: ease-in;
+  }
+}
+@keyframes descend {
+  0% {
+    top: 20vw;
+    animation-timing-function: cubic-bezier;
+  }
+  100% {
+    top: 40vw;
+    animation-timing-function: ease-in;
+  }
+}
+/* line 495, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/discovery_queue.css.scss */
+/* line 253, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/discovery_queue.css.scss */
+/* line 272, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/discovery_queue.css.scss */
+#ball-and-cards {
+  bottom: 20vw;
+  height: 40vw;
+  position: relative;
+}
+
+/* line 278, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/discovery_queue.css.scss */
+#discovery-container {
+  /*   display: inline-block; */
+  text-align: center;
+}
+
+/* line 283, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/discovery_queue.css.scss */
+#content {
+  position: relative;
+}

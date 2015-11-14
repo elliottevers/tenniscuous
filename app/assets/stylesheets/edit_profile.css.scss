@@ -1,0 +1,119 @@
+
+
+
+    #clicked {
+      height: 15vw;
+      width: 15vw;
+      border-radius: 50%;
+      background-color: black;
+      position: relative;
+      border: .25vw solid grey;
+    }
+
+    #not-clicked {
+      height: 15vw;
+      width: 15vw;
+      border-radius: 50%;
+      background-color: grey;
+      position: relative;
+      border: .25vw solid grey;
+    }
+
+
+    #clicked p, #not-clicked p {
+      position: absolute;
+      top: 3vw;
+      left: 3vw;
+      color: white;
+    }
+  img {
+    height: 45vw;
+    width: 45vw;
+    border-radius: 50%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  #editProfilePicture {
+    height: 35vw;
+    width: 35vw;
+    border-radius: 50%;
+    display: inline-block;
+  }
+
+  #goToProfileButton {
+    height: 15vw;
+    width: 15vw;
+    font-size: 3vw;
+    white-space: normal;
+    background-color: black;
+    border-radius: 50%;
+    display: inline-block;
+  }
+
+  #goToProfileButton:hover {
+    background-color: orange;
+ }
+ 
+  #changeProfilePicture:hover {
+    background-color: orange;
+  }
+
+  #changeProfilePicture {
+    height: 15vw;
+    width: 15vw;
+    font-size: 2.5vw;
+    white-space: normal;
+    background-color: black;
+    border-radius: 50%;
+    display: inline-block;
+  }
+
+  #editWrapper {
+    text-align:center;
+  }
+
+  .btn-group > .btn {
+    background-color: black;
+    white-space: normal;
+    height: 15vw;
+    width: 15vw;
+    border-radius: 50%;
+    font-size: 2.5vw;
+  }
+
+
+  #slider-update {
+    margin-left: 20vw;
+    margin-right: 20vw;
+  }
+
+  #range {
+    margin-left: 20vw;
+    margin-right: 20vw;
+  }
+
+  #discovery_radius_update {
+    margin-left: 20vw;
+    margin-right: 20vw;
+  }
+
+  select {
+    margin: 50px;
+    border: 1px solid #111;
+    background: transparent;
+    width: 150px;
+    padding: 5px 35px 5px 5px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    height: 34px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+  }
+
+  :focus {
+    outline-color: transparent;
+    outline-style: none;
+  }

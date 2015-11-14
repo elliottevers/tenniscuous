@@ -42,7 +42,6 @@ window.SignIn = React.createClass({
   },
 
   render: function () {
-    var Button = ReactBootstrap.Button;
     return(
     <div>
       <h2>Log In</h2>
@@ -53,7 +52,7 @@ window.SignIn = React.createClass({
         <label>Password</label>
         <input value={this.state.password} type="password" onChange={this.handlePasswordChange}/>
         <br/>
-        <Button type="submit" bsStyle="primary">Sign In</Button>
+        <button type="submit" bsStyle="primary">Sign In</button>
       </form>
     </div>
     );
