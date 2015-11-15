@@ -78,23 +78,22 @@ class Api::UsersController < ApplicationController
       }
     end
 
-    users_distances = Hash.new
+    distances_from_current_user = Hash.new
 
     users_positions.each do |user|
       haversine_arguments = [current_user[:position][0], current_user[:position][1]]
       haversine_arguments << user[:position][0]
       haversine_arguments << user[:position][1]
-      users_distances[user[:id]] = haversine_arguments
+      distances_from_current_user[user[:id]] = haversine_arguments
     end
 
-    users_distances.keys.each do |key|
-      users_distances[key] = Haversine.distance(*users_distances[key]).to_miles
+    distances_from_current_user.keys.each do |key|
+      distances_from_current_user[key] = Haversine.distance(*distances_from_current_user[key]).to_miles
     end
 
-    filtered_users_distances = users_distances.select do |key, value|
+    filtered_users_distances = distances_from_current_user.select do |key, value|
       value < current_user[:discovery_radius]
     end
-
 
     filtered_users = filtered_users_distances.keys.map do |key|
       User.find(key)
@@ -103,8 +102,6 @@ class Api::UsersController < ApplicationController
     filtered_users_by_rating = filtered_users.select do |user|
       (user[:rating] >= current_user[:ratings_sought][0]) && (user[:rating] <= current_user[:ratings_sought][1])
     end
-
-    # logger.debug filtered_users_by_rating.map{|u| u[:genders_sought]  }
 
     filtered_users_by_genders_sought = filtered_users_by_rating.select do |user|
       if current_user[:gender] == "Male"
@@ -127,8 +124,6 @@ class Api::UsersController < ApplicationController
     filtered_by_previously_seen = filtered_users_identifiers.reject do |user|
       this_user[:seen_users].include?(user[:id])
     end
-
-    filtered_by_previously_seen
 
     render json: filtered_by_previously_seen
 
