@@ -13,7 +13,8 @@ window.ChatMatchHeader = React.createClass({
 
   unmatchUser: function(event){
     var that = this;
-    ApiUtil.deleteConversation(parseInt(that.props.params.id), that.history.pushState(null, "/matches", {}));
+    console.log(this.props);
+    ApiUtil.deleteConversation(parseInt(that.props.conversation_id), that.history.pushState(null, "/matches", {}));
   },
 
   render: function () {

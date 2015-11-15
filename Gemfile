@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-
+gem 'newrelic_rpm'
 gem 'faker'
 gem 'figaro'
 gem 'faye-rails'

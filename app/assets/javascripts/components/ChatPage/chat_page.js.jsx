@@ -61,6 +61,7 @@ var ChatPage = React.createClass({
       <div>
         <CustomTabs className={'text-center'} tabList={tabList} activeTab={2}/>
         <ChatMatchHeader
+        conversation_id={this.state.conversation.conversation_id}
         other_user_id={this.state.conversation.other_user_id}
         other_user_username={this.state.conversation.other_user_username}
         other_user_picture_url={this.state.conversation.other_user_profile_picture_url}
