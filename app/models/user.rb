@@ -18,8 +18,6 @@ class User < ActiveRecord::Base
 
   def add_to_matches(user_id)
     self.update_attributes(matches: self[:matches] << user_id)
-    logger.debug "MY ID IS #{self[:id]}"
-    logger.debug "MATCHES #{self[:matches]}"
   end
 
   def they_accepted_you?(user_id)
@@ -28,18 +26,14 @@ class User < ActiveRecord::Base
 
   def add_to_seen_users(user_id)
     self.update_attributes(seen_users: self[:seen_users] << user_id)
-    logger.debug "SEEN USERS #{self[:seen_users]}"
   end
 
   def add_to_accepted_users(user_id)
     self.update_attributes(seen_users: self[:seen_users] << user_id, accepted_users: self[:accepted_users] << user_id)
-    logger.debug "ACCEPTED USERS #{self[:accepted_users]}"
-    logger.debug "SEEN USERS #{self[:seen_users]}"
   end
 
   def self.find_by_credentials(username, password)
     user = User.find_by(username: username)
-
     return nil if user.nil?
     user.is_password?(password) ? user : nil
   end

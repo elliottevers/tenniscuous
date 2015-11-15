@@ -30,20 +30,6 @@ class Api::MessagesController < ApplicationController
     @conversation = new_conversation
     render json: @conversation
 
-    # render ('api/message/create.js.erb')
-
-    # json.conversation_id @conversation[:id]
-    # json.other_user_id @self.interlocutor(@conversation)[:id]
-    # json.other_user_username @self.interlocutor(@conversation)[:username]
-    # json.other_user_profile_picture_url @self.interlocutor(@conversation)[:profile_picture_url]
-    # json.messages @messages do |message|
-    #   json.conversation_id  message.conversation_id
-    #   json.user_id  message.user_id
-    #   json.body  message.body
-    # end
-    # PrivatePub.publish_to("/api/messages/new", :conversation => new_conversation)
-
-    # @path = conversation_path(@conversation)
   end
 
 end
