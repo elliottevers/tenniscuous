@@ -60,7 +60,4 @@ ActiveRecord::Schema.define(version: 20151010022715) do
   add_index "messages", ["conversation_id"], name: "index_messages_on_conversation_id"
   add_index "messages", ["user_id"], name: "index_messages_on_user_id"
 
-
-
-
 end

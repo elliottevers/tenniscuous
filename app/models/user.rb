@@ -1,5 +1,8 @@
 class User < ActiveRecord::Base
+  
   attr_reader :password
+
+  has_many :conversations, :foreign_key => :sender_id
 
   after_initialize :ensure_session_token, :init_fields
 
@@ -13,12 +16,6 @@ class User < ActiveRecord::Base
     :password,
     length: { minimum: 6, allow_nil: true }
   )
-
-  has_many :conversations, :foreign_key => :sender_id
-
-  # def add_to_matches(user_id)
-  #   self.update_attributes(matches: self[:matches] << user_id)
-  # end
 
   def they_accepted_you?(user_id)
     User.find(user_id)[:accepted_users].include?(self[:id])
@@ -65,9 +62,7 @@ class User < ActiveRecord::Base
     self.discovery_radius ||= 25
     self.num_displayed_messages ||= 10
     self.accepted_users ||= []
-    # self.accepted_users ||= nil
     self.seen_users ||= []
-    # self.last_seen_user ||= nil
   end
 
   def ensure_session_token

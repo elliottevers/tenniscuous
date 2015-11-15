@@ -19,12 +19,14 @@ class Api::ConversationsController < ApplicationController
       current_user[:num_displayed_messages] = 10
       current_user.save
     end
+
     @conversation = Conversation.find(params[:id])
-    @current_user = current_user
-    @reciever = interlocutor(@conversation)
     @messages = @conversation.messages.last(current_user[:num_displayed_messages])
     @message = Message.new
+    @reciever = interlocutor(@conversation)
+    @current_user = current_user
     @self = self
+    
     render ('api/conversation/show.json.jbuilder')
   end
 
@@ -46,6 +48,5 @@ class Api::ConversationsController < ApplicationController
   def conversation_params
     params.permit(:sender_id, :recipient_id)
   end
-
 
 end
