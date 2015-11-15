@@ -3,7 +3,7 @@ Rails.application.configure do
   config.react.addons = true # defaults to false
   # Code is not reloaded between requests.
   config.cache_classes = true
-  config.serve_static_assets = true
+  config.serve_static_files = true
   config.log_level = :debug
 
   # Eager load code on boot. This eager loads most of Rails and
