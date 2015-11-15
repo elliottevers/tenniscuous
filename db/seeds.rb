@@ -20,9 +20,9 @@ ActiveRecord::Base.transaction do
     position: [0, 0],
     discovery_radius: 20,
     accepted_users: [],
-    last_accepted_user: nil,
-    seen_users: [],
-    last_seen_user: nil
+    # last_accepted_user: nil,
+    seen_users: []
+    # last_seen_user: nil
   }, {
     username: "Rafael Nadal",
     profile_picture_url: "http://res.cloudinary.com/dax4cembx/image/upload/v1445717904/v1h5cqsrq7txzwqfg4l2.jpg",
@@ -34,10 +34,10 @@ ActiveRecord::Base.transaction do
     ratings_sought: [1.0, 7.0],
     position: [37.781824,-122.433014],
     discovery_radius: 3,
-    accepted_users: [1],
-    last_accepted_user: nil,
-    seen_users: [1],
-    last_seen_user: nil
+    accepted_users: [],
+    # last_accepted_user: nil,
+    seen_users: []
+    # last_seen_user: nil
   }]
   #   username: "Novak Djokovic",
   #   profile_picture_url: "http://res.cloudinary.com/dax4cembx/image/upload/v1445718433/pagmwd4e5qjfe3vl0lfx.jpg",
@@ -176,9 +176,9 @@ ActiveRecord::Base.transaction do
       position: [37.760367,-122.450867],
       discovery_radius: 25,
       accepted_users: [random_like],
-      last_accepted_user: nil,
-      seen_users: [random_like],
-      last_seen_user: nil
+      # last_accepted_user: nil,
+      seen_users: [random_like]
+      # last_seen_user: nil
     }
     test_players << player
   end

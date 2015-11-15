@@ -103,9 +103,6 @@ window.ApiUtil = {
       method: "PATCH",
       data: {user: user, message: message},
       success: function(returned_user){
-        if(user.last_seen_user === returned_user.last_seen_user){
-
-        }
       },
       error: function(){
         history.pushState(null, "/", {});

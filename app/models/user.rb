@@ -16,9 +16,9 @@ class User < ActiveRecord::Base
 
   has_many :conversations, :foreign_key => :sender_id
 
-  def add_to_matches(user_id)
-    self.update_attributes(matches: self[:matches] << user_id)
-  end
+  # def add_to_matches(user_id)
+  #   self.update_attributes(matches: self[:matches] << user_id)
+  # end
 
   def they_accepted_you?(user_id)
     User.find(user_id)[:accepted_users].include?(self[:id])
@@ -65,9 +65,9 @@ class User < ActiveRecord::Base
     self.discovery_radius ||= 25
     self.num_displayed_messages ||= 10
     self.accepted_users ||= []
-    self.accepted_users ||= nil
+    # self.accepted_users ||= nil
     self.seen_users ||= []
-    self.last_seen_user ||= nil
+    # self.last_seen_user ||= nil
   end
 
   def ensure_session_token

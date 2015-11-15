@@ -28,9 +28,9 @@ ActiveRecord::Schema.define(version: 20151010022715) do
     t.float   "position", array: true
     t.integer  "discovery_radius"
     t.integer "accepted_users", array: true
-    t.integer "last_accepted_user"
+    # t.integer "last_accepted_user"
     t.integer "seen_users", array: true
-    t.integer "last_seen_user"
+    # t.integer "last_seen_user"
     t.string   "profile_picture_url"
     t.integer "num_displayed_messages"
     t.datetime "created_at"

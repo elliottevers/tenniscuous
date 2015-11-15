@@ -28,15 +28,16 @@ class Api::UsersController < ApplicationController
     @has_new_match = false
     if (params[:message] == "rejection")
       if @user
-        @user.update(user_params)
-        @user.add_to_seen_users(user_params[:last_seen_user])
+        @user.update(user_params_to_save)
+        last_user_id = user_params[:last_seen_user]
+        @user.add_to_seen_users(last_user_id)
         render json: @user
       else
         render json: { message: 'not found', status: 404}
       end
     elsif (params[:message] == "acceptance")
       if @user
-        @user.update(user_params)
+        @user.update(user_params_to_save)
         last_user_id = user_params[:last_accepted_user]
         @user.add_to_accepted_users(last_user_id)
         if @user.they_accepted_you?(last_user_id)
@@ -54,7 +55,7 @@ class Api::UsersController < ApplicationController
       end
     else
       if @user
-        @user.update(user_params)
+        @user.update(user_params_to_save)
         render json: @user
       else
         render json: { message: 'not found', status: 404}
@@ -103,7 +104,7 @@ class Api::UsersController < ApplicationController
       (user[:rating] >= current_user[:ratings_sought][0]) && (user[:rating] <= current_user[:ratings_sought][1])
     end
 
-    logger.debug filtered_users_by_rating.map{|u| u[:genders_sought]  }
+    # logger.debug filtered_users_by_rating.map{|u| u[:genders_sought]  }
 
     filtered_users_by_genders_sought = filtered_users_by_rating.select do |user|
       if current_user[:gender] == "Male"
@@ -137,6 +138,10 @@ class Api::UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:username, :password, :id, :profile_description, :gender, {:genders_sought => []}, :rating, {:ratings_sought => []}, {:position => []}, :discovery_radius, :profile_picture_url, :last_seen_user, :last_accepted_user)
+    params.require(:user).permit(:username, :password, :id, :profile_description, :gender, {:genders_sought => []}, :rating, {:ratings_sought => []}, {:position => []}, :discovery_radius, :profile_picture_url, :last_accepted_user, :last_seen_user)
+  end
+
+  def user_params_to_save
+    user_params.reject{|key, value| (value == user_params[:last_accepted_user]) || (value == user_params[:last_seen_user])}
   end
 end
