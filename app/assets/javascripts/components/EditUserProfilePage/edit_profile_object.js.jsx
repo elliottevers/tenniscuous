@@ -1,3 +1,16 @@
+var Formats = ["mens_singles",
+               "womens_singles",
+               "mens_doubles",
+               "womens_doubles",
+               "mixed_doubles"];
+
+var formatStrings = ["Men's Singles",
+                     "Women's Singles",
+                     "Men's Doubles",
+                     "Women's Doubles",
+                     "Mixed Doubles"
+                    ];
+
 window.EditProfileObject = React.createClass({
   mixins: [ReactRouter.History],
 
@@ -11,6 +24,11 @@ window.EditProfileObject = React.createClass({
       rating: this.props.edit_current_user.rating,
       ratings_sought: this.props.edit_current_user.ratings_sought,
       discovery_radius: this.props.edit_current_user.discovery_radius,
+      formatsSought: [(this.props.edit_current_user.genders_sought.indexOf("Men's Singles") > -1),
+                      (this.props.edit_current_user.genders_sought.indexOf("Women's Singles") > -1),
+                      (this.props.edit_current_user.genders_sought.indexOf("Men's Doubles") > -1),
+                      (this.props.edit_current_user.genders_sought.indexOf("Women's Doubles") > -1),
+                      (this.props.edit_current_user.genders_sought.indexOf("Mixed Doubles") > -1)],
       MensSingles: (this.props.edit_current_user.genders_sought.indexOf("Men's Singles") > -1),
       WomensSingles: (this.props.edit_current_user.genders_sought.indexOf("Women's Singles") > -1),
       MensDoubles: (this.props.edit_current_user.genders_sought.indexOf("Men's Doubles") > -1),
@@ -110,49 +128,42 @@ window.EditProfileObject = React.createClass({
 
   handleChange: function (event) {
     var name_of_class = $(event.target).parent().attr('class');
-    if (name_of_class === "mens_singles") {
-      this.setState({MensSingles: !this.state.MensSingles});
-    } else if (name_of_class === "womens_singles") {
-      this.setState({WomensSingles: !this.state.WomensSingles});
-    } else if (name_of_class === "mens_doubles") {
-      this.setState({MensDoubles: !this.state.MensDoubles});
-    } else if (name_of_class === "womens_doubles") {
-      this.setState({WomensDoubles: !this.state.WomensDoubles});
-    } else if (name_of_class === "mixed_doubles") {
-      this.setState({MixedDoubles: !this.state.MixedDoubles});
-    }
+    var this_class = this;
+    Formats.forEach(function(format){
+      if (name_of_class === format) {
+      newFormatsSought = this_class.state.formatsSought;
+      newFormatsSought[this.indexOf(format)] = !newFormatsSought[this.indexOf(format)];
+        this_class.setState(
+          {formatsSought: newFormatsSought}
+        );
+      }
+    }, Formats)
   },
 
   updateUser: function (event) {
     event.preventDefault();
     var user = {};
     var genders_sought = [];
+
     Object.keys(this.state).forEach(function (key) {
       user[key] = this.state[key];
     }.bind(this));
-    if (this.state.MensSingles){
-      genders_sought.push("Men's Singles");
-    }
-    if (this.state.WomensSingles){
-      genders_sought.push("Women's Singles");
-    }
-    if (this.state.MensDoubles){
-      genders_sought.push("Men's Doubles");
-    }
-    if (this.state.WomensDoubles){
-      genders_sought.push("Women's Doubles");
-    }
-    if (this.state.MixedDoubles){
-      genders_sought.push("Mixed Doubles");
-    }
-    delete user['MensSingles'];
-    delete user['WomensSingles'];
-    delete user['MensDoubles'];
-    delete user['WomensDoubles'];
-    delete user['MixedDoubles'];
-    user.genders_sought = genders_sought;
-    user.id = this.props.edit_current_user.id;
 
+    var formatsSought = this.state.formatsSought;
+
+    for (i = 0; i < formatsSought.length; i++) {
+      if (formatsSought[i]) {
+        genders_sought.push(formatStrings[i]);
+      }
+    }
+
+    formatStrings.forEach(function(formatString){
+      delete user[formatString];
+    });
+
+    user.genders_sought = genders_sought;
+
+    user.id = this.props.edit_current_user.id;
 
     ApiUtil.updateUser(user, function () {
       this.history.pushState(null, "/profile", {});
@@ -189,38 +200,7 @@ window.EditProfileObject = React.createClass({
 
 
   render: function() {
-
-    var mens_singles_state = "";
-    if (this.state.MensSingles) {
-      mens_singles_state = "clicked";
-    } else {
-      mens_singles_state = "not-clicked";
-    }
-    var womens_singles_state = "";
-    if (this.state.WomensSingles) {
-      womens_singles_state = "clicked";
-    } else {
-      womens_singles_state = "not-clicked";
-    }
-    var mens_doubles_state = "";
-    if (this.state.MensDoubles) {
-      mens_doubles_state = "clicked";
-    } else {
-      mens_doubles_state = "not-clicked";
-    }
-    var womens_doubles_state = "";
-    if (this.state.WomensDoubles) {
-      womens_doubles_state = "clicked";
-    } else {
-      womens_doubles_state = "not-clicked";
-    }
-    var mixed_doubles_state = "";
-    if (this.state.MixedDoubles) {
-      mixed_doubles_state = "clicked";
-    } else {
-      mixed_doubles_state = "not-clicked";
-    }
-
+    this_class = this;
     return (
        <div>
          <div id={"editWrapper"}>
@@ -236,11 +216,13 @@ window.EditProfileObject = React.createClass({
               <option value="Female">Female</option>
           </select>
 
-          <div id={mens_singles_state} className={"mens_singles"}><p onClick={this.toggleButton}>Men's Singles</p></div>
-          <div id={womens_singles_state} className={"womens_singles"}><p onClick={this.toggleButton}>Women's Singles</p></div>
-          <div id={mens_doubles_state} className={"mens_doubles"}><p onClick={this.toggleButton}>Men's Doubles</p></div>
-          <div id={womens_doubles_state} className={"womens_doubles"}><p onClick={this.toggleButton}>Women's Doubles</p></div>
-          <div id={mixed_doubles_state} className={"mixed_doubles"}><p onClick={this.toggleButton}>Mixed Doubles</p></div>
+          {Formats.map(function(format){
+            if (this_class.state.formatsSought[Formats.indexOf(format)]) {
+              return (<div id={"clicked"} className={format}><p onClick={this_class.toggleButton}>{formatStrings[Formats.indexOf(format)]}</p></div>);
+            } else {
+              return (<div id={"not-clicked"} className={format}><p onClick={this_class.toggleButton}>{formatStrings[Formats.indexOf(format)]}</p></div>);
+            }
+          })}
 
           <div id={"slider-update"}></div>
           <div id={"slider-update-value"}></div>
