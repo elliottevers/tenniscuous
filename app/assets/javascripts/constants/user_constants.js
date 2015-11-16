@@ -10,13 +10,3 @@ window.CloudinaryConstants = {
   CONVERSATION: "upload/h_50,w_50,c_thumb,r_max",
   CARD: "upload/h_300,w_230,c_fill,r_40"
 };
-
-window.root_url = "localhost:3000";
-
-window.notifyNewMatch = function () {
-  if (sessionStorage.getItem('hasNewMatch')) {
-    $('[data-pulse="false"]').attr('data-pulse', true);
-  } else {
-    $('[data-pulse="true"]').attr('data-pulse', false);
-  }
-};

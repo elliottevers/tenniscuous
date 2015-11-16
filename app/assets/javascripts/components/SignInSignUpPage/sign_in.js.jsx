@@ -22,6 +22,7 @@ window.SignIn = React.createClass({
   },
 
   handleSubmit: function(event){
+  
     event.preventDefault();
 
     var that = this;

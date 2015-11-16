@@ -7,7 +7,6 @@ var ChatPage = React.createClass({
   },
 
   getStateFromStore: function () {
-
     return { conversation: ConversationStore.conversation(), newMessage: ""};
   },
 
@@ -37,29 +36,27 @@ var ChatPage = React.createClass({
   },
 
   handleKeyDown: function(event) {
-      var that = this;
-      var ENTER = 13;
-      if( event.keyCode == ENTER ) {
-          this.handleMessageSubmit(event);
-      }
+    var that = this;
+    var ENTER = 13;
+    if( event.keyCode == ENTER ) {
+        this.handleMessageSubmit(event);
+    }
 
   },
 
   loadMessages: function(event){
-    var that = this;
     var conversation_id = parseInt(this.props.params.id);
     ApiUtil.fetchConversation(conversation_id, true);
-
   },
 
   render: function () {
-    var that = this;
 
     if (this.state.conversation.messages){
       return (
 
       <div>
         <CustomTabs className={'text-center'} tabList={tabList} activeTab={2}/>
+
         <ChatMatchHeader
         conversation_id={this.state.conversation.conversation_id}
         other_user_id={this.state.conversation.other_user_id}
@@ -76,7 +73,12 @@ var ChatPage = React.createClass({
             })}
           </ul>
         </div>
-        <textarea value={this.state.newMessage} placeholder={"New Message"} onKeyDown={this.handleKeyDown} onChange={this.handleMessageChange}></textarea>
+
+        <textarea
+          value={this.state.newMessage} 
+          placeholder={"New Message"}
+          onKeyDown={this.handleKeyDown}
+          onChange={this.handleMessageChange}></textarea>
         <button onClick={this.handleMessageSubmit}>Send Message</button>
       </div>
 

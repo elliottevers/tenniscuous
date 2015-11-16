@@ -1,6 +1,5 @@
 window.ProfileObject = React.createClass({
 
-
   render: function () {
     if (!this.props.current_user.ratings_sought) {
       ratings_sought = [" "," "];

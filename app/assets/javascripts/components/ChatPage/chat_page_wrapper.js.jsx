@@ -11,8 +11,8 @@ var ChatPageWrapper = React.createClass({
     var conversation = {id: conversation_id};
     return (
         <div>
-        <button onClick={this.handleClick}>Back</button>
-        <ChatPage conversation={conversation} />
+          <button onClick={this.handleClick}>Back</button>
+          <ChatPage conversation={conversation} />
         </div>
     );
   }

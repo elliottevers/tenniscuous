@@ -23,8 +23,10 @@ window.EditProfileObject = React.createClass({
 
       var that = this;
 
-      var updateSlider = document.getElementById('slider-update'),
-    	updateSliderValue = document.getElementById('slider-update-value'),
+      var updateSlider = document.getElementById('slider-update');
+
+    	var updateSliderValue = document.getElementById('slider-update-value');
+
     	settings = {
     		range: {
     			'min': 1,
@@ -35,7 +37,7 @@ window.EditProfileObject = React.createClass({
     		step: .5
     	};
 
-      function bindValue ( ) {
+      function bindValue () {
       	updateSlider.noUiSlider.on('update', function( values, handle ) {
       		updateSliderValue.innerHTML = values[handle];
           that.setState({rating: values[handle]});
@@ -43,25 +45,26 @@ window.EditProfileObject = React.createClass({
       }
 
       noUiSlider.create(updateSlider, settings);
+
       bindValue();
 
       var slider = document.getElementById('range');
 
       noUiSlider.create(slider, {
-      	start: [ that.state.ratings_sought[0], that.state.ratings_sought[1] ], // Handle start position
-      	step: .5, // Slider moves in increments of '10'
-      	margin: .5, // Handles must be more than '20' apart
-      	connect: true, // Display a colored bar between the handles
-      	orientation: 'horizontal', // Orient the slider vertically
-      	behaviour: 'tap-drag', // Move handle on tap, bar is draggable
-      	range: { // Slider can select '0' to '100'
+      	start: [ that.state.ratings_sought[0], that.state.ratings_sought[1] ],
+      	step: .5,
+      	margin: .5,
+      	connect: true,
+      	orientation: 'horizontal',
+      	behaviour: 'tap-drag',
+      	range: {
       		'min': 1,
       		'max': 7
       	}
       });
 
-      var valueInput = document.getElementById('value-input'),
-      	valueSpan = document.getElementById('value-span');
+      var valueInput = document.getElementById('value-input');
+      var	valueSpan = document.getElementById('value-span');
 
       slider.noUiSlider.on('update', function( values, handle ) {
         var new_range = that.state.ratings_sought;
@@ -79,8 +82,9 @@ window.EditProfileObject = React.createClass({
       	slider.noUiSlider.set([null, this.value]);
       });
 
-      var discovery = document.getElementById('discovery_radius_update'),
-      discoveryValue = document.getElementById('discovery_radius_update_value'),
+      var discovery = document.getElementById('discovery_radius_update');
+      var discoveryValue = document.getElementById('discovery_radius_update_value');
+
       settings = {
         range: {
           'min': 1,
@@ -99,6 +103,7 @@ window.EditProfileObject = React.createClass({
       }
 
       noUiSlider.create(discovery, settings);
+
       bindDiscoveryValue();
 
   },
@@ -172,7 +177,6 @@ window.EditProfileObject = React.createClass({
   },
 
   toggleButton: function(event){
-
     $target = $(event.target);
     $parent = $target.parent();
     if ($parent.attr('id') === 'clicked') {
@@ -218,30 +222,33 @@ window.EditProfileObject = React.createClass({
     }
 
     return (
-      <div>
-       <div id={"editWrapper"}>
-           <button onClick={this.updateUser} id={"goToProfileButton"}>Done Editting</button>
-           <img src={this.state.profile_picture_url} id={"editProfilePicture"}></img>
-           <button onClick={this.uploadPicture} id={"changeProfilePicture"}>Change Profile Picture</button>
-        </div>
-        <textarea value={this.state.profile_description} placeholder={this.props.edit_current_user.profile_description} onChange={this.handleDescriptionChange}></textarea>
-        <select ref="select" onChange={this.handleGenderChange} value={this.state.gender}>
-            <option value="Male">Male</option>
-            <option value="Female">Female</option>
-        </select>
-        <div id={mens_singles_state} className={"mens_singles"}><p onClick={this.toggleButton}>Men's Singles</p></div>
-        <div id={womens_singles_state} className={"womens_singles"}><p onClick={this.toggleButton}>Women's Singles</p></div>
-        <div id={mens_doubles_state} className={"mens_doubles"}><p onClick={this.toggleButton}>Men's Doubles</p></div>
-        <div id={womens_doubles_state} className={"womens_doubles"}><p onClick={this.toggleButton}>Women's Doubles</p></div>
-        <div id={mixed_doubles_state} className={"mixed_doubles"}><p onClick={this.toggleButton}>Mixed Doubles</p></div>
-        <div id={"slider-update"}></div>
-        <div id={"slider-update-value"}></div>
-        <div id={"range"}></div>
-        <div id={"value-span"}></div>
-        <div id={"value-input"}></div>
-        <div id={"discovery_radius_update"}></div>
-        <div id={"discovery_radius_update_value"}></div>
+       <div>
+         <div id={"editWrapper"}>
+             <button onClick={this.updateUser} id={"goToProfileButton"}>Done Editting</button>
+             <img src={this.state.profile_picture_url} id={"editProfilePicture"}></img>
+             <button onClick={this.uploadPicture} id={"changeProfilePicture"}>Change Profile Picture</button>
+          </div>
 
+          <textarea value={this.state.profile_description} placeholder={this.props.edit_current_user.profile_description} onChange={this.handleDescriptionChange}></textarea>
+
+          <select ref="select" onChange={this.handleGenderChange} value={this.state.gender}>
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+          </select>
+
+          <div id={mens_singles_state} className={"mens_singles"}><p onClick={this.toggleButton}>Men's Singles</p></div>
+          <div id={womens_singles_state} className={"womens_singles"}><p onClick={this.toggleButton}>Women's Singles</p></div>
+          <div id={mens_doubles_state} className={"mens_doubles"}><p onClick={this.toggleButton}>Men's Doubles</p></div>
+          <div id={womens_doubles_state} className={"womens_doubles"}><p onClick={this.toggleButton}>Women's Doubles</p></div>
+          <div id={mixed_doubles_state} className={"mixed_doubles"}><p onClick={this.toggleButton}>Mixed Doubles</p></div>
+
+          <div id={"slider-update"}></div>
+          <div id={"slider-update-value"}></div>
+          <div id={"range"}></div>
+          <div id={"value-span"}></div>
+          <div id={"value-input"}></div>
+          <div id={"discovery_radius_update"}></div>
+          <div id={"discovery_radius_update_value"}></div>
         </div>
     );
   }

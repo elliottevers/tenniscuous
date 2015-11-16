@@ -31,7 +31,6 @@ window.DiscoveryQueue = React.createClass({
 
   handleSubmit: function(event){
     event.preventDefault;
-    var that = this;
     var user = JSON.parse(sessionStorage.getItem("current_user"));
     user.discovery_radius = parseInt(this.state.new_discovery_radius);
     $.when(ApiUtil.updateUser(user)).then(ApiUtil.fetchAllUsers());

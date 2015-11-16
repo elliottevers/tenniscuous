@@ -2,7 +2,6 @@ window.ChatMatchHeader = React.createClass({
 
   mixins: [ReactRouter.History],
 
-
   handleClick: function(){
     this.history.pushState(null, "/matches", {});
   },
@@ -13,7 +12,6 @@ window.ChatMatchHeader = React.createClass({
 
   unmatchUser: function(event){
     var that = this;
-    console.log(this.props);
     ApiUtil.deleteConversation(parseInt(that.props.conversation_id), that.history.pushState(null, "/matches", {}));
   },
 
@@ -26,8 +24,12 @@ window.ChatMatchHeader = React.createClass({
       <div>
         <div className={"chat-panel"}>
           <button onClick={this.handleClick}>Back to Matches</button>
-          <img onClick={this.handlePictureClick} src={this.props.other_user_picture_url}></img>
+
+          <img
+          onClick={this.handlePictureClick}
+          src={this.props.other_user_picture_url}></img>
           <p>{this.props.other_user_username}</p>
+
           <button onClick={this.unmatchUser}>Unmatch User</button>
         </div>
       </div>

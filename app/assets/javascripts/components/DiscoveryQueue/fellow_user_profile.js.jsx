@@ -11,11 +11,11 @@ var FellowUserProfile = React.createClass({
     var user = {id: user_id};
     return (
         <div>
-        <CustomTabs className={'text-center'} tabList={tabList} activeTab={1}/>
-        <div id={"fellow_user_profile_wrapper"}>
-        <button id={"toPreviousPage"} onClick={this.handleClick}>Back</button>
-        <Profile isCurrentUser={false} user={user} />
-        </div>
+          <CustomTabs className={'text-center'} tabList={tabList} activeTab={1}/>
+          <div id={"fellow_user_profile_wrapper"}>
+            <button id={"toPreviousPage"} onClick={this.handleClick}>Back</button>
+            <Profile isCurrentUser={false} user={user} />
+          </div>
         </div>
     );
   }
