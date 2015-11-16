@@ -17,7 +17,7 @@
 //= require eventemitter
 //= require react
 //= require react_ujs
-//= require ReactRouter.min
+//= require react_router.min
 //= require faye
 //= require conversation
 //= require_tree .

@@ -1,10 +1,11 @@
 source 'https://rubygems.org'
+
+gem 'cloudinary'
 gem 'newrelic_rpm'
 gem 'faker'
 gem 'figaro'
 gem 'faye-rails'
 gem 'thin'
-gem 'cloudinary'
 gem 'react-rails', '1.3.0'
 gem 'flux-rails-assets'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
