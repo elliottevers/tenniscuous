@@ -29,11 +29,6 @@ window.EditProfileObject = React.createClass({
                       (this.props.edit_current_user.genders_sought.indexOf("Men's Doubles") > -1),
                       (this.props.edit_current_user.genders_sought.indexOf("Women's Doubles") > -1),
                       (this.props.edit_current_user.genders_sought.indexOf("Mixed Doubles") > -1)],
-      MensSingles: (this.props.edit_current_user.genders_sought.indexOf("Men's Singles") > -1),
-      WomensSingles: (this.props.edit_current_user.genders_sought.indexOf("Women's Singles") > -1),
-      MensDoubles: (this.props.edit_current_user.genders_sought.indexOf("Men's Doubles") > -1),
-      WomensDoubles: (this.props.edit_current_user.genders_sought.indexOf("Women's Doubles") > -1),
-      MixedDoubles: (this.props.edit_current_user.genders_sought.indexOf("Mixed Doubles") > -1)
     };
   },
 
