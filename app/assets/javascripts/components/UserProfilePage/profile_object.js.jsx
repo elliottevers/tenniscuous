@@ -18,6 +18,12 @@ window.ProfileObject = React.createClass({
         <div className={"profile_container"}>
           <div className={"user_datum_container"}>
             <div className={"user_datum"}>
+              <p>{this.props.current_user.profile_description}</p>
+            </div>
+            <div className={"bottom_border"}></div>
+          </div>
+          <div className={"user_datum_container"}>
+            <div className={"user_datum"}>
               <p>Gender</p>
               <p>{this.props.current_user.gender}</p>
             </div>
@@ -25,7 +31,7 @@ window.ProfileObject = React.createClass({
           </div>
           <div className={"user_datum_container"}>
             <div className={"user_datum"}>
-              <p>Genders Sought</p>
+              <p>Formats Sought</p>
               <p>{genders_sought}</p>
             </div>
             <div className={"bottom_border"}></div>

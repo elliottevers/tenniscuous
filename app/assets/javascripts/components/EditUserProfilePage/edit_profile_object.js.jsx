@@ -258,6 +258,7 @@ window.EditProfileObject = React.createClass({
             <div id={"range"}></div>
             <div id={"range_value_wrapper"}>
               <div id={"value-span"}></div>
+              <p> - </p>
               <div id={"value-input"}></div>
             </div>
             <p> Discovery Radius </p>
