@@ -135,33 +135,33 @@
 /* line 126, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/chat_page.css.scss */
 /* line 157, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/chat_page.css.scss */
 /* line 129, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/chat_page.css.scss */
-.other_user:after {
-  width: 10vw;
-  height: 10vw;
-  bottom: -1vw;
-  left: 0vw;
-  content: " ";
-  font-size: 4vw;
-  position: absolute;
-  background-color: black;
-  transform: rotate(135deg);
-  background: linear-gradient(to bottom right, #E5E4E9 50%, transparent 50%);
-  z-index: -10;
-}
+// .other_user:after {
+//   width: 10vw;
+//   height: 10vw;
+//   bottom: -1vw;
+//   left: 0vw;
+//   content: " ";
+//   font-size: 4vw;
+//   position: absolute;
+//   background-color: black;
+//   transform: rotate(135deg);
+//   background: linear-gradient(to bottom right, #E5E4E9 50%, transparent 50%);
+//   z-index: -10;
+// }
 
 /* line 171, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/chat_page.css.scss */
 /* line 144, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/chat_page.css.scss */
-.other_user:before {
-  margin: 4vw;
-  content: " ";
-  font-size: 4vw;
-  width: 1vw;
-  height: 1vw;
-  background-color: white;
-  position: absolute;
-  left: 1vw;
-  bottom: 6.6vw;
-}
+// .other_user:before {
+//   margin: 4vw;
+//   content: " ";
+//   font-size: 4vw;
+//   width: 1vw;
+//   height: 1vw;
+//   background-color: white;
+//   position: absolute;
+//   left: 1vw;
+//   bottom: 6.6vw;
+// }
 
 /* line 176, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/chat_page.css.scss */
 /* line 159, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/chat_page.css.scss */
@@ -170,33 +170,33 @@
 }
 
 /* line 163, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/chat_page.css.scss */
-.current_user:after {
-  width: 10vw;
-  height: 10vw;
-  bottom: -1vw;
-  right: 0vw;
-  content: " ";
-  font-size: 4vw;
-  position: absolute;
-  background-color: black;
-  transform: rotate(-45deg);
-  background: linear-gradient(to bottom right, #2095FE 50%, transparent 50%);
-  z-index: -10;
-}
+// .current_user:after {
+//   width: 10vw;
+//   height: 10vw;
+//   bottom: -1vw;
+//   right: 0vw;
+//   content: " ";
+//   font-size: 4vw;
+//   position: absolute;
+//   background-color: black;
+//   transform: rotate(-45deg);
+//   background: linear-gradient(to bottom right, #2095FE 50%, transparent 50%);
+//   z-index: -10;
+// }
 
 /* line 171, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/chat_page.css.scss */
 /* line 178, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/chat_page.css.scss */
-.current_user:before {
-  margin: 4vw;
-  content: " ";
-  font-size: 4vw;
-  width: 1vw;
-  height: 1vw;
-  background-color: white;
-  position: absolute;
-  right: 1vw;
-  bottom: 6.6vw;
-}
+// .current_user:before {
+//   margin: 4vw;
+//   content: " ";
+//   font-size: 4vw;
+//   width: 1vw;
+//   height: 1vw;
+//   background-color: white;
+//   position: absolute;
+//   right: 1vw;
+//   bottom: 6.6vw;
+// }
 
 /* line 191, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/chat_page.css.scss */
 .current_user {

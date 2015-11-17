@@ -173,7 +173,6 @@ div.meta {
   z-index: -1;
   -webkit-animation: jump 1s infinite;
   -moz-animation: jump 1s infinite;
-  -o-animation: jump 1s infinite;
   -ms-animation: jump 1s infinite;
   animation: rise 1s, jump 1s infinite, descend 1s;
   animation-delay: 0s, 1s, 4.05s;
@@ -232,52 +231,103 @@ div.meta {
 @keyframes rise {
   0% {
     top: 40vw;
-    animation-timing-function: ease-out;
+    -webkit-animation-timing-function: ease-out;
   }
   100% {
     top: 20vw;
-    animation-timing-function: ease-in;
+    -webkit-animation-timing-function: ease-in;
+  }
+}
+@-webkit-keyframes rise {
+  0% {
+    top: 40vw;
+    -webkit-animation-timing-function: ease-out;
+  }
+  100% {
+    top: 20vw;
+    -webkit-animation-timing-function: ease-in;
   }
 }
 @keyframes jump {
   0% {
     top: 20vw;
-    animation-timing-function: ease-in;
+    -webkit-animation-timing-function: ease-in;
   }
   50% {
     top: 47vw;
     height: 30vw;
-    animation-timing-function: ease-out;
+    -webkit-animation-timing-function: ease-out;
   }
   55% {
     top: 50vw;
     height: 28vw;
     border-radius: 50%;
-    animation-timing-function: ease-in;
+    -webkit-animation-timing-function: ease-in;
   }
   65% {
     top: 45vw;
     height: 30vw;
     border-radius: 50%;
-    animation-timing-function: ease-out;
+    -webkit-animation-timing-function: ease-out;
   }
   95% {
     top: 20vw;
-    animation-timing-function: ease-in;
+    -webkit-animation-timing-function: ease-in;
   }
   100% {
     top: 20vw;
-    animation-timing-function: ease-in;
+    -webkit-animation-timing-function: ease-in;
+  }
+}
+@-webkit-keyframes jump {
+  0% {
+    top: 20vw;
+    -webkit-animation-timing-function: ease-in;
+  }
+  50% {
+    top: 47vw;
+    height: 30vw;
+    -webkit-animation-timing-function: ease-out;
+  }
+  55% {
+    top: 50vw;
+    height: 28vw;
+    border-radius: 50%;
+    -webkit-animation-timing-function: ease-in;
+  }
+  65% {
+    top: 45vw;
+    height: 30vw;
+    border-radius: 50%;
+    -webkit-animation-timing-function: ease-out;
+  }
+  95% {
+    top: 20vw;
+    -webkit-animation-timing-function: ease-in;
+  }
+  100% {
+    top: 20vw;
+    -webkit-animation-timing-function: ease-in;
   }
 }
 @keyframes descend {
   0% {
     top: 20vw;
-    animation-timing-function: cubic-bezier;
+    -webkit-animation-timing-function: cubic-bezier;
   }
   100% {
     top: 40vw;
-    animation-timing-function: ease-in;
+    -webkit-animation-timing-function: ease-in;
+  }
+}
+@-webkit-keyframes descend {
+  0% {
+    top: 20vw;
+    -webkit-animation-timing-function: cubic-bezier;
+  }
+  100% {
+    top: 40vw;
+    -webkit-animation-timing-function: ease-in;
   }
 }
 /* line 495, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/discovery_queue.css.scss */

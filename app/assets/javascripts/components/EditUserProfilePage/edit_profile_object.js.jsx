@@ -38,6 +38,10 @@ window.EditProfileObject = React.createClass({
     };
   },
 
+  componentWillMount: function(){
+    React.initializeTouchEvents(true);
+  },
+
   componentDidMount: function(){
 
       var that = this;
