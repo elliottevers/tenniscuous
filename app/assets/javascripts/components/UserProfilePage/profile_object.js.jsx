@@ -18,28 +18,28 @@ window.ProfileObject = React.createClass({
         <div className={"profile_container"}>
           <div className={"user_datum_container"}>
             <div className={"user_datum"}>
-              <p>Gender:</p>
+              <p>Gender</p>
               <p>{this.props.current_user.gender}</p>
             </div>
             <div className={"bottom_border"}></div>
           </div>
           <div className={"user_datum_container"}>
             <div className={"user_datum"}>
-              <p>Genders Sought:</p>
+              <p>Genders Sought</p>
               <p>{genders_sought}</p>
             </div>
             <div className={"bottom_border"}></div>
           </div>
           <div className={"user_datum_container"}>
             <div className={"user_datum"}>
-              <p>My NTRP Level:</p>
+              <p>NTRP Level</p>
               <p>{this.props.current_user.rating}</p>
             </div>
             <div className={"bottom_border"}></div>
           </div>
           <div className={"user_datum_container"}>
             <div className={"user_datum"}>
-              <p>NTRP Levels Sought:</p>
+              <p>NTRP Levels Sought</p>
               <p>{ratings_sought[0]}</p>
               <p> - </p>
               <p>{ratings_sought[1]}</p>
@@ -48,7 +48,7 @@ window.ProfileObject = React.createClass({
           </div>
           <div className={"user_datum_container"}>
             <div className={"user_datum"}>
-              <p>Discovery Radius:</p>
+              <p>Discovery Radius</p>
               <p>{this.props.current_user.discovery_radius}</p>
             </div>
             <div className={"bottom_border"}></div>

@@ -1,6 +1,7 @@
 /* line 2, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/edit_profile.css.scss */
 /* line 3, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/edit_profile.css.scss */
 /* line 4, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/edit_profile.css.scss */
+/* line 5, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/edit_profile.css.scss */
 #clicked {
   height: 15vw;
   width: 15vw;
@@ -13,6 +14,7 @@
 /* line 11, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/edit_profile.css.scss */
 /* line 13, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/edit_profile.css.scss */
 /* line 15, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/edit_profile.css.scss */
+/* line 17, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/edit_profile.css.scss */
 #not-clicked {
   height: 15vw;
   width: 15vw;
@@ -30,17 +32,19 @@
 /* line 25, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/edit_profile.css.scss */
 /* line 28, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/edit_profile.css.scss */
 /* line 31, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/edit_profile.css.scss */
+/* line 34, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/edit_profile.css.scss */
 #clicked p, #not-clicked p {
   position: absolute;
-  top: 3vw;
-  left: 3vw;
   font-size: 3vw;
+  left: 0px;
+  width: 100%;
   color: white;
 }
 
 /* line 34, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/edit_profile.css.scss */
 /* line 37, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/edit_profile.css.scss */
 /* line 41, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/edit_profile.css.scss */
+/* line 45, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/edit_profile.css.scss */
 #editWrapper {
   position: relative;
   width: 100%;
@@ -51,6 +55,7 @@
 /* line 41, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/edit_profile.css.scss */
 /* line 45, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/edit_profile.css.scss */
 /* line 50, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/edit_profile.css.scss */
+/* line 55, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/edit_profile.css.scss */
 #editWrapper img {
   position: absolute;
   right: 31vw;
@@ -59,6 +64,7 @@
 /* line 47, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/edit_profile.css.scss */
 /* line 51, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/edit_profile.css.scss */
 /* line 57, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/edit_profile.css.scss */
+/* line 63, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/edit_profile.css.scss */
 #changeProfilePicture {
   position: absolute;
   height: 35vw;
@@ -78,6 +84,7 @@
 /* line 63, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/edit_profile.css.scss */
 /* line 68, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/edit_profile.css.scss */
 /* line 75, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/edit_profile.css.scss */
+/* line 82, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/edit_profile.css.scss */
 #goToProfileButton {
   height: 15vw;
   width: 15vw;
@@ -94,6 +101,7 @@
 /* line 77, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/edit_profile.css.scss */
 /* line 82, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/edit_profile.css.scss */
 /* line 90, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/edit_profile.css.scss */
+/* line 98, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/edit_profile.css.scss */
 #editWrapper img {
   height: 30vw;
   width: 30vw;
@@ -103,6 +111,7 @@
 /* line 84, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/edit_profile.css.scss */
 /* line 89, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/edit_profile.css.scss */
 /* line 98, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/edit_profile.css.scss */
+/* line 107, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/edit_profile.css.scss */
 #goToProfileButton:hover {
   background-color: orange;
 }
@@ -110,6 +119,7 @@
 /* line 88, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/edit_profile.css.scss */
 /* line 94, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/edit_profile.css.scss */
 /* line 104, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/edit_profile.css.scss */
+/* line 114, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/edit_profile.css.scss */
 #changeProfilePicture:hover {
   background-color: orange;
 }
@@ -117,6 +127,7 @@
 /* line 93, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/edit_profile.css.scss */
 /* line 99, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/edit_profile.css.scss */
 /* line 110, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/edit_profile.css.scss */
+/* line 121, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/edit_profile.css.scss */
 #changeProfilePicture {
   height: 15vw;
   width: 15vw;
@@ -135,6 +146,7 @@
 /* line 108, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/edit_profile.css.scss */
 /* line 115, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/edit_profile.css.scss */
 /* line 127, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/edit_profile.css.scss */
+/* line 139, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/edit_profile.css.scss */
 #editWrapper {
   text-align: center;
 }
@@ -153,6 +165,7 @@
 /* line 123, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/edit_profile.css.scss */
 /* line 131, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/edit_profile.css.scss */
 /* line 144, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/edit_profile.css.scss */
+/* line 157, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/edit_profile.css.scss */
 #slider-update, #range, #discovery_radius_update {
   margin-left: 5vw;
   margin-right: 5vw;
@@ -168,6 +181,7 @@
 /* line 147, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/edit_profile.css.scss */
 /* line 157, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/edit_profile.css.scss */
 /* line 172, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/edit_profile.css.scss */
+/* line 172, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/edit_profile.css.scss */
 :focus {
   outline-color: transparent;
   outline-style: none;
@@ -179,6 +193,7 @@
 /* line 155, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/edit_profile.css.scss */
 /* line 166, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/edit_profile.css.scss */
 /* line 182, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/edit_profile.css.scss */
+/* line 183, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/edit_profile.css.scss */
 textarea {
   padding-top: 6vw;
   width: 80%;
@@ -191,6 +206,7 @@ textarea {
 /* line 210, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/edit_profile.css.scss */
 /* line 166, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/edit_profile.css.scss */
 /* line 178, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/edit_profile.css.scss */
+/* line 196, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/edit_profile.css.scss */
 /* line 196, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/edit_profile.css.scss */
 #textarea-container {
   position: relative;
@@ -206,6 +222,7 @@ textarea {
 /* line 177, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/edit_profile.css.scss */
 /* line 190, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/edit_profile.css.scss */
 /* line 209, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/edit_profile.css.scss */
+/* line 210, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/edit_profile.css.scss */
 #gender-container {
   position: relative;
   background-color: #d3d3d3;
@@ -219,6 +236,7 @@ textarea {
 /* line 187, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/edit_profile.css.scss */
 /* line 201, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/edit_profile.css.scss */
 /* line 221, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/edit_profile.css.scss */
+/* line 223, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/edit_profile.css.scss */
 #gender-container > p {
   font-size: 4vw;
 }
@@ -227,6 +245,7 @@ textarea {
 /* line 192, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/edit_profile.css.scss */
 /* line 207, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/edit_profile.css.scss */
 /* line 228, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/edit_profile.css.scss */
+/* line 231, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/edit_profile.css.scss */
 .male {
   position: absolute;
   left: 14vw;
@@ -236,16 +255,21 @@ textarea {
 /* line 198, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/edit_profile.css.scss */
 /* line 214, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/edit_profile.css.scss */
 /* line 236, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/edit_profile.css.scss */
+/* line 240, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/edit_profile.css.scss */
 .female {
   position: absolute;
   left: 36vw;
   top: -15vw;
+}
+.male p, .female p {
+  top: 2.5vw;
 }
 
 /* line 244, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/edit_profile.css.scss */
 /* line 205, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/edit_profile.css.scss */
 /* line 222, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/edit_profile.css.scss */
 /* line 245, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/edit_profile.css.scss */
+/* line 250, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/edit_profile.css.scss */
 #gender-container div.female, #gender-container div.male {
   margin: none;
 }
@@ -254,6 +278,7 @@ textarea {
 /* line 210, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/edit_profile.css.scss */
 /* line 228, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/edit_profile.css.scss */
 /* line 252, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/edit_profile.css.scss */
+/* line 258, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/edit_profile.css.scss */
 .mens_singles {
   position: absolute;
   left: 14vw;
@@ -263,6 +288,7 @@ textarea {
 /* line 216, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/edit_profile.css.scss */
 /* line 235, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/edit_profile.css.scss */
 /* line 260, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/edit_profile.css.scss */
+/* line 267, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/edit_profile.css.scss */
 .womens_singles {
   position: absolute;
   left: 36vw;
@@ -273,6 +299,7 @@ textarea {
 /* line 223, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/edit_profile.css.scss */
 /* line 243, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/edit_profile.css.scss */
 /* line 269, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/edit_profile.css.scss */
+/* line 277, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/edit_profile.css.scss */
 .mens_doubles {
   position: absolute;
   left: 14vw;
@@ -283,6 +310,7 @@ textarea {
 /* line 230, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/edit_profile.css.scss */
 /* line 251, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/edit_profile.css.scss */
 /* line 278, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/edit_profile.css.scss */
+/* line 287, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/edit_profile.css.scss */
 .womens_doubles {
   position: absolute;
   left: 36vw;
@@ -293,6 +321,7 @@ textarea {
 /* line 237, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/edit_profile.css.scss */
 /* line 259, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/edit_profile.css.scss */
 /* line 287, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/edit_profile.css.scss */
+/* line 297, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/edit_profile.css.scss */
 .mixed_doubles {
   position: absolute;
   left: 25vw;
@@ -303,6 +332,7 @@ textarea {
 /* line 244, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/edit_profile.css.scss */
 /* line 267, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/edit_profile.css.scss */
 /* line 296, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/edit_profile.css.scss */
+/* line 307, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/edit_profile.css.scss */
 #gender-container p:nth-child(4) {
   margin-top: -8vw;
 }
@@ -311,6 +341,7 @@ textarea {
 /* line 249, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/edit_profile.css.scss */
 /* line 273, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/edit_profile.css.scss */
 /* line 303, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/edit_profile.css.scss */
+/* line 315, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/edit_profile.css.scss */
 #slider-container {
   position: relative;
   background-color: #d3d3d3;
@@ -324,61 +355,65 @@ textarea {
 /* line 259, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/edit_profile.css.scss */
 /* line 284, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/edit_profile.css.scss */
 /* line 315, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/edit_profile.css.scss */
-#slider-container > p {
-  position: absolute;
-}
+/* line 328, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/edit_profile.css.scss */
 
 /* line 288, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/edit_profile.css.scss */
 /* line 320, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/edit_profile.css.scss */
+/* line 334, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/edit_profile.css.scss */
 #slider-container p {
   font-size: 3vw;
   position: absolute;
+  left: 0px;
+  width: 100%;
 }
 
 /* line 263, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/edit_profile.css.scss */
 /* line 294, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/edit_profile.css.scss */
 /* line 327, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/edit_profile.css.scss */
-#slider-container p:nth-child(1) {
-  left: 25vw;
-}
+/* line 342, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/edit_profile.css.scss */
+/*
 
 /* line 267, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/edit_profile.css.scss */
 /* line 299, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/edit_profile.css.scss */
 /* line 333, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/edit_profile.css.scss */
+/* line 349, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/edit_profile.css.scss */
 #slider-container p:nth-child(4) {
-  left: 25vw;
   top: 22vw;
 }
 
 /* line 272, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/edit_profile.css.scss */
 /* line 305, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/edit_profile.css.scss */
 /* line 340, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/edit_profile.css.scss */
+/* line 357, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/edit_profile.css.scss */
 #slider-container p:nth-child(7) {
-  left: 25vw;
   top: 43vw;
 }
 
 /* line 277, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/edit_profile.css.scss */
 /* line 311, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/edit_profile.css.scss */
 /* line 347, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/edit_profile.css.scss */
+/* line 365, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/edit_profile.css.scss */
 #slider-update {
   top: 11vw;
 }
 
 /* line 315, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/edit_profile.css.scss */
 /* line 352, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/edit_profile.css.scss */
+/* line 371, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/edit_profile.css.scss */
 #range {
   top: 11vw;
 }
 
 /* line 319, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/edit_profile.css.scss */
 /* line 357, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/edit_profile.css.scss */
+/* line 377, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/edit_profile.css.scss */
 #discovery_radius_update {
   top: 30vw;
 }
 
 /* line 323, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/edit_profile.css.scss */
 /* line 362, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/edit_profile.css.scss */
+/* line 383, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/edit_profile.css.scss */
 #slider-update-value {
   font-size: 4vw;
   margin-top: 14vw;
@@ -386,6 +421,7 @@ textarea {
 
 /* line 327, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/edit_profile.css.scss */
 /* line 368, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/edit_profile.css.scss */
+/* line 390, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/edit_profile.css.scss */
 #value-span {
   position: absolute;
   top: 14vw;
@@ -395,6 +431,7 @@ textarea {
 
 /* line 332, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/edit_profile.css.scss */
 /* line 376, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/edit_profile.css.scss */
+/* line 399, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/edit_profile.css.scss */
 #value-input {
   position: absolute;
   top: 14vw;
@@ -404,12 +441,14 @@ textarea {
 
 /* line 337, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/edit_profile.css.scss */
 /* line 384, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/edit_profile.css.scss */
+/* line 408, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/edit_profile.css.scss */
 #discovery_radius_update_value {
   margin-top: 33vw;
   font-size: 4vw;
 }
 
 /* line 389, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/edit_profile.css.scss */
+/* line 414, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/edit_profile.css.scss */
 #range_value_wrapper {
   position: relative;
 }
