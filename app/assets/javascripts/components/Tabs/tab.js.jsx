@@ -8,13 +8,12 @@ var Tab = React.createClass({
 
   render: function(){
     return (
-      <div>
+      <div data-pulse={false}>
         <img
           className={"nav"}
           id={this.props.id}
           onClick={this.handleSelect}
-          src={this.props.src}
-          data-pulse={false}> </img>
+          src={this.props.src}> </img>
       </div>
     );
   }

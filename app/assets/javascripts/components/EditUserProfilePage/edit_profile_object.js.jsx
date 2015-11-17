@@ -4,12 +4,16 @@ var Formats = ["mens_singles",
                "womens_doubles",
                "mixed_doubles"];
 
+var Genders = ["male", "female"];
+
 var formatStrings = ["Men's Singles",
                      "Women's Singles",
                      "Men's Doubles",
                      "Women's Doubles",
                      "Mixed Doubles"
                     ];
+
+var genderStrings = ["Male", "Female"];
 
 window.EditProfileObject = React.createClass({
   mixins: [ReactRouter.History],
@@ -29,6 +33,8 @@ window.EditProfileObject = React.createClass({
                       (this.props.edit_current_user.genders_sought.indexOf("Men's Doubles") > -1),
                       (this.props.edit_current_user.genders_sought.indexOf("Women's Doubles") > -1),
                       (this.props.edit_current_user.genders_sought.indexOf("Mixed Doubles") > -1)],
+      possibleGenders: [(this.props.edit_current_user.gender === "Male"),
+                      (this.props.edit_current_user.gender === "Female")]
     };
   },
 
@@ -121,7 +127,7 @@ window.EditProfileObject = React.createClass({
 
   },
 
-  handleChange: function (event) {
+  handleFormatChange: function (event) {
     var name_of_class = $(event.target).parent().attr('class');
     var this_class = this;
     Formats.forEach(function(format){
@@ -179,7 +185,19 @@ window.EditProfileObject = React.createClass({
   },
 
   handleGenderChange: function(event) {
-    this.setState({gender: event.target.value});
+    var name_of_class = $(event.target).parent().attr('class');
+    var this_class = this;
+    Genders.forEach(function(gender){
+      if (name_of_class === gender) {
+      newGenders = this_class.state.possibleGenders;
+      newGenders[this.indexOf(gender)] = !newGenders[this.indexOf(gender)];
+      newGenders[1 - this.indexOf(gender)] = !newGenders[1 - this.indexOf(gender)];
+        this_class.setState(
+          {possibleGenders: newGenders,
+          gender: gender.charAt(0).toUpperCase() + gender.slice(1)}
+        );
+      }
+    }, Genders)
   },
 
   toggleButton: function(event){
@@ -190,7 +208,11 @@ window.EditProfileObject = React.createClass({
     } else if ($parent.attr('id') === 'not-clicked'){
       $parent.attr('id', 'clicked');
     }
-    this.handleChange(event);
+    if (Formats.indexOf($parent.attr('class')) > -1) {
+      this.handleFormatChange(event);
+    } else {
+      this.handleGenderChange(event);
+    }
   },
 
 
@@ -204,12 +226,17 @@ window.EditProfileObject = React.createClass({
              <button onClick={this.uploadPicture} id={"changeProfilePicture"}>Change Profile Picture</button>
           </div>
 
-          <textarea value={this.state.profile_description} placeholder={this.props.edit_current_user.profile_description} onChange={this.handleDescriptionChange}></textarea>
+          <div id={"textarea-container"}>
+            <textarea value={this.state.profile_description} placeholder={this.props.edit_current_user.profile_description} onChange={this.handleDescriptionChange}></textarea>
+          </div>
 
-          <select ref="select" onChange={this.handleGenderChange} value={this.state.gender}>
-              <option value="Male">Male</option>
-              <option value="Female">Female</option>
-          </select>
+          {Genders.map(function(gender){
+            if (this_class.state.possibleGenders[Genders.indexOf(gender)]) {
+              return (<div id={"clicked"} className={gender}><p onClick={this_class.toggleButton}>{genderStrings[Genders.indexOf(gender)]}</p></div>);
+            } else {
+              return (<div id={"not-clicked"} className={gender}><p onClick={this_class.toggleButton}>{genderStrings[Genders.indexOf(gender)]}</p></div>);
+            }
+          })}
 
           {Formats.map(function(format){
             if (this_class.state.formatsSought[Formats.indexOf(format)]) {
