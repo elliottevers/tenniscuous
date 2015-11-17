@@ -230,29 +230,36 @@ window.EditProfileObject = React.createClass({
             <textarea value={this.state.profile_description} placeholder={this.props.edit_current_user.profile_description} onChange={this.handleDescriptionChange}></textarea>
           </div>
 
-          {Genders.map(function(gender){
-            if (this_class.state.possibleGenders[Genders.indexOf(gender)]) {
-              return (<div id={"clicked"} className={gender}><p onClick={this_class.toggleButton}>{genderStrings[Genders.indexOf(gender)]}</p></div>);
-            } else {
-              return (<div id={"not-clicked"} className={gender}><p onClick={this_class.toggleButton}>{genderStrings[Genders.indexOf(gender)]}</p></div>);
-            }
-          })}
-
-          {Formats.map(function(format){
-            if (this_class.state.formatsSought[Formats.indexOf(format)]) {
-              return (<div id={"clicked"} className={format}><p onClick={this_class.toggleButton}>{formatStrings[Formats.indexOf(format)]}</p></div>);
-            } else {
-              return (<div id={"not-clicked"} className={format}><p onClick={this_class.toggleButton}>{formatStrings[Formats.indexOf(format)]}</p></div>);
-            }
-          })}
-
-          <div id={"slider-update"}></div>
-          <div id={"slider-update-value"}></div>
-          <div id={"range"}></div>
-          <div id={"value-span"}></div>
-          <div id={"value-input"}></div>
-          <div id={"discovery_radius_update"}></div>
-          <div id={"discovery_radius_update_value"}></div>
+          <div id={"gender-container"}>
+            <p>Gender</p>
+            {Genders.map(function(gender){
+              if (this_class.state.possibleGenders[Genders.indexOf(gender)]) {
+                return (<div id={"clicked"} className={gender}><p onClick={this_class.toggleButton}>{genderStrings[Genders.indexOf(gender)]}</p></div>);
+              } else {
+                return (<div id={"not-clicked"} className={gender}><p onClick={this_class.toggleButton}>{genderStrings[Genders.indexOf(gender)]}</p></div>);
+              }
+            })}
+            <p>Formats Sought</p>
+            {Formats.map(function(format){
+              if (this_class.state.formatsSought[Formats.indexOf(format)]) {
+                return (<div id={"clicked"} className={format}><p onClick={this_class.toggleButton}>{formatStrings[Formats.indexOf(format)]}</p></div>);
+              } else {
+                return (<div id={"not-clicked"} className={format}><p onClick={this_class.toggleButton}>{formatStrings[Formats.indexOf(format)]}</p></div>);
+              }
+            })}
+          </div>
+          <div id={"slider-container"}>
+            <p> NTRP Rating </p>
+            <div id={"slider-update"}></div>
+            <div id={"slider-update-value"}></div>
+            <p> NTRP Ratings Sought </p>
+            <div id={"range"}></div>
+            <div id={"value-span"}></div>
+            <div id={"value-input"}></div>
+            <p> Discovery Radius </p>
+            <div id={"discovery_radius_update"}></div>
+            <div id={"discovery_radius_update_value"}></div>
+          </div>
         </div>
     );
   }
