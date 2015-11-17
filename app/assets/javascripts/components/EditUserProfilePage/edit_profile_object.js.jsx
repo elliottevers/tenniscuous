@@ -51,6 +51,7 @@ window.EditProfileObject = React.createClass({
     			'min': 1,
     			'max': 7
     		},
+        connect: "lower",
     		start: that.state.rating,
     		margin: 1,
     		step: .5
@@ -58,8 +59,8 @@ window.EditProfileObject = React.createClass({
 
       function bindValue () {
       	updateSlider.noUiSlider.on('update', function( values, handle ) {
-      		updateSliderValue.innerHTML = values[handle];
-          that.setState({rating: values[handle]});
+      		updateSliderValue.innerHTML = Math.round(values[handle]*10)/10;
+          that.setState({rating:  Math.round(values[handle]*10)/10});
       	});
       }
 
@@ -88,11 +89,11 @@ window.EditProfileObject = React.createClass({
       slider.noUiSlider.on('update', function( values, handle ) {
         var new_range = that.state.ratings_sought;
       	if ( handle ) {
-      		valueInput.innerHTML = values[handle];
-          new_range[1] = values[handle];
+      		valueInput.innerHTML = (values[handle]*10)/10;
+          new_range[1] = (values[handle]*10)/10;
       	} else {
-      		valueSpan.innerHTML = values[handle];
-          new_range[0] = values[handle];
+      		valueSpan.innerHTML = (values[handle]*10)/10;
+          new_range[0] = (values[handle]*10)/10;
       	}
         that.setState({ratings_sought: new_range});
       });
@@ -109,6 +110,7 @@ window.EditProfileObject = React.createClass({
           'min': 1,
           'max': 50
         },
+        connect: "lower",
         start: that.state.discovery_radius,
         margin: 1,
         step: 1
@@ -116,8 +118,8 @@ window.EditProfileObject = React.createClass({
 
       function bindDiscoveryValue ( ) {
         discovery.noUiSlider.on('update', function( values, handle ) {
-          discoveryValue.innerHTML = values[handle];
-          that.setState({discovery_radius: values[handle]});
+          discoveryValue.innerHTML = (values[handle]*100)/100;
+          that.setState({discovery_radius: (values[handle]*100)/100});
         });
       }
 
@@ -254,8 +256,10 @@ window.EditProfileObject = React.createClass({
             <div id={"slider-update-value"}></div>
             <p> NTRP Ratings Sought </p>
             <div id={"range"}></div>
-            <div id={"value-span"}></div>
-            <div id={"value-input"}></div>
+            <div id={"range_value_wrapper"}>
+              <div id={"value-span"}></div>
+              <div id={"value-input"}></div>
+            </div>
             <p> Discovery Radius </p>
             <div id={"discovery_radius_update"}></div>
             <div id={"discovery_radius_update_value"}></div>
