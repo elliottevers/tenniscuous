@@ -73,13 +73,14 @@ var ChatPage = React.createClass({
             })}
           </ul>
         </div>
-
-        <textarea
-          value={this.state.newMessage} 
-          placeholder={"New Message"}
-          onKeyDown={this.handleKeyDown}
-          onChange={this.handleMessageChange}></textarea>
-        <button onClick={this.handleMessageSubmit}>Send Message</button>
+        <div id={"send_message_wrapper"}>
+          <textarea
+            value={this.state.newMessage}
+            placeholder={"New Message"}
+            onKeyDown={this.handleKeyDown}
+            onChange={this.handleMessageChange}></textarea>
+          <button onClick={this.handleMessageSubmit}>Send</button>
+        </div>
       </div>
 
       );
