@@ -14,6 +14,10 @@ window.DiscoveryQueue = React.createClass({
 
   },
 
+  componentWillMount: function(){
+    React.initializeTouchEvents(true);
+  },
+
   componentDidMount: function () {
     UserStore.addUsersIndexChangeListener(this._onChange);
     var user = JSON.parse(sessionStorage.getItem("current_user"));
