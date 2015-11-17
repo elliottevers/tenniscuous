@@ -76,7 +76,6 @@ div.photo {
 /* line 71, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/discovery_queue.css.scss */
 /* line 75, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/discovery_queue.css.scss */
 div.meta {
-  /*   display: block; */
   height: 9vw;
   background-color: #FFF;
   margin-top: 63vw;
@@ -129,7 +128,10 @@ div.meta {
 /* line 117, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/discovery_queue.css.scss */
 /* line 125, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/discovery_queue.css.scss */
 .rotate-left {
-  transform: scale(0.8) translate(-200px, 0px);
+  transform: scale(0.8) translate(-30vw, 0vw);
+  -webkit-transform: scale(0.8) translate(-30vw, 0vw);
+  -moz-transform: scale(0.8) translate(-30vw, 0vw);
+  -ms-transform: scale(0.8) translate(-30vw, 0vw);
   transition: .5s;
 }
 
@@ -137,7 +139,10 @@ div.meta {
 /* line 123, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/discovery_queue.css.scss */
 /* line 132, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/discovery_queue.css.scss */
 .rotate-right {
-  transform: scale(0.8) translate(200px, 0px);
+  transform: scale(0.8) translate(30vw, 0vw);
+  -webkit-transform: scale(0.8) translate(30vw, 0vw);
+  -moz-transform: scale(0.8) translate(30vw, 0vw);
+  -ms-transform: scale(0.8) translate(30vw, 0vw);
   transition: .5s;
 }
 
@@ -167,15 +172,21 @@ div.meta {
   background: radial-gradient(ellipse at center, #ccff00 0%, #8fb300 100%);
   box-sizing: border-box;
   transform: translate(-50%, -50%) rotate(90deg);
+  -webkit-transform: translate(-50%, -50%) rotate(90deg);
+  -moz-transform: translate(-50%, -50%) rotate(90deg);
+  -ms-transform: translate(-50%, -50%) rotate(90deg);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#EBFA49', endColorstr='#777777',GradientType=0 );
   box-shadow: inset 0 0px 10px rgba(255, 255, 255, 0.4), inset -2px -1px 40px rgba(0, 0, 0, 0.4), 0 0 1px #000;
   position: absolute;
   z-index: -1;
-  -webkit-animation: jump 1s infinite;
-  -moz-animation: jump 1s infinite;
-  -ms-animation: jump 1s infinite;
+  -webkit-animation: rise 1s, jump 1s infinite, descend 1s;
+  -moz-animation: rise 1s, jump 1s infinite, descend 1s;
+  -ms-animation: rise 1s, jump 1s infinite, descend 1s;
   animation: rise 1s, jump 1s infinite, descend 1s;
   animation-delay: 0s, 1s, 4.05s;
+  -webkit-animation-delay: 0s, 1s, 4.05s;
+  -moz-animation-delay: 0s, 1s, 4.05s;
+  -ms-animation-delay: 0s, 1s, 4.05s;
 }
 
 /* line 147, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/discovery_queue.css.scss */
@@ -195,6 +206,9 @@ div.meta {
   background: radial-gradient(ellipse at center, #ccff00 0%, #8fb300 100%);
   box-sizing: border-box;
   transform: translate(-50%, -50%) rotate(90deg);
+  -webkit-transform: translate(-50%, -50%) rotate(90deg);
+  -moz-transform: translate(-50%, -50%) rotate(90deg);
+  -ms-transform: translate(-50%, -50%) rotate(90deg);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#EBFA49', endColorstr='#777777',GradientType=0 );
   box-shadow: inset 0 0px 10px rgba(255, 255, 255, 0.4), inset -2px -1px 40px rgba(0, 0, 0, 0.4), 0 0 1px #000;
   z-index: 0;
@@ -231,11 +245,11 @@ div.meta {
 @keyframes rise {
   0% {
     top: 40vw;
-    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
   }
   100% {
     top: 20vw;
-    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
   }
 }
 @-webkit-keyframes rise {
@@ -251,32 +265,32 @@ div.meta {
 @keyframes jump {
   0% {
     top: 20vw;
-    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
   }
   50% {
     top: 47vw;
     height: 30vw;
-    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
   }
   55% {
     top: 50vw;
     height: 28vw;
     border-radius: 50%;
-    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
   }
   65% {
     top: 45vw;
     height: 30vw;
     border-radius: 50%;
-    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
   }
   95% {
     top: 20vw;
-    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
   }
   100% {
     top: 20vw;
-    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
   }
 }
 @-webkit-keyframes jump {
@@ -313,11 +327,11 @@ div.meta {
 @keyframes descend {
   0% {
     top: 20vw;
-    -webkit-animation-timing-function: cubic-bezier;
+    animation-timing-function: cubic-bezier;
   }
   100% {
     top: 40vw;
-    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
   }
 }
 @-webkit-keyframes descend {
