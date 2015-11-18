@@ -14,14 +14,12 @@ window.ProfileObject = React.createClass({
     return(
       <div>
         <img src={this.props.current_user.profile_picture_url}></img>
-        <h4>{this.props.current_user.username}</h4>
+        <div className={"description-container"}>
+            <h4>{this.props.current_user.username}</h4>
+            <p>{this.props.current_user.profile_description}</p>
+          <div className={"bottom_border"}></div>
+        </div>
         <div className={"profile_container"}>
-          <div className={"user_datum_container"}>
-            <div className={"user_datum"}>
-              <p>{this.props.current_user.profile_description}</p>
-            </div>
-            <div className={"bottom_border"}></div>
-          </div>
           <div className={"user_datum_container"}>
             <div className={"user_datum"}>
               <p>Gender</p>
@@ -54,7 +52,7 @@ window.ProfileObject = React.createClass({
           </div>
           <div className={"user_datum_container"}>
             <div className={"user_datum"}>
-              <p>Discovery Radius</p>
+              <p>Discovery Radius (Miles)</p>
               <p>{this.props.current_user.discovery_radius}</p>
             </div>
             <div className={"bottom_border"}></div>

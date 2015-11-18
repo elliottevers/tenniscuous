@@ -109,8 +109,10 @@ window.DiscoveryQueue = React.createClass({
             return <DiscoveryCard id={user.id} username={user.username} picture={user.picture}/>;
           })}
           <div className="ballWrapper">
-            <div className={"ball"} onClick={this.handleBallClick}></div>
-            <div className={"ballContent"}></div>
+            <div className={"ball"} onClick={this.handleBallClick}>
+              <p>Tenniscuous</p>
+            </div>
+            <p>Search for players around you</p>
           </div>
         </div>
         <LikeDislikeBar onChange={this.handleCardChange} />

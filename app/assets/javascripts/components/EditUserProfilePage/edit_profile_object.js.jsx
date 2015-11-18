@@ -265,7 +265,7 @@ window.EditProfileObject = React.createClass({
               <p> - </p>
               <div id={"value-input"}></div>
             </div>
-            <p> Discovery Radius </p>
+            <p> Discovery Radius (Miles)</p>
             <div id={"discovery_radius_update"}></div>
             <div id={"discovery_radius_update_value"}></div>
           </div>
