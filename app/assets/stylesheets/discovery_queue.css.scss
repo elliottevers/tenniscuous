@@ -262,6 +262,26 @@ div.meta {
     -webkit-animation-timing-function: ease-in;
   }
 }
+@-moz-keyframes rise {
+  0% {
+    top: 40vw;
+    -moz-animation-timing-function: ease-out;
+  }
+  100% {
+    top: 20vw;
+    -moz-animation-timing-function: ease-in;
+  }
+}
+@-ms-keyframes rise {
+  0% {
+    top: 40vw;
+    -ms-animation-timing-function: ease-out;
+  }
+  100% {
+    top: 20vw;
+    -ms-animation-timing-function: ease-in;
+  }
+}
 @keyframes jump {
   0% {
     top: 20vw;
@@ -324,6 +344,68 @@ div.meta {
     -webkit-animation-timing-function: ease-in;
   }
 }
+@-moz-keyframes jump {
+  0% {
+    top: 20vw;
+    -moz-animation-timing-function: ease-in;
+  }
+  50% {
+    top: 47vw;
+    height: 30vw;
+    -moz-animation-timing-function: ease-out;
+  }
+  55% {
+    top: 50vw;
+    height: 28vw;
+    border-radius: 50%;
+    -moz-animation-timing-function: ease-in;
+  }
+  65% {
+    top: 45vw;
+    height: 30vw;
+    border-radius: 50%;
+    -moz-animation-timing-function: ease-out;
+  }
+  95% {
+    top: 20vw;
+    -moz-animation-timing-function: ease-in;
+  }
+  100% {
+    top: 20vw;
+    -moz-animation-timing-function: ease-in;
+  }
+}
+@-ms-keyframes jump {
+  0% {
+    top: 20vw;
+    -ms-animation-timing-function: ease-in;
+  }
+  50% {
+    top: 47vw;
+    height: 30vw;
+    -ms-animation-timing-function: ease-out;
+  }
+  55% {
+    top: 50vw;
+    height: 28vw;
+    border-radius: 50%;
+    -ms-animation-timing-function: ease-in;
+  }
+  65% {
+    top: 45vw;
+    height: 30vw;
+    border-radius: 50%;
+    -ms-animation-timing-function: ease-out;
+  }
+  95% {
+    top: 20vw;
+    -ms-animation-timing-function: ease-in;
+  }
+  100% {
+    top: 20vw;
+    -ms-animation-timing-function: ease-in;
+  }
+}
 @keyframes descend {
   0% {
     top: 20vw;
@@ -342,6 +424,26 @@ div.meta {
   100% {
     top: 40vw;
     -webkit-animation-timing-function: ease-in;
+  }
+}
+@-moz-keyframes descend {
+  0% {
+    top: 20vw;
+    -moz-animation-timing-function: cubic-bezier;
+  }
+  100% {
+    top: 40vw;
+    -moz-animation-timing-function: ease-in;
+  }
+}
+@-ms-keyframes descend {
+  0% {
+    top: 20vw;
+    -ms-animation-timing-function: cubic-bezier;
+  }
+  100% {
+    top: 40vw;
+    -ms-animation-timing-function: ease-in;
   }
 }
 /* line 495, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/discovery_queue.css.scss */

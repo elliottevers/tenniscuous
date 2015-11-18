@@ -1,0 +1,23 @@
+#log-out-wrapper {
+   height: 40vw;
+   position: relative;
+}
+
+#log-out-wrapper div:first-child button {
+    top: 15vw;
+    width: 30vw;
+    right: 32vw;
+}
+
+#log-out-wrapper div:nth-child(2) button {
+    top: 35vw;
+    width: 30vw;
+    right: 32vw;
+}
+
+#warning-message p {
+    top: 48vw;
+    width: 50vw;
+    right: 23vw;
+    position: absolute;
+}
