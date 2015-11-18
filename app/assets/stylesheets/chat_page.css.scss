@@ -1,22 +1,8 @@
-/* line 1, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/chat_page.css.scss */
-/* line 3, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/chat_page.css.scss */
-/* line 4, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/chat_page.css.scss */
-/* line 5, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/chat_page.css.scss */
-/* line 6, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/chat_page.css.scss */
-/* line 7, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/chat_page.css.scss */
 .messages-wrapper {
   padding-top: 2vw;
   position: relative;
 }
 
-/* line 7, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/chat_page.css.scss */
-/* line 3, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/matches_page.css.scss */
-/* line 3, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/matches_page.css.scss */
-/* line 14, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/chat_page.css.scss */
-/* line 13, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/chat_page.css.scss */
-/* line 15, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/chat_page.css.scss */
-/* line 17, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/chat_page.css.scss */
-/* line 19, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/chat_page.css.scss */
 .chat-panel {
   position: relative;
   height: 25vw;
@@ -25,13 +11,6 @@
   margin: 4vw;
 }
 
-/* line 9, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/matches_page.css.scss */
-/* line 12, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/matches_page.css.scss */
-/* line 24, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/chat_page.css.scss */
-/* line 24, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/chat_page.css.scss */
-/* line 27, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/chat_page.css.scss */
-/* line 30, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/chat_page.css.scss */
-/* line 33, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/chat_page.css.scss */
 .chat-panel img {
   position: absolute;
   top: 2vw;
@@ -41,13 +20,6 @@
   border-radius: 50%;
 }
 
-/* line 17, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/matches_page.css.scss */
-/* line 22, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/matches_page.css.scss */
-/* line 34, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/chat_page.css.scss */
-/* line 35, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/chat_page.css.scss */
-/* line 39, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/chat_page.css.scss */
-/* line 44, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/chat_page.css.scss */
-/* line 48, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/chat_page.css.scss */
 .chat-panel p {
   position: absolute;
   top: 14vw;
@@ -56,11 +28,6 @@
   width: 100%;
 }
 
-/* line 41, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/chat_page.css.scss */
-/* line 43, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/chat_page.css.scss */
-/* line 48, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/chat_page.css.scss */
-/* line 55, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/chat_page.css.scss */
-/* line 60, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/chat_page.css.scss */
 .message {
   border-radius: 4vw 4vw 4vw 4vw;
   margin: 0 3vw 2vw;
@@ -70,35 +37,18 @@
   font-family: 'Open Sans', sans-serif;
 }
 
-/* line 13, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/chat_page.css.scss */
-/* line 49, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/chat_page.css.scss */
-/* line 52, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/chat_page.css.scss */
-/* line 59, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/chat_page.css.scss */
-/* line 67, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/chat_page.css.scss */
-/* line 73, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/chat_page.css.scss */
 .message.current_user {
   background-color: #2095FE;
   color: #fff;
   margin-left: 10%;
 }
 
-/* line 18, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/chat_page.css.scss */
-/* line 56, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/chat_page.css.scss */
-/* line 60, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/chat_page.css.scss */
-/* line 68, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/chat_page.css.scss */
-/* line 77, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/chat_page.css.scss */
-/* line 84, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/chat_page.css.scss */
 .message.other_user {
   background-color: #E5E4E9;
   color: #363636;
   margin-right: 10%;
 }
 
-/* line 62, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/chat_page.css.scss */
-/* line 67, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/chat_page.css.scss */
-/* line 76, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/chat_page.css.scss */
-/* line 86, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/chat_page.css.scss */
-/* line 94, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/chat_page.css.scss */
 .chat-panel :nth-child(1) {
   position: absolute;
   background-color: #1464F4;
@@ -112,11 +62,6 @@
   border: none;
 }
 
-/* line 73, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/chat_page.css.scss */
-/* line 79, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/chat_page.css.scss */
-/* line 89, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/chat_page.css.scss */
-/* line 100, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/chat_page.css.scss */
-/* line 109, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/chat_page.css.scss */
 .chat-panel :nth-child(4) {
   position: absolute;
   background-color: #1464F4;
@@ -134,18 +79,9 @@
   font-family: 'Open Sans', sans-serif;
 }
 
-/* line 84, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/chat_page.css.scss */
-/* line 91, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/chat_page.css.scss */
-/* line 102, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/chat_page.css.scss */
-/* line 114, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/chat_page.css.scss */
-/* line 124, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/chat_page.css.scss */
-/* .chat-panel :nth-child(1):hover, .chat-panel :nth-child(4):hover {
   background-color: orange;
 } */
 
-/* line 106, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/chat_page.css.scss */
-/* line 119, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/chat_page.css.scss */
-/* line 130, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/chat_page.css.scss */
 #load-messages {
   background: transparent;
   height: 7vw;
@@ -153,29 +89,15 @@
   font-family: 'Open Sans', sans-serif;
 }
 
-/* line 126, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/chat_page.css.scss */
-/* line 157, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/chat_page.css.scss */
-/* line 129, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/chat_page.css.scss */
-/* line 171, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/chat_page.css.scss */
-/* line 144, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/chat_page.css.scss */
-/* line 176, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/chat_page.css.scss */
-/* line 159, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/chat_page.css.scss */
-/* line 169, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/chat_page.css.scss */
 .other_user {
   margin: 4vw;
 }
 
-/* line 163, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/chat_page.css.scss */
-/* line 171, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/chat_page.css.scss */
-/* line 178, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/chat_page.css.scss */
-/* line 191, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/chat_page.css.scss */
-/* line 203, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/chat_page.css.scss */
 .current_user {
   margin: 4vw;
   font-size: 4vw;
 }
 
-/* line 208, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/chat_page.css.scss */
 #send_message_wrapper {
   padding: 2vw;
   background-color: grey;
@@ -184,7 +106,6 @@
   height: 6vw;
 }
 
-/* line 216, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/chat_page.css.scss */
 #send_message_wrapper textarea {
   border-radius: 2vw;
   padding: 0;
@@ -194,7 +115,6 @@
   font-family: 'Open Sans', sans-serif;
 }
 
-/* line 224, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/chat_page.css.scss */
 #send_message_wrapper button {
   background-color: #d3d3d3;
   border-radius: 2vw;
