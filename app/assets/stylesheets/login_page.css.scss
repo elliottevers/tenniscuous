@@ -1,8 +1,9 @@
 /* line 1, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/login_page.css.scss */
 /* line 3, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/login_page.css.scss */
 /* line 4, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/login_page.css.scss */
+/* line 5, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/login_page.css.scss */
 #logo-wrapper {
-  background-color: green;
+  background-color: #5ecc47;
   height: 24vw;
   width: 100%;
   position: relative;
@@ -11,16 +12,19 @@
 /* line 8, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/login_page.css.scss */
 /* line 11, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/login_page.css.scss */
 /* line 13, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/login_page.css.scss */
+/* line 15, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/login_page.css.scss */
 #logo-wrapper p {
   color: white;
   font-size: 14vw;
   position: absolute;
-  left: 13vw;
+  left: 9vw;
   bottom: -10vw;
+  font-family: 'Open Sans', sans-serif;
 }
 
 /* line 19, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/login_page.css.scss */
 /* line 22, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/login_page.css.scss */
+/* line 25, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/login_page.css.scss */
 #form-wrapper {
   position: relative;
   height: 60vw;
@@ -28,6 +32,7 @@
 
 /* line 24, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/login_page.css.scss */
 /* line 28, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/login_page.css.scss */
+/* line 32, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/login_page.css.scss */
 form label:nth-child(n), form input:nth-child(n) {
   position: absolute;
   left: 0vw;
@@ -37,6 +42,7 @@ form label:nth-child(n), form input:nth-child(n) {
 
 /* line 31, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/login_page.css.scss */
 /* line 36, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/login_page.css.scss */
+/* line 41, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/login_page.css.scss */
 form input:nth-child(2), form input:nth-child(5) {
   top: 9vw;
   background-color: #d3d3d3;
@@ -44,56 +50,67 @@ form input:nth-child(2), form input:nth-child(5) {
   margin-left: 12.5%;
   border-radius: 3vw;
   height: 10vw;
-  border-color: black;
+  border: none;
   font-size: 3vw;
 }
 
 /* line 42, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/login_page.css.scss */
 /* line 48, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/login_page.css.scss */
+/* line 54, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/login_page.css.scss */
 form input:nth-child(5) {
   top: 30vw;
 }
 
 /* line 46, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/login_page.css.scss */
 /* line 53, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/login_page.css.scss */
+/* line 60, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/login_page.css.scss */
 form label:nth-child(1) {
   top: 4vw;
+  display: none;
 }
 
 /* line 50, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/login_page.css.scss */
 /* line 58, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/login_page.css.scss */
+/* line 67, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/login_page.css.scss */
 form label:nth-child(4) {
   top: 23vw;
+  display: none;
 }
 
 /* line 54, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/login_page.css.scss */
 /* line 63, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/login_page.css.scss */
-#form-wrapper button, #log-out-wrapper button{
-  background-color: green;
+/* line 74, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/login_page.css.scss */
+#form-wrapper button, #log-out-wrapper button {
+  background-color: #5ecc47;
   position: absolute;
-  border-color: black;
+  border: none;
   border-radius: 3vw;
   height: 10vw;
   font-size: 3vw;
+  font-family: 'Open Sans', sans-serif;
   color: white;
 }
 
 /* line 64, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/login_page.css.scss */
 /* line 74, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/login_page.css.scss */
+/* line 86, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/login_page.css.scss */
 form button {
   top: 54vw;
   right: 55vw;
-  width: 24vw;
+  width: 29.5vw;
 }
 
 /* line 70, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/login_page.css.scss */
 /* line 81, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/login_page.css.scss */
+/* line 94, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/login_page.css.scss */
 #form-wrapper > button {
   top: 54vw;
-  right: 15vw;
+  right: 12vw;
+  width: 29.5vw;
 }
 
 /* line 86, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/login_page.css.scss */
+/* line 100, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/login_page.css.scss */
 #create-button {
   left: 35vw;
 }

@@ -2,12 +2,16 @@
 /* line 3, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/tabs.css.scss */
 /* line 4, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/tabs.css.scss */
 /* line 5, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/tabs.css.scss */
+/* line 6, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/tabs.css.scss */
 #tabs {
-  background-color: green;
-  height: 15vw;
+  background-color: #5ecc47;
+  height: 17vw;
+  padding-top: 2vw;
+  padding-bottom: 0vw;
 }
 
 /* line 10, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/tabs.css.scss */
+/* line 12, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/tabs.css.scss */
 #tabs img {
   height: 15vw;
   width: 15vw;
@@ -16,6 +20,7 @@
 /* line 7, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/tabs.css.scss */
 /* line 9, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/tabs.css.scss */
 /* line 18, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/tabs.css.scss */
+/* line 20, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/tabs.css.scss */
 #tabs div {
   float: left;
   width: 24vw;
@@ -27,6 +32,7 @@
 /* line 12, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/tabs.css.scss */
 /* line 15, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/tabs.css.scss */
 /* line 27, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/tabs.css.scss */
+/* line 31, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/tabs.css.scss */
 #tabs:after {
   content: "";
   display: block;
@@ -40,19 +46,20 @@
 /* line 27, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/tabs.css.scss */
 /* line 32, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/tabs.css.scss */
 /* line 41, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/tabs.css.scss */
-
 /* line 22, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/tabs.css.scss */
 /* line 32, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/tabs.css.scss */
 /* line 38, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/tabs.css.scss */
 /* line 48, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/tabs.css.scss */
-#tabs div:hover {
+/* line 49, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/tabs.css.scss */
+/* #tabs div:hover {
   background-color: yellow;
-}
+} */
 
 /* line 26, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/tabs.css.scss */
 /* line 37, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/tabs.css.scss */
 /* line 44, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/tabs.css.scss */
 /* line 55, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/tabs.css.scss */
+/* line 57, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/tabs.css.scss */
 img.nav {
   border-radius: 0;
 }
@@ -61,6 +68,7 @@ img.nav {
 /* line 42, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/tabs.css.scss */
 /* line 50, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/tabs.css.scss */
 /* line 62, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/tabs.css.scss */
+/* line 65, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/tabs.css.scss */
 #tabs {
   margin-bottom: 5vw;
 }
@@ -69,6 +77,7 @@ img.nav {
 /* line 47, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/tabs.css.scss */
 /* line 56, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/tabs.css.scss */
 /* line 69, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/tabs.css.scss */
+/* line 73, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/tabs.css.scss */
 #tabs div:nth-child(3)[data-pulse=true] {
   -webkit-animation-name: pulse;
   -webkit-animation-duration: 3s;
@@ -80,13 +89,14 @@ img.nav {
     background-color: #ffffff;
   }
   50% {
-    background-color: #ffa500;
+    background-color: #5ecc47;
   }
   to {
     background-color: #ffffff;
   }
 }
 /* line 87, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/tabs.css.scss */
+/* line 91, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/tabs.css.scss */
 #content {
   text-align: center;
 }

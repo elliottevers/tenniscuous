@@ -1,6 +1,7 @@
 /* line 1, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/discovery_queue.css.scss */
 /* line 3, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/discovery_queue.css.scss */
 /* line 4, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/discovery_queue.css.scss */
+/* line 5, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/discovery_queue.css.scss */
 div.photo {
   position: absolute;
   display: block;
@@ -18,6 +19,7 @@ div.photo {
 /* line 17, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/discovery_queue.css.scss */
 /* line 20, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/discovery_queue.css.scss */
 /* line 21, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/discovery_queue.css.scss */
+/* line 22, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/discovery_queue.css.scss */
 #swipe_like::after {
   content: " ";
   display: block;
@@ -37,6 +39,7 @@ div.photo {
 /* line 33, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/discovery_queue.css.scss */
 /* line 37, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/discovery_queue.css.scss */
 /* line 39, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/discovery_queue.css.scss */
+/* line 41, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/discovery_queue.css.scss */
 #swipe_dislike::after {
   content: " ";
   display: block;
@@ -56,6 +59,7 @@ div.photo {
 /* line 49, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/discovery_queue.css.scss */
 /* line 54, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/discovery_queue.css.scss */
 /* line 57, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/discovery_queue.css.scss */
+/* line 60, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/discovery_queue.css.scss */
 #swipe_dislike::before {
   content: " ";
   display: block;
@@ -75,6 +79,7 @@ div.photo {
 /* line 65, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/discovery_queue.css.scss */
 /* line 71, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/discovery_queue.css.scss */
 /* line 75, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/discovery_queue.css.scss */
+/* line 79, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/discovery_queue.css.scss */
 div.meta {
   height: 9vw;
   background-color: #FFF;
@@ -89,6 +94,7 @@ div.meta {
 /* line 78, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/discovery_queue.css.scss */
 /* line 85, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/discovery_queue.css.scss */
 /* line 90, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/discovery_queue.css.scss */
+/* line 93, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/discovery_queue.css.scss */
 .rate {
   width: 30vw;
   height: 30vw;
@@ -101,11 +107,12 @@ div.meta {
 /* line 87, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/discovery_queue.css.scss */
 /* line 95, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/discovery_queue.css.scss */
 /* line 101, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/discovery_queue.css.scss */
+/* line 105, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/discovery_queue.css.scss */
 #swipe_dislike {
   float: left;
   margin-top: 20vw;
   margin-left: 12vw;
-  background-color: #EE2C2C;
+  background-color: #e54545;
   background-size: 0vw;
   background-position: center;
   background-repeat: no-repeat;
@@ -114,11 +121,12 @@ div.meta {
 /* line 98, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/discovery_queue.css.scss */
 /* line 106, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/discovery_queue.css.scss */
 /* line 113, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/discovery_queue.css.scss */
+/* line 118, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/discovery_queue.css.scss */
 #swipe_like {
   float: right;
   margin-right: 12vw;
   margin-top: 20vw;
-  background-color: #458B00;
+  background-color: #5ecc47;
   background-size: 0vw;
   background-position: center;
   background-repeat: no-repeat;
@@ -127,6 +135,7 @@ div.meta {
 /* line 108, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/discovery_queue.css.scss */
 /* line 117, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/discovery_queue.css.scss */
 /* line 125, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/discovery_queue.css.scss */
+/* line 131, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/discovery_queue.css.scss */
 .rotate-left {
   transform: scale(0.8) translate(-30vw, 0vw);
   -webkit-transform: scale(0.8) translate(-30vw, 0vw);
@@ -138,6 +147,7 @@ div.meta {
 /* line 113, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/discovery_queue.css.scss */
 /* line 123, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/discovery_queue.css.scss */
 /* line 132, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/discovery_queue.css.scss */
+/* line 142, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/discovery_queue.css.scss */
 .rotate-right {
   transform: scale(0.8) translate(30vw, 0vw);
   -webkit-transform: scale(0.8) translate(30vw, 0vw);
@@ -149,6 +159,7 @@ div.meta {
 /* line 119, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/discovery_queue.css.scss */
 /* line 129, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/discovery_queue.css.scss */
 /* line 139, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/discovery_queue.css.scss */
+/* line 153, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/discovery_queue.css.scss */
 .ballWrapper {
   width: 60vw;
   margin-top: 30vw;
@@ -158,6 +169,7 @@ div.meta {
 /* line 125, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/discovery_queue.css.scss */
 /* line 136, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/discovery_queue.css.scss */
 /* line 147, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/discovery_queue.css.scss */
+/* line 162, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/discovery_queue.css.scss */
 .bouncy-ball {
   overflow: hidden;
   position: absolute;
@@ -192,6 +204,7 @@ div.meta {
 /* line 147, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/discovery_queue.css.scss */
 /* line 160, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/discovery_queue.css.scss */
 /* line 175, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/discovery_queue.css.scss */
+/* line 196, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/discovery_queue.css.scss */
 .ball {
   overflow: hidden;
   position: absolute;
@@ -217,6 +230,7 @@ div.meta {
 /* line 167, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/discovery_queue.css.scss */
 /* line 180, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/discovery_queue.css.scss */
 /* line 196, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/discovery_queue.css.scss */
+/* line 221, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/discovery_queue.css.scss */
 .ball::before, .ball::after, .bouncy-ball::after, .bouncy-ball::before {
   content: '';
   position: absolute;
@@ -231,6 +245,7 @@ div.meta {
 /* line 178, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/discovery_queue.css.scss */
 /* line 192, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/discovery_queue.css.scss */
 /* line 209, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/discovery_queue.css.scss */
+/* line 235, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/discovery_queue.css.scss */
 .ball:before, .bouncy-ball:before {
   right: 75%;
 }
@@ -238,6 +253,7 @@ div.meta {
 /* line 182, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/discovery_queue.css.scss */
 /* line 197, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/discovery_queue.css.scss */
 /* line 215, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/discovery_queue.css.scss */
+/* line 242, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/discovery_queue.css.scss */
 .ball:after, .bouncy-ball:after {
   left: 75%;
 }
@@ -449,6 +465,7 @@ div.meta {
 /* line 495, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/discovery_queue.css.scss */
 /* line 253, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/discovery_queue.css.scss */
 /* line 272, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/discovery_queue.css.scss */
+/* line 453, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/discovery_queue.css.scss */
 #ball-and-cards {
   bottom: 20vw;
   height: 40vw;
@@ -456,12 +473,14 @@ div.meta {
 }
 
 /* line 278, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/discovery_queue.css.scss */
+/* line 460, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/discovery_queue.css.scss */
 #discovery-container {
   /*   display: inline-block; */
   text-align: center;
 }
 
 /* line 283, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/discovery_queue.css.scss */
+/* line 466, /Users/elliottevers/Desktop/ede-master-new-master/app/assets/stylesheets/discovery_queue.css.scss */
 #content {
   position: relative;
 }
