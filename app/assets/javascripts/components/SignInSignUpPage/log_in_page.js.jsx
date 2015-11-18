@@ -10,8 +10,15 @@ window.LogInPage = React.createClass({
   render: function () {
       return(
         <div>
-          <SignIn/>
-          <button onClick={this.handleClick}>Create Account</button>
+          <div id={"logo-wrapper"}>
+            <p>
+              Tenniscuous
+            </p>
+          </div>
+          <div id={"form-wrapper"}>
+            <SignIn/>
+            <button onClick={this.handleClick}>Create Account</button>
+          </div>
         </div>
       )
   }

@@ -22,7 +22,7 @@ window.SignIn = React.createClass({
   },
 
   handleSubmit: function(event){
-  
+
     event.preventDefault();
 
     var that = this;
@@ -45,9 +45,8 @@ window.SignIn = React.createClass({
   render: function () {
     return(
     <div>
-      <h2>Log In</h2>
       <form onSubmit={this.handleSubmit}>
-        <label>Name</label>
+        <label>Username</label>
         <input value={this.state.username} type="text" onChange={this.handleUsernameChange}/>
         <br/>
         <label>Password</label>

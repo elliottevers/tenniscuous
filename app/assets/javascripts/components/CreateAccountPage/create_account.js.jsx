@@ -44,16 +44,22 @@ window.CreateAccount = React.createClass({
   render: function () {
     return(
       <div>
-        <h2>Create Account</h2>
-        <form onSubmit={this.handleSubmit}>
-          <label>Name</label>
-          <input value={this.state.username} type="text" onChange={this.handleUsernameChange}/>
-          <br/>
-          <label>Password</label>
-          <input value={this.state.password} type="password" onChange={this.handlePasswordChange}/>
-          <br/>
-          <button type="submit" bsStyle="primary">Create Account</button>
-        </form>
+        <div id={"logo-wrapper"}>
+          <p>
+            Tenniscuous
+          </p>
+        </div>
+        <div id={"form-wrapper"}>
+          <form onSubmit={this.handleSubmit}>
+            <label>Username</label>
+            <input value={this.state.username} type="text" onChange={this.handleUsernameChange}/>
+            <br/>
+            <label>Password</label>
+            <input value={this.state.password} type="password" onChange={this.handlePasswordChange}/>
+            <br/>
+            <button id={"create-button"} type={"submit"}>Create Account</button>
+          </form>
+        </div>
       </div>
     );
   }
