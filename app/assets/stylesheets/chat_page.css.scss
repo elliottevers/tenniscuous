@@ -23,7 +23,7 @@
 .chat-panel p {
   position: absolute;
   top: 14vw;
-  font-size: 4vw;
+  font-size: 3vw;
   left: 0px;
   width: 100%;
 }
@@ -49,34 +49,36 @@
   margin-right: 10%;
 }
 
-.chat-panel :nth-child(1) {
+.chat-panel button {
   position: absolute;
   background-color: #1464F4;
-  border: thin solid black;
+  border: none;
   height: 15vw;
   width: 15vw;
   border-radius: 50%;
-  right: 65vw;
-  top: 5vw;
   font-family: 'Open Sans', sans-serif;
   border: none;
+  color: white;
+  font-size: 2.5vw;
+}
+
+.chat-panel button:hover {
+  background-color: #5ecc47;
+}
+
+.chat-panel :nth-child(1) {
+  right: 65vw;
+  top: 5vw;
 }
 
 .chat-panel :nth-child(4) {
-  position: absolute;
-  background-color: #1464F4;
-  border: thin solid black;
-  height: 15vw;
-  width: 15vw;
-  border-radius: 50%;
   right: 7vw;
   top: 5vw;
-  font-family: 'Open Sans', sans-serif;
-  border: none;
 }
 
-.chat-panel :nth-child(3){
+.chat-panel :nth-child(3) {
   font-family: 'Open Sans', sans-serif;
+
 }
 
 #load-messages {
@@ -84,6 +86,7 @@
   height: 7vw;
   border: none !important;
   font-family: 'Open Sans', sans-serif;
+  font-size: 2.5vw;
 }
 
 .other_user {
