@@ -22,10 +22,11 @@ div.photo {
   position: absolute;
   margin-top: 3vw;
   margin-left: 9vw;
+  transform: rotate(45deg);
   -webkit-transform: rotate(45deg);
   -moz-transform: rotate(45deg);
   -o-transform: rotate(45deg);
-  transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
 }
 
 #swipe_dislike::after {
@@ -38,10 +39,11 @@ div.photo {
   position: absolute;
   margin-top: 1vw;
   margin-left: 8vw;
+  transform: rotate(45deg);
   -webkit-transform: rotate(45deg);
   -moz-transform: rotate(45deg);
   -o-transform: rotate(45deg);
-  transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
 }
 
 #swipe_dislike::before {
@@ -54,10 +56,11 @@ div.photo {
   position: absolute;
   margin-top: 15.1vw;
   margin-left: 8vw;
+  transform: rotate(225deg);
   -webkit-transform: rotate(225deg);
   -moz-transform: rotate(225deg);
   -o-transform: rotate(225deg);
-  transform: rotate(225deg);
+  -ms-transform: rotate(225deg);
 }
 
 div.meta {
@@ -106,6 +109,7 @@ div.meta {
   -webkit-transform: scale(0.8) translate(-100vw, 0vw);
   -moz-transform: scale(0.8) translate(-100vw, 0vw);
   -ms-transform: scale(0.8) translate(-100vw, 0vw);
+  -o-transform: scale(0.8) translate(-100vw, 0vw);
   transition: .6s;
 }
 
@@ -114,6 +118,7 @@ div.meta {
   -webkit-transform: scale(0.8) translate(100vw, 0vw);
   -moz-transform: scale(0.8) translate(100vw, 0vw);
   -ms-transform: scale(0.8) translate(100vw, 0vw);
+  -o-transform: scale(0.8) translate(100vw, 0vw);
   transition: .6s;
 }
 
@@ -140,18 +145,21 @@ div.meta {
   -webkit-transform: translate(-50%, -50%) rotate(90deg);
   -moz-transform: translate(-50%, -50%) rotate(90deg);
   -ms-transform: translate(-50%, -50%) rotate(90deg);
+  -o-transform: translate(-50%, -50%) rotate(90deg);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#EBFA49', endColorstr='#777777',GradientType=0 );
   box-shadow: inset 0 0px 10px rgba(255, 255, 255, 0.4), inset -2px -1px 40px rgba(0, 0, 0, 0.4), 0 0 1px #000;
   position: absolute;
   z-index: -1;
+  animation: rise 1s, jump 1s infinite, descend 1s;
   -webkit-animation: rise 1s, jump 1s infinite, descend 1s;
   -moz-animation: rise 1s, jump 1s infinite, descend 1s;
   -ms-animation: rise 1s, jump 1s infinite, descend 1s;
-  animation: rise 1s, jump 1s infinite, descend 1s;
+  -o-animation: rise 1s, jump 1s infinite, descend 1s;
   animation-delay: 0s, 1s, 4.05s;
   -webkit-animation-delay: 0s, 1s, 4.05s;
   -moz-animation-delay: 0s, 1s, 4.05s;
   -ms-animation-delay: 0s, 1s, 4.05s;
+  -o-animation-delay: 0s, 1s, 4.05s;
 }
 
 .ball {
@@ -171,6 +179,7 @@ div.meta {
   -webkit-transform: translate(-50%, -50%) rotate(90deg);
   -moz-transform: translate(-50%, -50%) rotate(90deg);
   -ms-transform: translate(-50%, -50%) rotate(90deg);
+  -o-transform: translate(-50%, -50%) rotate(90deg);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#EBFA49', endColorstr='#777777',GradientType=0 );
   box-shadow: inset 0 0px 10px rgba(255, 255, 255, 0.4), inset -2px -1px 40px rgba(0, 0, 0, 0.4), 0 0 1px #000;
   z-index: 0;
@@ -204,6 +213,7 @@ div.meta {
   -webkit-transform: translate(0vw, 10.5vw) rotate(-90deg);
   -moz-transform: translate(0vw, 10.5vw) rotate(-90deg);
   -ms-transform: translate(0vw, 10.5vw) rotate(-90deg);
+  -o-transform: translate(0vw, 10.5vw) rotate(-90deg);
 }
 
 .ball + p {
@@ -260,6 +270,16 @@ div.meta {
   100% {
     top: 20vw;
     -ms-animation-timing-function: ease-in;
+  }
+}
+@-o-keyframes rise {
+  0% {
+    top: 40vw;
+    -o-animation-timing-function: ease-out;
+  }
+  100% {
+    top: 20vw;
+    -o-animation-timing-function: ease-in;
   }
 }
 @keyframes jump {
@@ -386,6 +406,37 @@ div.meta {
     -ms-animation-timing-function: ease-in;
   }
 }
+@-o-keyframes jump {
+  0% {
+    top: 20vw;
+    -o-animation-timing-function: ease-in;
+  }
+  50% {
+    top: 47vw;
+    height: 30vw;
+    -o-animation-timing-function: ease-out;
+  }
+  55% {
+    top: 50vw;
+    height: 28vw;
+    border-radius: 50%;
+    -o-animation-timing-function: ease-in;
+  }
+  65% {
+    top: 45vw;
+    height: 30vw;
+    border-radius: 50%;
+    -o-animation-timing-function: ease-out;
+  }
+  95% {
+    top: 20vw;
+    -o-animation-timing-function: ease-in;
+  }
+  100% {
+    top: 20vw;
+    -o-animation-timing-function: ease-in;
+  }
+}
 @keyframes descend {
   0% {
     top: 20vw;
@@ -424,6 +475,16 @@ div.meta {
   100% {
     top: 40vw;
     -ms-animation-timing-function: ease-in;
+  }
+}
+@-o-keyframes descend {
+  0% {
+    top: 20vw;
+    -o-animation-timing-function: cubic-bezier;
+  }
+  100% {
+    top: 40vw;
+    -o-animation-timing-function: ease-in;
   }
 }
 #ball-and-cards {

@@ -16,7 +16,7 @@ class ApplicationController < ActionController::Base
     if (conversation[:sender_id] == ceo_id || conversation[:recipient_id] == ceo_id)
       Message.create!({
         user_id: ceo_id,
-        body: "Hey, welcome to Tenniscuous!  Be sure to edit your profile so that you can see others players around you.  Also, if you are on a desktop computer try resizing the browser to a smaller width!",
+        body: "Hey, welcome to Tenniscuous!  Be sure to edit your profile so that you can see others players around you.",
         conversation_id: conversation[:id]
       })
     end

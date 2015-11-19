@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'cloudinary'
+gem 'sweetalert-rails'
 gem 'newrelic_rpm'
 gem 'faker'
 gem 'figaro'

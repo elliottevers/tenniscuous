@@ -20,5 +20,6 @@
 //= require react_router.min
 //= require faye
 //= require conversation
+//= require sweet-alert
 //= require_tree .
 //= require tenniscuous

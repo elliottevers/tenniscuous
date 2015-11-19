@@ -24,9 +24,6 @@
   clear: both;
 }
 
-/* #tabs div:hover {
-  background-color: yellow;
-} */
 img.nav {
   border-radius: 0;
 }
@@ -39,9 +36,51 @@ img.nav {
   -webkit-animation-name: pulse;
   -webkit-animation-duration: 3s;
   -webkit-animation-iteration-count: infinite;
+  -moz-animation-name: pulse;
+  -moz-animation-duration: 3s;
+  -moz-animation-iteration-count: infinite;
+  -ms-animation-name: pulse;
+  -ms-animation-duration: 3s;
+  -ms-animation-iteration-count: infinite;
+  -o-animation-name: pulse;
+  -o-animation-duration: 3s;
+  -o-animation-iteration-count: infinite;
 }
 
 @-webkit-keyframes pulse {
+  from {
+    background-color: #ffffff;
+  }
+  50% {
+    background-color: #5ecc47;
+  }
+  to {
+    background-color: #ffffff;
+  }
+}
+@-moz-keyframes pulse {
+  from {
+    background-color: #ffffff;
+  }
+  50% {
+    background-color: #5ecc47;
+  }
+  to {
+    background-color: #ffffff;
+  }
+}
+@-ms-keyframes pulse {
+  from {
+    background-color: #ffffff;
+  }
+  50% {
+    background-color: #5ecc47;
+  }
+  to {
+    background-color: #ffffff;
+  }
+}
+@-o-keyframes pulse {
   from {
     background-color: #ffffff;
   }

@@ -37,6 +37,8 @@ window.CreateAccount = React.createClass({
       ApiUtil.createUser(user, function () {
         that.history.pushState(null, "/profile", {});
       });
+    }, function (error) {
+      sweetAlert("Please let us know where you are!");
     });
 
   },

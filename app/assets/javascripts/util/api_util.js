@@ -26,7 +26,7 @@ window.ApiUtil = {
         callback();
       },
       error: function(){
-        alert("Make sure your password is long enough!");
+        alert("You probably gotta have a longer password!");
       }
     })
   },
@@ -42,7 +42,7 @@ window.ApiUtil = {
         callback();
       },
       error: function (message) {
-        alert("Your username or password are incorrect!");
+        alert("Sorry! That wasn't the right username and password.");
       }
     })
   },
@@ -72,7 +72,7 @@ window.ApiUtil = {
         callback();
       },
       error: function(){
-        history.pushState(null, "/", {});
+
       }
     })
   },
@@ -94,7 +94,7 @@ window.ApiUtil = {
         }
       },
       error: function(){
-        history.pushState(null, "/", {});
+
       }
     })
   },
@@ -108,7 +108,7 @@ window.ApiUtil = {
       success: function(returned_user){
       },
       error: function(){
-        history.pushState(null, "/", {});
+
       }
     })
   },
@@ -161,7 +161,7 @@ window.ApiUtil = {
         ApiActions.ConversationFetched(conversation_information);
       },
       error: function(){
-        history.pushState(null, "/", {});
+
       }
     })
   },
@@ -177,7 +177,7 @@ window.ApiUtil = {
         });
       },
       error: function(){
-        history.pushState(null, "/", {});
+
       }
     })
   },
@@ -190,7 +190,7 @@ window.ApiUtil = {
         callback();
       },
       error: function(){
-        history.pushState(null, "/", {});
+
       }
     })
   }
