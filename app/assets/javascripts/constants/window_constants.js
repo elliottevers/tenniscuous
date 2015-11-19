@@ -1,4 +1,4 @@
-window.root_url = "localhost:3000";
+window.root_url = "https://tenniscuous.herokuapp.com/";
 
 window.notifyNewMatch = function () {
   if (sessionStorage.getItem('hasNewMatch')) {

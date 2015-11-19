@@ -21,7 +21,7 @@ class Api::SessionsController < ApplicationController
       :profile_picture_url => current_user[:profile_picture_url]
     }
     logout_user!
-    render json: user
+    render nothing: true, status: :unauthorized
   end
 
 end

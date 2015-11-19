@@ -10,7 +10,7 @@ window.ApiUtil = {
         callback();
       },
       error: function(){
-        history.pushState(null, "/", {});
+        window.location.replace(root_url);
       }
     })
 
@@ -26,7 +26,7 @@ window.ApiUtil = {
         callback();
       },
       error: function(){
-        history.pushState(null, "/", {});
+        alert("Make sure your password is long enough!");
       }
     })
   },
@@ -42,7 +42,7 @@ window.ApiUtil = {
         callback();
       },
       error: function (message) {
-        alert("Your username or password are incorrect");
+        alert("Your username or password are incorrect!");
       }
     })
   },
@@ -54,6 +54,9 @@ window.ApiUtil = {
       success: function (message) {
         sessionStorage.setItem("current_user", null);
         callback();
+      },
+      error: function(message){
+        window.location.replace(root_url);
       }
     })
   },
@@ -118,7 +121,7 @@ window.ApiUtil = {
         ApiActions.AllUsersFetched(users_identifiers);
       },
       error: function(){
-        history.pushState(null, "/", {});
+        window.location.replace(root_url);
       }
     })
   },
@@ -131,7 +134,7 @@ window.ApiUtil = {
         ApiActions.UserFetched(user);
       },
       error: function(){
-        history.pushState(null, "/", {});
+        window.location.replace(root_url);
       }
     })
   },
@@ -144,7 +147,7 @@ window.ApiUtil = {
         ApiActions.allConversationsFetched(conversations_identifiers);
       },
       error: function(){
-        history.pushState(null, "/", {});
+        window.location.replace(root_url);
       }
     })
   },

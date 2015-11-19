@@ -14,7 +14,7 @@ class Api::UsersController < ApplicationController
       }
       render ("api/user/create.json.jbuilder")
     else
-      render json: { message: 'not found', status: 404}
+      render nothing: true, status: :unauthorized
     end
 
   end
@@ -34,7 +34,7 @@ class Api::UsersController < ApplicationController
         @user.add_to_seen_users(last_user_id)
         render json: @user
       else
-        render json: { message: 'not found', status: 404}
+        render nothing: true, status: :unauthorized
       end
     elsif (params[:message] == "acceptance")
       if @user
@@ -54,14 +54,14 @@ class Api::UsersController < ApplicationController
         end
         render ('api/user/show.json.jbuilder')
       else
-        render json: { message: 'not found', status: 404}
+        render nothing: true, status: :unauthorized
       end
     else
       if @user
         @user.update(user_params_to_save)
         render json: @user
       else
-        render json: { message: 'not found', status: 404}
+        render nothing: true, status: :unauthorized
       end
     end
   end
@@ -69,7 +69,7 @@ class Api::UsersController < ApplicationController
   def destroy
     @user = User.find(params[:id])
     @user.destroy
-    render json: @user
+    render nothing: true, status: :unauthorized
   end
 
   def index
