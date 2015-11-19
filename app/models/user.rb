@@ -53,7 +53,7 @@ class User < ActiveRecord::Base
   private
 
   def init_fields
-    self.profile_description ||= ""
+    self.profile_description ||= "I should really add a description of myself!"
     self.profile_picture_url ||= "http://res.cloudinary.com/dax4cembx/image/upload/v1447899856/default_user_profile_oogfwm.png"
     self.gender ||= ""
     self.genders_sought ||= []

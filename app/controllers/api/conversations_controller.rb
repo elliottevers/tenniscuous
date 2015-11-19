@@ -26,7 +26,7 @@ class Api::ConversationsController < ApplicationController
     @reciever = interlocutor(@conversation)
     @current_user = current_user
     @self = self
-    
+
     render ('api/conversation/show.json.jbuilder')
   end
 

@@ -42,13 +42,15 @@ class Api::UsersController < ApplicationController
         last_user_id = user_params[:last_accepted_user]
         @user.add_to_accepted_users(last_user_id)
         if @user.they_accepted_you?(last_user_id)
-          Conversation.create(
-          :sender_id => current_user.id,
-          :recipient_id => last_user_id
-          )
+          conversation = Conversation.create(
+                          :sender_id => current_user.id,
+                          :recipient_id => last_user_id
+                        )
+          ceo_send_message(conversation)
           @has_new_match = true
           @current_user_id = current_user.id
           @other_user_id = last_user_id.to_i
+
         end
         render ('api/user/show.json.jbuilder')
       else

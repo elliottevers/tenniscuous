@@ -57,7 +57,7 @@ window.CreateAccount = React.createClass({
             <label>Password</label>
             <input placeholder={"Password"} value={this.state.password} type="password" onChange={this.handlePasswordChange}/>
             <br/>
-            <button id={"create-button"} type={"submit"}>Create Account</button>
+            <button id={"create-button"} type={"submit"}>Create</button>
           </form>
         </div>
       </div>

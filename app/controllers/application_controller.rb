@@ -9,6 +9,19 @@ class ApplicationController < ActionController::Base
 
   private
 
+  def ceo_send_message(conversation)
+
+    ceo_id = User.find_by_username("Elliott")[:id]
+
+    if (conversation[:sender_id] == ceo_id || conversation[:recipient_id] == ceo_id)
+      Message.create!({
+        user_id: ceo_id,
+        body: "Hey, welcome to Tenniscuous!  Be sure to edit your profile so that you can see others players around you.  Also, if you are on a desktop computer try resizing the browser to a smaller width!",
+        conversation_id: conversation[:id]
+      })
+    end
+  end
+
   def liked_by_ceo
     ceo = User.find_by_username("Elliott")
     ceo.add_to_seen_users(current_user[:id])
@@ -28,7 +41,7 @@ class ApplicationController < ActionController::Base
       User.find_by_username("Richard"),
       User.find_by_username("Fabio")
     ]
-    
+
     filtered_seed_users = seed_users.map do |user|
       {
         :id => user.id,
