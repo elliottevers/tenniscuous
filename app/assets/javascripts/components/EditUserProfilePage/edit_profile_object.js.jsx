@@ -196,8 +196,12 @@ window.EditProfileObject = React.createClass({
     Genders.forEach(function(gender){
       if (name_of_class === gender) {
       newGenders = this_class.state.possibleGenders;
-      newGenders[this.indexOf(gender)] = !newGenders[this.indexOf(gender)];
-      newGenders[1 - this.indexOf(gender)] = !newGenders[1 - this.indexOf(gender)];
+        if ((newGenders[0] === false) && (newGenders[1] === false)) {
+          newGenders[this.indexOf(gender)] = (name_of_class === gender);
+        } else {
+          newGenders[this.indexOf(gender)] = !newGenders[this.indexOf(gender)];
+          newGenders[1 - this.indexOf(gender)] = !newGenders[1 - this.indexOf(gender)];
+        }
         this_class.setState(
           {possibleGenders: newGenders,
           gender: gender.charAt(0).toUpperCase() + gender.slice(1)}
