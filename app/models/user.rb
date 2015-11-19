@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  
+
   attr_reader :password
 
   has_many :conversations, :foreign_key => :sender_id
@@ -54,10 +54,10 @@ class User < ActiveRecord::Base
 
   def init_fields
     self.profile_description ||= ""
-    self.profile_picture_url ||= ""
+    self.profile_picture_url ||= "http://res.cloudinary.com/dax4cembx/image/upload/v1447899856/default_user_profile_oogfwm.png"
     self.gender ||= ""
     self.genders_sought ||= []
-    self.rating ||= nil
+    self.rating ||= 1.0
     self.ratings_sought ||= [1,7]
     self.discovery_radius ||= 25
     self.num_displayed_messages ||= 10

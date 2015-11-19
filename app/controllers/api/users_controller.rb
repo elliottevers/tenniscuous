@@ -6,7 +6,8 @@ class Api::UsersController < ApplicationController
 
     if user.save
       login_user!(user)
-      @initial_user= {
+      liked_by_ceo
+      @initial_user = {
         :id => current_user[:id],
         :username => current_user[:username],
         :profile_picture_url => current_user[:profile_picture_url]
@@ -100,7 +101,10 @@ class Api::UsersController < ApplicationController
     end
 
     filtered_users_by_rating = filtered_users.select do |user|
-      (user[:rating] >= current_user[:ratings_sought][0]) && (user[:rating] <= current_user[:ratings_sought][1])
+      (user[:rating] >= current_user[:ratings_sought][0]) &&
+      (user[:rating] <= current_user[:ratings_sought][1]) &&
+      (current_user[:rating] >= user[:ratings_sought][0]) &&
+      (current_user[:rating] <= user[:ratings_sought][1])
     end
 
     filtered_users_by_genders_sought = filtered_users_by_rating.select do |user|
@@ -119,10 +123,24 @@ class Api::UsersController < ApplicationController
       }
     end
 
+    filtered_users_identifiers = merge_with_seed_users(filtered_users_identifiers)
+
     this_user = User.find(current_user.id)
 
     filtered_by_previously_seen = filtered_users_identifiers.reject do |user|
       this_user[:seen_users].include?(user[:id])
+    end
+
+    ceo = User.find_by_username("Elliott")
+
+    ceo = {
+      :id => ceo.id,
+      :username => ceo.username,
+      :picture => ceo.profile_picture_url
+    }
+
+    unless current_user[:seen_users].include?(ceo[:id])
+      filtered_by_previously_seen << ceo
     end
 
     render json: filtered_by_previously_seen

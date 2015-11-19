@@ -52,10 +52,10 @@ window.CreateAccount = React.createClass({
         <div id={"form-wrapper"}>
           <form onSubmit={this.handleSubmit}>
             <label>Username</label>
-            <input value={this.state.username} type="text" onChange={this.handleUsernameChange}/>
+            <input placeholder={"Username"} value={this.state.username} type="text" onChange={this.handleUsernameChange}/>
             <br/>
             <label>Password</label>
-            <input value={this.state.password} type="password" onChange={this.handlePasswordChange}/>
+            <input placeholder={"Password"} value={this.state.password} type="password" onChange={this.handlePasswordChange}/>
             <br/>
             <button id={"create-button"} type={"submit"}>Create Account</button>
           </form>
