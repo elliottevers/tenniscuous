@@ -38,6 +38,8 @@ window.SignIn = React.createClass({
       ApiUtil.createSession(user, function () {
         this.history.pushState(null, "/discovery_queue", {});
       }.bind(that));
+    }, function (error) {
+      sweetAlert("Please let us know where you are!");
     });
 
   },
