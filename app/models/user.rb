@@ -59,7 +59,7 @@ class User < ActiveRecord::Base
     self.genders_sought ||= []
     self.rating ||= 1.0
     self.ratings_sought ||= [1,7]
-    self.discovery_radius ||= 25
+    self.discovery_radius ||= 50
     self.num_displayed_messages ||= 10
     self.accepted_users ||= []
     self.seen_users ||= []
