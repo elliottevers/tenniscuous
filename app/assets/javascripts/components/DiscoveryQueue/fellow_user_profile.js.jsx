@@ -3,7 +3,11 @@ var FellowUserProfile = React.createClass({
   mixins: [ReactRouter.History],
 
   handleClick: function(){
-    this.history.goBack();
+    if (window.location.href.indexOf("?chat") > -1) {
+      this.history.pushState(null, "/matches", {});
+    } else {
+      this.history.pushState(null, "/discovery_queue", {});
+    }
   },
 
   render: function () {

@@ -7,7 +7,7 @@ window.ChatMatchHeader = React.createClass({
   },
 
   handlePictureClick: function(){
-    this.history.pushState(null, "/discovery_queue/" + this.props.other_user_id, {});
+    this.history.pushState(null, "/discovery_queue/" + this.props.other_user_id + "?chat", {});
   },
 
   unmatchUser: function(event){
