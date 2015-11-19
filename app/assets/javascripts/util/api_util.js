@@ -121,7 +121,7 @@ window.ApiUtil = {
         ApiActions.AllUsersFetched(users_identifiers);
       },
       error: function(){
-        // window.location.replace(root_url);
+        window.location.replace(root_url);
       }
     })
   },
@@ -134,7 +134,7 @@ window.ApiUtil = {
         ApiActions.UserFetched(user);
       },
       error: function(){
-        // window.location.replace(root_url);
+        window.location.replace(root_url);
       }
     })
   },
@@ -147,7 +147,7 @@ window.ApiUtil = {
         ApiActions.allConversationsFetched(conversations_identifiers);
       },
       error: function(){
-        // window.location.replace(root_url);
+        window.location.replace(root_url);
       }
     })
   },

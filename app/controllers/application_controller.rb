@@ -39,7 +39,7 @@ class ApplicationController < ActionController::Base
       User.find_by_username("Alexandr"),
       User.find_by_username("Gael"),
       User.find_by_username("Richard"),
-      User.find_by_username("Fabio")
+      User.find_by_username("Jerzy")
     ]
 
     filtered_seed_users = seed_users.map do |user|
