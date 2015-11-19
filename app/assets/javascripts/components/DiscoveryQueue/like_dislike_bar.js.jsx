@@ -16,7 +16,7 @@ window.LikeDislikeBar = React.createClass({
     return (
         <div>
           <div onClick={this.handleReject} onTouchStart={this.handleReject} id="swipe_dislike" className={'rate'}></div>
-          <div onClick={this.handleAccept} onTouchStart={this.handleReject} id="swipe_like" className={'rate'}></div>
+          <div onClick={this.handleAccept} onTouchStart={this.handleAccept} id="swipe_like" className={'rate'}></div>
         </div>
     );
   }
