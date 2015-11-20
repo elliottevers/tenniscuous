@@ -28,13 +28,6 @@ window.DiscoveryQueue = React.createClass({
     UserStore.removeUsersIndexChangeListener(this._onChange);
   },
 
-  handleSubmit: function(event){
-    event.preventDefault;
-    var user = JSON.parse(sessionStorage.getItem("current_user"));
-    user.discovery_radius = parseInt(this.state.new_discovery_radius);
-    ApiUtil.updateUser(user, ApiUtil.fetchAllUsers);
-  },
-
   handleAccept: function() {
     var $photo = $("div.photo:last");
     var user_id = $photo.attr('id');
@@ -81,7 +74,7 @@ window.DiscoveryQueue = React.createClass({
 
         user.position = user_position;
 
-        ApiUtil.updateUser(user, window.location.reload.bind(window.location));
+        ApiUtil.updateUser(user, ApiUtil.fetchAllUsers);
       });
 
     }, 5050);
