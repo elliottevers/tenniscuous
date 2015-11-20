@@ -24,7 +24,7 @@ window.SignIn = React.createClass({
   componentWillMount: function(){
     React.initializeTouchEvents(true);
   },
-  
+
   handleSubmit: function(event){
 
     event.preventDefault();

@@ -7,6 +7,10 @@ window.LogInPage = React.createClass({
       this.history.pushState(null, '/create_account', {});
   },
 
+  componentWillMount: function(){
+    React.initializeTouchEvents(true);
+  },
+
   render: function () {
       return(
         <div>
@@ -17,7 +21,7 @@ window.LogInPage = React.createClass({
           </div>
           <div id={"form-wrapper"}>
             <SignIn/>
-            <button onClick={this.handleClick}>Create Account</button>
+            <button onTouchStart={this.handleClick} onClick={this.handleClick}>Create Account</button>
           </div>
         </div>
       )

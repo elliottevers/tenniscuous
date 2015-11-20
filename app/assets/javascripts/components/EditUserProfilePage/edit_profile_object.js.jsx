@@ -244,9 +244,9 @@ window.EditProfileObject = React.createClass({
             <p>Gender</p>
             {Genders.map(function(gender){
               if (this_class.state.possibleGenders[Genders.indexOf(gender)]) {
-                return (<div id={"clicked"} className={gender}><p onTouchStart={this_class.toggleButton} onClick={this_class.toggleButton}>{genderStrings[Genders.indexOf(gender)]}</p></div>);
+                return (<div id={"clicked"} className={gender}><p onClick={this_class.toggleButton}>{genderStrings[Genders.indexOf(gender)]}</p></div>);
               } else {
-                return (<div id={"not-clicked"} className={gender}><p onTouchStart={this_class.toggleButton} onClick={this_class.toggleButton}>{genderStrings[Genders.indexOf(gender)]}</p></div>);
+                return (<div id={"not-clicked"} className={gender}><p onClick={this_class.toggleButton}>{genderStrings[Genders.indexOf(gender)]}</p></div>);
               }
             })}
             <p>Formats Sought</p>
