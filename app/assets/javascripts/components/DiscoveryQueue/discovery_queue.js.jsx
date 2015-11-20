@@ -86,6 +86,8 @@ window.DiscoveryQueue = React.createClass({
       user.position = user_position;
 
       $.when(ApiUtil.updateUser(user)).then(ApiUtil.fetchAllUsers());
+    }, function(){
+      sweetAlert("didn't get position");
     });
   },
 
