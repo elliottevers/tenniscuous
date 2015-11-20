@@ -133,6 +133,10 @@ window.EditProfileObject = React.createClass({
 
   },
 
+  componentWillMount: function(){
+    React.initializeTouchEvents(true);
+  },
+
   handleFormatChange: function (event) {
     var name_of_class = $(event.target).parent().attr('class');
     var this_class = this;

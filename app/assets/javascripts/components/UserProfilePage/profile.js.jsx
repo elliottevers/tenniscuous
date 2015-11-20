@@ -10,6 +10,10 @@ window.Profile = React.createClass({
     this.setState({user: UserStore.user()});
   },
 
+  componentWillMount: function(){
+    React.initializeTouchEvents(true);
+  },
+
   componentDidMount: function () {
     UserStore.addUserShowChangeListener(this._onChange);
     ApiUtil.fetchUser(this.props.user.id);
