@@ -40,8 +40,6 @@ window.EditProfileObject = React.createClass({
 
   componentDidMount: function(){
 
-      React.initializeTouchEvents(true);
-
       var that = this;
 
       var updateSlider = document.getElementById('slider-update');
