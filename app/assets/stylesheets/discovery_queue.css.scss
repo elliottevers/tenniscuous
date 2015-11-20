@@ -205,15 +205,14 @@ div.meta {
 }
 
 .ball p, .bouncy-ball p {
-  font-size: 2.5vw;
-  font-weight: bold;
+  font-size: 3vw;
   font-family: 'Open Sans', sans-serif;
   color: black;
-  transform: translate(0vw, 10.5vw) rotate(-90deg);
-  -webkit-transform: translate(0vw, 10.5vw) rotate(-90deg);
-  -moz-transform: translate(0vw, 10.5vw) rotate(-90deg);
-  -ms-transform: translate(0vw, 10.5vw) rotate(-90deg);
-  -o-transform: translate(0vw, 10.5vw) rotate(-90deg);
+  transform: translate(0vw, 10.6vw) rotate(-90deg);
+  -webkit-transform: translate(0vw, 10.6vw) rotate(-90deg);
+  -moz-transform: translate(0vw, 10.6vw) rotate(-90deg);
+  -ms-transform: translate(0vw, 10.6vw) rotate(-90deg);
+  -o-transform: translate(0vw, 10.6vw) rotate(-90deg);
 }
 
 .ball + p {
