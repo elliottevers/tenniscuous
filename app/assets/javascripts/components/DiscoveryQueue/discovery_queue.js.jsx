@@ -36,7 +36,7 @@ window.DiscoveryQueue = React.createClass({
     event.preventDefault;
     var user = JSON.parse(sessionStorage.getItem("current_user"));
     user.discovery_radius = parseInt(this.state.new_discovery_radius);
-    $.when(ApiUtil.updateUser(user)).then(ApiUtil.fetchAllUsers());
+    ApiUtil.updateUser(user, ApiUtil.fetchAllUsers);
   },
 
   handleAccept: function() {
@@ -85,9 +85,7 @@ window.DiscoveryQueue = React.createClass({
 
       user.position = user_position;
 
-      $.when(ApiUtil.updateUser(user)).then(ApiUtil.fetchAllUsers());
-    }, function(){
-      sweetAlert("didn't get position");
+      ApiUtil.updateUser(user, ApiUtil.fetchAllUsers);
     });
   },
 
