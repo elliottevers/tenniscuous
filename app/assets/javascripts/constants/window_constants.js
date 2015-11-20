@@ -1,4 +1,4 @@
-window.root_url = "https://www.tenniscuous.com/";
+window.root_url = "http://www.tenniscuous.com/";
 
 window.notifyNewMatch = function () {
   if (sessionStorage.getItem('hasNewMatch')) {
