@@ -11,7 +11,6 @@ window.DiscoveryQueue = React.createClass({
 
   _onChange: function () {
     this.setState(this.getStateFromStore());
-
   },
 
   componentWillMount: function(){

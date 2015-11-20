@@ -54,7 +54,7 @@ window.SignIn = React.createClass({
         <label>Password</label>
         <input placeholder={"Password"} value={this.state.password} type="password" onChange={this.handlePasswordChange}/>
         <br/>
-        <button type="submit" bsStyle="primary">Sign In</button>
+        <button type="submit">Sign In</button>
       </form>
     </div>
     );
