@@ -15,7 +15,7 @@ window.ProfileObject = React.createClass({
       <div>
         <img src={this.props.current_user.profile_picture_url}></img>
         <div className={"description-container"}>
-            <h4>{this.props.current_user.username}</h4>
+            <p>{this.props.current_user.username}</p>
             <p>{this.props.current_user.profile_description}</p>
           <div className={"bottom_border"}></div>
         </div>
