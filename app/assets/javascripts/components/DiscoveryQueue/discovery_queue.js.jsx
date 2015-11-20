@@ -1,5 +1,6 @@
 window.DiscoveryQueue = React.createClass({
 
+  mixins: [ReactRouter.History],
 
   getInitialState: function () {
     return this.getStateFromStore();
@@ -25,11 +26,6 @@ window.DiscoveryQueue = React.createClass({
 
   componentWillUnmount: function () {
     UserStore.removeUsersIndexChangeListener(this._onChange);
-  },
-
-  handleRadiusChange: function(event){
-    event.preventDefault;
-    this.setState({new_discovery_radius: event.target.value});
   },
 
   handleSubmit: function(event){
@@ -72,21 +68,23 @@ window.DiscoveryQueue = React.createClass({
     $ball.removeClass('ball').addClass('bouncy-ball');
 
     window.setTimeout(function(){
+
       $ball.removeClass('bouncy-ball').addClass('ball');
+
+      var user = {};
+
+      user.id = JSON.parse(sessionStorage.getItem("current_user")).id;
+
+      navigator.geolocation.getCurrentPosition(function(position) {
+
+        var user_position = [position.coords.latitude, position.coords.longitude];
+
+        user.position = user_position;
+
+        ApiUtil.updateUser(user, window.location.reload.bind(window.location));
+      });
+
     }, 5050);
-
-    var user = {};
-
-    user.id = JSON.parse(sessionStorage.getItem("current_user")).id;
-
-    navigator.geolocation.getCurrentPosition(function(position) {
-
-      var user_position = [position.coords.latitude, position.coords.longitude];
-
-      user.position = user_position;
-
-      ApiUtil.updateUser(user, ApiUtil.fetchAllUsers);
-    });
   },
 
   handleCardChange: function(type){
