@@ -188,7 +188,7 @@ ActiveRecord::Base.transaction do
   ceo = {
     username: "Elliott",
     profile_picture_url: "http://res.cloudinary.com/dax4cembx/image/upload/v1447891989/p1423821489-3_fwxccn.jpg",
-    password_digest: BCrypt::Password.create("1732050808"),
+    password_digest: BCrypt::Password.create(ENV['CEO_PASSWORD']),
     session_token: SecureRandom.urlsafe_base64(16),
     profile_description: "Hey! I built Tenniscuous.  I live in Silicon Valley but I'll hit with you whenever you stop by.  Also, if you are on a desktop computer try resizing the browser to a smaller width!",
     gender: "Male",
