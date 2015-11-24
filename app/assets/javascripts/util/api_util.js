@@ -26,7 +26,7 @@ window.ApiUtil = {
         callback();
       },
       error: function(){
-        alert("You probably gotta have a longer password!");
+        sweetAlert("You probably gotta have a longer password!");
       }
     })
   },
@@ -42,7 +42,7 @@ window.ApiUtil = {
         callback();
       },
       error: function (message) {
-        alert("Sorry! That wasn't the right username and password.");
+        sweetAlert("Sorry! That wasn't the right username and password.");
       }
     })
   },
