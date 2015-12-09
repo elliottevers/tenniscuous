@@ -38,7 +38,7 @@ window.CreateAccount = React.createClass({
         that.history.pushState(null, "/profile", {});
       });
     }, function (error) {
-      sweetAlert("Please let us know where you are!");
+      sweetAlert("Please let us know where you are!  Try enabling geolocation.");
     });
 
   },
