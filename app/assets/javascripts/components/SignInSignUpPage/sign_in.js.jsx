@@ -43,7 +43,7 @@ window.SignIn = React.createClass({
         this.history.pushState(null, "/discovery_queue", {});
       }.bind(that));
     }, function (error) {
-      sweetAlert("Please let us know where you are!");
+      sweetAlert("Please let us know where you are! Try enabling geolocation.");
     });
 
   },
