@@ -1,4 +1,6 @@
 This app was my first foray into web development.  It was created with Ruby,
 Rails, Javascript, React, Flux, JSX, and CSS.  Log in, update your profile, and
 see other tennis players in your area with the properties that you specify.
-Swipe right and swipe left.  It's just like Tinder.
+Swipe right and swipe left.  When you match with another user, you will get a
+real time notification.  View their profile, chat with him or her in real-time,
+set up a tennis match.  It's just like Tinder.

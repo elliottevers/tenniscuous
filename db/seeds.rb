@@ -149,42 +149,6 @@ ActiveRecord::Base.transaction do
     seen_users: []
   }]
 
-  # test_players = []
-  # (1..25).each do |index|
-  #   random_like = Random.rand(1..3)
-  #   player = {
-  #     username: "user#{index}",
-  #     profile_picture_url: Faker::Avatar.image,
-  #     password_digest: BCrypt::Password.create("user#{index}"),
-  #     gender: ["Male","Female"].sample,
-  #     genders_sought: ["Men's Singles", "Women's Singles", "Men's Doubles", "Women's Doubles","Mixed Doubles"].shuffle.drop(2),
-  #     rating: Random.rand(2..14)/2,
-  #     ratings_sought: [Random.rand(2..14)/2, Random.rand(2..14)/2].sort,
-  #     position: [37.760367,-122.450867],
-  #     discovery_radius: 25,
-  #     accepted_users: [random_like],
-  #     seen_users: [random_like]
-  #   }
-  #   test_players << player
-  # end
-  # (26..50).each do |index|
-  #   random_like = Random.rand(1..3)
-  #   player = {
-  #     username: "user#{index}",
-  #     profile_picture_url: Faker::Avatar.image,
-  #     password_digest: BCrypt::Password.create("user#{index}"),
-  #     gender: ["Male","Female"].sample,
-  #     genders_sought: ["Men's Singles", "Women's Singles", "Men's Doubles", "Women's Doubles","Mixed Doubles"].shuffle.drop(2),
-  #     rating: Random.rand(2..14)/2,
-  #     ratings_sought: [Random.rand(2..14)/2, Random.rand(2..14)/2].sort,
-  #     position: [46.5958,-112.0270],
-  #     discovery_radius: 50,
-  #     accepted_users: [random_like],
-  #     seen_users: [random_like]
-  #   }
-  #   test_players << player
-  # end
-
   ceo = {
     username: "Elliott",
     profile_picture_url: "http://res.cloudinary.com/dax4cembx/image/upload/v1447891989/p1423821489-3_fwxccn.jpg",
