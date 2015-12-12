@@ -11,7 +11,7 @@ class ApplicationController < ActionController::Base
 
   def ceo_send_message(conversation)
 
-    ceo_id = User.find_by_username("Elliott")[:id]
+    ceo_id = User.find_by_username("Elliott").id
 
     if (conversation[:sender_id] == ceo_id || conversation[:recipient_id] == ceo_id)
       Message.create!({
@@ -29,6 +29,7 @@ class ApplicationController < ActionController::Base
   end
 
   def merge_with_seed_users(users)
+    
     seed_users = [
       User.find_by_username("Roger"),
       User.find_by_username("Rafael"),

@@ -2,8 +2,8 @@ class Api::SessionsController < ApplicationController
 
   def create
     @user = User.find_by_credentials(
-      params[:user][:username],
-      params[:user][:password]
+      session_params[:username],
+      session_params[:password]
     )
     if @user.nil?
       render nothing: true, status: :unauthorized
@@ -24,4 +24,9 @@ class Api::SessionsController < ApplicationController
     render nothing: true, status: :unauthorized
   end
 
+  private
+
+  def session_params
+    params.require(:user).permit(:password, :username)
+  end
 end

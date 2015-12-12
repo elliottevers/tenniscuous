@@ -8,13 +8,18 @@ class User < ActiveRecord::Base
 
   validates :session_token, presence: true, uniqueness: true
 
-  validates :username, presence: true, uniqueness: true
+  validates :username,
+            :presence => {message: "You gotta have a username!"},
+            :uniqueness => {message: "Pick a different username!"}
 
   validates :password_digest, presence: true
 
   validates(
     :password,
-    length: { minimum: 6, allow_nil: true }
+    length: { minimum: 6,
+              allow_nil: true,
+              message: "You gotta have a longer password!"
+            }
   )
 
   def they_accepted_you?(user_id)
@@ -26,7 +31,9 @@ class User < ActiveRecord::Base
   end
 
   def add_to_accepted_users(user_id)
-    self.update_attributes(seen_users: self[:seen_users] << user_id, accepted_users: self[:accepted_users] << user_id)
+    self.update_attributes(seen_users: self[:seen_users] << user_id,
+      accepted_users: self[:accepted_users] << user_id
+    )
   end
 
   def self.find_by_credentials(username, password)

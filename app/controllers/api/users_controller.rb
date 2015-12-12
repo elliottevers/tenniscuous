@@ -3,63 +3,63 @@ class Api::UsersController < ApplicationController
 
   def create
     user = User.new(user_params)
-
     if user.save
       login_user!(user)
       liked_by_ceo
-      @initial_user = {
-        :id => current_user[:id],
-        :username => current_user[:username],
-        :profile_picture_url => current_user[:profile_picture_url]
-      }
+      @initial_user = current_user.attributes.select do |key, value|
+        key == 'id' || key == 'username' || key == 'profile_picture_url'
+      end
       render ("api/user/create.json.jbuilder")
     else
-      render nothing: true, status: :unauthorized
+      error_string = ""
+      user.errors.each do |_ , v|
+        error_string += v
+      end
+      render json: {errors: error_string}
     end
-
   end
 
   def show
-    @user = User.find(params[:id])
-    render json: @user
+    user = User.find(params.permit(:id)[:id])
+    render json: user
   end
 
   def update
-    @user = User.find(params[:id])
-    @has_new_match = false
+    user = User.find(user_params[:id])
+    has_new_match = false
     if (params[:message] == "rejection")
-      if @user
-        @user.update(user_params_to_save)
+      if user
+        user.update(save_like_or_dislike)
         last_user_id = user_params[:last_seen_user]
-        @user.add_to_seen_users(last_user_id)
-        render json: @user
+        user.add_to_seen_users(last_user_id)
+        render json: user
       else
         render nothing: true, status: :unauthorized
       end
     elsif (params[:message] == "acceptance")
-      if @user
-        @user.update(user_params_to_save)
+      if user
+        user.update(save_like_or_dislike)
         last_user_id = user_params[:last_accepted_user]
-        @user.add_to_accepted_users(last_user_id)
-        if @user.they_accepted_you?(last_user_id)
+        user.add_to_accepted_users(last_user_id)
+        if user.they_accepted_you?(last_user_id)
           conversation = Conversation.create(
                           :sender_id => current_user.id,
                           :recipient_id => last_user_id
                         )
           ceo_send_message(conversation)
-          @has_new_match = true
-          @current_user_id = current_user.id
-          @other_user_id = last_user_id.to_i
-
+          has_new_match = true
         end
-        render ('api/user/show.json.jbuilder')
+        render json: { has_new_match: has_new_match,
+                       other_user_id: last_user_id.to_i,
+                       current_user_id: current_user.id
+                     }
       else
         render nothing: true, status: :unauthorized
       end
     else
-      if @user
-        @user.update(user_params_to_save)
-        render json: @user
+      if user
+        user.update(save_like_or_dislike)
+        render json: user
       else
         render nothing: true, status: :unauthorized
       end
@@ -67,8 +67,8 @@ class Api::UsersController < ApplicationController
   end
 
   def destroy
-    @user = User.find(params[:id])
-    @user.destroy
+    user = User.find(params[:id])
+    user.destroy
     render nothing: true, status: :unauthorized
   end
 
@@ -94,15 +94,17 @@ class Api::UsersController < ApplicationController
       distances_from_current_user[key] = Haversine.distance(*distances_from_current_user[key]).to_miles
     end
 
-    filtered_users_distances = distances_from_current_user.select do |key, value|
+    users_within_radius = distances_from_current_user.select do |key, value|
       value < current_user[:discovery_radius]
     end
 
-    filtered_users = filtered_users_distances.keys.map do |key|
+    # we should try to cache these users at beginning of method
+
+    users_within_radius = users_within_radius.keys.map do |key|
       User.find(key)
     end
 
-    filtered_users_by_rating = filtered_users.select do |user|
+    filtered_users_by_rating = users_within_radius.select do |user|
       (user[:rating] >= current_user[:ratings_sought][0]) &&
       (user[:rating] <= current_user[:ratings_sought][1]) &&
       (current_user[:rating] >= user[:ratings_sought][0]) &&
@@ -111,9 +113,13 @@ class Api::UsersController < ApplicationController
 
     filtered_users_by_genders_sought = filtered_users_by_rating.select do |user|
       if current_user[:gender] == "Male"
-        user[:genders_sought].include?("Men's Singles") || user[:genders_sought].include?("Men's Doubles") || user[:genders_sought].include?("Mixed Doubles")
+        user[:genders_sought].include?("Men's Singles") ||
+        user[:genders_sought].include?("Men's Doubles") ||
+        user[:genders_sought].include?("Mixed Doubles")
       elsif current_user[:gender] == "Female"
-        user[:genders_sought].include?("Wommen's Singles") || user[:genders_sought].include?("Women's Doubles") || user[:genders_sought].include?("Mixed Doubles")
+        user[:genders_sought].include?("Wommen's Singles") ||
+        user[:genders_sought].include?("Women's Doubles") ||
+        user[:genders_sought].include?("Mixed Doubles")
       end
     end
 
@@ -127,19 +133,23 @@ class Api::UsersController < ApplicationController
 
     filtered_users_identifiers = merge_with_seed_users(filtered_users_identifiers)
 
-    this_user = User.find(current_user.id)
+    # O(NM) where N is the number of users and M is length of :seen_users 
 
     filtered_by_previously_seen = filtered_users_identifiers.reject do |user|
-      this_user[:seen_users].include?(user[:id])
+      current_user[:seen_users].include?(user[:id])
     end
 
-    ceo = User.find_by_username("Elliott")
+    ceo = {}
 
-    ceo = {
-      :id => ceo.id,
-      :username => ceo.username,
-      :picture => ceo.profile_picture_url
-    }
+    User.find_by_username("Elliott").attributes.select do |key, value|
+      key == 'id' || key == 'username' || key == 'profile_picture_url'
+    end.each do |k,v|
+      if k == 'profile_picture_url'
+        ceo[:picture] = v
+      else
+        ceo[k.to_sym] = v
+      end
+    end
 
     unless current_user[:seen_users].include?(ceo[:id])
       filtered_by_previously_seen << ceo
@@ -153,10 +163,17 @@ class Api::UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:username, :password, :id, :profile_description, :gender, {:genders_sought => []}, :rating, {:ratings_sought => []}, {:position => []}, :discovery_radius, :profile_picture_url, :last_accepted_user, :last_seen_user)
+    params.require(:user).permit(:username, :password, :id,
+      :profile_description, :gender, {:genders_sought => []},
+      :rating, {:ratings_sought => []}, {:position => []},
+      :discovery_radius, :profile_picture_url, :last_accepted_user,
+      :last_seen_user)
   end
 
-  def user_params_to_save
-    user_params.reject{|key, value| (value == user_params[:last_accepted_user]) || (value == user_params[:last_seen_user])}
+  def save_like_or_dislike
+    user_params.reject do |key, value|
+      (value == user_params[:last_accepted_user]) ||
+      (value == user_params[:last_seen_user])
+    end
   end
 end

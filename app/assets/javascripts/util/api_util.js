@@ -1,4 +1,3 @@
-
 window.ApiUtil = {
 
   destroyUser: function(id, callback) {
@@ -22,11 +21,15 @@ window.ApiUtil = {
       method: "POST",
       data: {user: user},
       success: function(user){
-        sessionStorage.setItem("current_user", JSON.stringify(user));
-        callback();
+        if (user.id === undefined) {
+          sweetAlert(user.errors);
+        } else {
+          sessionStorage.setItem("current_user", JSON.stringify(user));
+          callback();
+        }
       },
       error: function(){
-        sweetAlert("You probably gotta have a longer password!");
+        
       }
     })
   },
@@ -85,12 +88,15 @@ window.ApiUtil = {
       data: {user: user, message: message},
       success: function(payload){
         user_id = JSON.parse(sessionStorage.getItem("current_user")).id;
-        if (payload.payload.has_new_match) {
+
+        if (payload.has_new_match) {
+
           publisher = client.publish('/hasNewMatch', {
-            has_new_match: payload.payload.has_new_match,
-            current_user_id: payload.payload.current_user_id,
-            other_user_id: payload.payload.other_user_id
+            has_new_match: payload.has_new_match,
+            current_user_id: payload.current_user_id,
+            other_user_id: payload.other_user_id
           });
+
         }
       },
       error: function(){
@@ -170,7 +176,10 @@ window.ApiUtil = {
     $.ajax({
       url: "api/conversations/" + conversation_id + "/messages",
       method: "POST",
-      data: {body: message, conversation_id: conversation_id, numMessages: numMessages},
+      data: {body: message,
+        conversation_id: conversation_id,
+        numMessages: numMessages
+      },
       success: function (conversation_information) {
         publisher = client.publish('/conversation', {
           conversation_information: conversation_information

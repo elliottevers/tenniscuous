@@ -1,14 +1,17 @@
 class Api::ConversationsController < ApplicationController
 
-
   def create
-    if Conversation.between(params[:sender_id],params[:recipient_id]).present?
-      @conversation = Conversation.between(params[:sender_id],params[:recipient_id]).first
+    if Conversation.between(conversation_params[:sender_id],
+                             conversation_params[:recipient_id]
+                            ).present?
+      conversation = Conversation.between(conversation_params[:sender_id],
+                                            conversation_params[:recipient_id]
+                                          ).first
     else
-      @conversation = Conversation.create!(conversation_params)
+      conversation = Conversation.create!(conversation_params)
     end
 
-    render json: { conversation_id: @conversation.id }
+    render json: { conversation_id: conversation.id }
   end
 
   def show
@@ -21,24 +24,19 @@ class Api::ConversationsController < ApplicationController
     end
 
     @conversation = Conversation.find(params[:id])
-    @messages = @conversation.messages.last(current_user[:num_displayed_messages])
-    @message = Message.new
-    @reciever = interlocutor(@conversation)
-    @current_user = current_user
-    @self = self
+    @sender = current_user
+    @receiver = interlocutor(@conversation)
 
     render ('api/conversation/show.json.jbuilder')
   end
 
   def destroy
-    @conversation = Conversation.find(params[:id])
-    @conversation.destroy
-    render json: @conversation
+    conversation = Conversation.find(params[:id]).destroy
+    render json: conversation
   end
 
   def index
-    @conversations = Conversation.involving(current_user.id)
-    @conversations = @conversations.reverse_order
+    @conversations = Conversation.involving(current_user.id).reverse_order
     @self = self
     render ('api/conversation/index.json.jbuilder')
   end
