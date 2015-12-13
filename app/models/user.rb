@@ -22,17 +22,17 @@ class User < ActiveRecord::Base
             }
   )
 
-  def they_accepted_you?(user_id)
-    User.find(user_id).accepted_users.include?(self.id)
+  def they_accepted_you?(user)
+    User.find(user.id).accepted_users.include?(self.id)
   end
 
-  def add_to_seen_users(user_id)
-    self.update_attributes(seen_users: self.seen_users << user_id)
+  def add_to_seen_users(user)
+    self.update_attributes(seen_users: self.seen_users << user.id)
   end
 
-  def add_to_accepted_users(user_id)
-    self.update_attributes(seen_users: self.seen_users << user_id,
-      accepted_users: self.accepted_users << user_id
+  def add_to_accepted_users(user)
+    self.update_attributes(seen_users: self.seen_users << user.id,
+      accepted_users: self.accepted_users << user.id
     )
   end
 
@@ -119,8 +119,8 @@ class User < ActiveRecord::Base
 
   def liked_by_ceo
     ceo = User.find_by_username("Elliott")
-    ceo.add_to_seen_users(self.id)
-    ceo.add_to_accepted_users(self.id)
+    ceo.add_to_seen_users(self)
+    ceo.add_to_accepted_users(self)
   end
 
   private

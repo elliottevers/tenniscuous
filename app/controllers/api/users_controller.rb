@@ -27,8 +27,8 @@ class Api::UsersController < ApplicationController
     if (params[:message] == "rejection")
       if user
         user.update(save_like_or_dislike)
-        last_user_id = user_params[:last_seen_user]
-        user.add_to_seen_users(last_user_id)
+        last_seen_user = User.find(user_params[:last_seen_user])
+        user.add_to_seen_users(last_seen_user)
         render json: user
       else
         render nothing: true, status: :unauthorized
@@ -36,17 +36,17 @@ class Api::UsersController < ApplicationController
     elsif (params[:message] == "acceptance")
       if user
         user.update(save_like_or_dislike)
-        last_user_id = user_params[:last_accepted_user]
-        user.add_to_accepted_users(last_user_id)
-        if user.they_accepted_you?(last_user_id)
+        last_accepted_user = User.find(user_params[:last_accepted_user])
+        user.add_to_accepted_users(last_accepted_user)
+        if user.they_accepted_you?(last_accepted_user)
           conversation = Conversation.create(
                           :sender_id => current_user.id,
-                          :recipient_id => last_user_id
+                          :recipient_id => last_accepted_user.id
                         )
           has_new_match = true
         end
         render json: { has_new_match: has_new_match,
-                       other_user_id: last_user_id.to_i,
+                       other_user_id: last_accepted_user.id,
                        current_user_id: current_user.id
                      }
       else
