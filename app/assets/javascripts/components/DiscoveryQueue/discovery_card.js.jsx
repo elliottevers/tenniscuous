@@ -9,7 +9,7 @@ window.DiscoveryCard = React.createClass({
 
   render: function () {
 
-    var url = this.props.picture;
+    var url = this.props.profile_picture_url;
     var divImage = {backgroundImage : 'url(' + url + ')'};
 
     return(

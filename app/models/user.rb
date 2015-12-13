@@ -23,16 +23,16 @@ class User < ActiveRecord::Base
   )
 
   def they_accepted_you?(user_id)
-    User.find(user_id)[:accepted_users].include?(self[:id])
+    User.find(user_id).accepted_users.include?(self.id)
   end
 
   def add_to_seen_users(user_id)
-    self.update_attributes(seen_users: self[:seen_users] << user_id)
+    self.update_attributes(seen_users: self.seen_users << user_id)
   end
 
   def add_to_accepted_users(user_id)
-    self.update_attributes(seen_users: self[:seen_users] << user_id,
-      accepted_users: self[:accepted_users] << user_id
+    self.update_attributes(seen_users: self.seen_users << user_id,
+      accepted_users: self.accepted_users << user_id
     )
   end
 
@@ -55,6 +55,72 @@ class User < ActiveRecord::Base
     self.session_token = SecureRandom.urlsafe_base64(16)
     self.save!
     self.session_token
+  end
+
+  def users_in_queue
+
+    all_other_users = User.where.not(id: self.id)
+
+    users_within_radius = all_other_users.select do |user|
+      haversine_arguments = [self.position[0], self.position[1]]
+      haversine_arguments << user.position[0]
+      haversine_arguments << user.position[1]
+      Haversine.distance(*haversine_arguments).to_miles < self.discovery_radius
+    end
+
+    filtered_users_by_rating = users_within_radius.select do |user|
+      (user.rating >= self.ratings_sought[0]) &&
+      (user.rating <= self.ratings_sought[1]) &&
+      (self.rating >= user.ratings_sought[0]) &&
+      (self.rating <= user.ratings_sought[1])
+    end
+
+    filtered_users_by_genders_sought = filtered_users_by_rating.select do |user|
+      if self.gender == "Male"
+        user.genders_sought.include?("Men's Singles") ||
+        user.genders_sought.include?("Men's Doubles") ||
+        user.genders_sought.include?("Mixed Doubles")
+      elsif self.gender == "Female"
+        user.genders_sought.include?("Women's Singles") ||
+        user.genders_sought.include?("Women's Doubles") ||
+        user.genders_sought.include?("Mixed Doubles")
+      end
+    end
+
+    including_seeds = merge_with_seed_users(filtered_users_by_genders_sought)
+
+    filtered_by_previously_seen = including_seeds.reject do |user|
+      self.seen_users.include?(user.id)
+    end
+
+    filtered_by_previously_seen
+
+  end
+
+  def merge_with_seed_users(users)
+
+    seed_users = [
+      User.find_by_username("Roger"),
+      User.find_by_username("Rafael"),
+      User.find_by_username("Andy"),
+      User.find_by_username("Novak"),
+      User.find_by_username("Stanislas"),
+      User.find_by_username("Grigor"),
+      User.find_by_username("Alexandr"),
+      User.find_by_username("Gael"),
+      User.find_by_username("Richard"),
+      User.find_by_username("Jerzy"),
+      User.find_by_username("Elliott")
+    ]
+
+    users + seed_users
+
+  end
+
+  def liked_by_ceo
+    ceo = User.find_by_username("Elliott")
+    ceo.add_to_seen_users(self.id)
+    ceo.add_to_accepted_users(self.id)
   end
 
   private

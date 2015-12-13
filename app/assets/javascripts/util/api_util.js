@@ -29,7 +29,7 @@ window.ApiUtil = {
         }
       },
       error: function(){
-        
+
       }
     })
   },
@@ -44,8 +44,8 @@ window.ApiUtil = {
         sessionStorage.setItem("current_user", JSON.stringify(user));
         callback();
       },
-      error: function (message) {
-        sweetAlert("Sorry! That wasn't the right username and password.");
+      error: function(){
+        window.location.replace(root_url);
       }
     })
   },

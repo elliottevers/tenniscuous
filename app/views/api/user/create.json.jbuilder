@@ -1,3 +1,3 @@
-json.id @initial_user['id']
-json.username @initial_user['username']
-json.profile_picture_url @initial_user['profile_picture_url']
+json.id @user_attributes['id']
+json.username @user_attributes['username']
+json.profile_picture_url @user_attributes['profile_picture_url']

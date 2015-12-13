@@ -15,11 +15,6 @@ class Api::SessionsController < ApplicationController
   end
 
   def destroy
-    user = {
-      :id => current_user[:id],
-      :username => current_user[:username],
-      :profile_picture_url => current_user[:profile_picture_url]
-    }
     logout_user!
     render nothing: true, status: :unauthorized
   end

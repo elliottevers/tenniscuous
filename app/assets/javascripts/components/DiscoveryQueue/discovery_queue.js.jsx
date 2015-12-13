@@ -96,7 +96,7 @@ window.DiscoveryQueue = React.createClass({
         <CustomTabs className={'text-center'} tabList={tabList} activeTab={1}/>
         <div id={"ball-and-cards"}>
           {this.state.users.map(function (user) {
-            return <DiscoveryCard id={user.id} username={user.username} picture={user.picture}/>;
+            return <DiscoveryCard id={user.id} username={user.username} profile_picture_url={user.profile_picture_url}/>;
           })}
           <div className="ballWrapper">
             <div className={"ball"} onClick={this.handleBallClick}>
