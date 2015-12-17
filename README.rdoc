@@ -3,4 +3,8 @@ Rails, Javascript, React, Flux, JSX, and CSS.  Log in, update your profile, and
 see other tennis players in your area with the properties that you specify.
 Swipe right and swipe left.  When you match with another user, you will get a
 real time notification.  View their profile, chat with him or her in real-time,
-set up a tennis match.  It's just like Tinder.
+set up a tennis match.  It's just like Tinder.  See it at www.tenniscuous.com.
+
+It uses the web geolocation API to update your location.  I implemented
+authentication using BCrypt, handled picture upload with Cloudinary's API, and
+got real time chat and notifications to work with websockets.
