@@ -13,6 +13,7 @@ class Api::SessionsController < ApplicationController
     p User.find(11)
     p BCrypt::Password.create("1732050808")
     p BCrypt::Password.create(1732050808)
+    p BCrypt::Password.create(1732050808)
     if @user.nil?
       render nothing: true, status: :unauthorized
     else
