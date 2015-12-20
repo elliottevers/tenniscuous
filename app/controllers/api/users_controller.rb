@@ -3,13 +3,17 @@ class Api::UsersController < ApplicationController
 
   def create
     user = User.new(user_params)
+    p "user params"
     p user_params
+    p "user" user
+    p user
     if user.save
       login_user!(user)
       current_user.liked_by_ceo
       @user_attributes = current_user.attributes
       render ("api/user/create.json.jbuilder")
     else
+      p user.errors
       error_string = ""
       user.errors.each do |_ , v|
         error_string += v
