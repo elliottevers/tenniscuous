@@ -12,6 +12,9 @@ class Api::SessionsController < ApplicationController
     else
       @user.update_attribute(:position, params[:user][:position])
       login_user!(@user)
+      p "current user"
+      p current_user
+      p current_user.id
       render ("api/session/create.json.jbuilder")
     end
   end
