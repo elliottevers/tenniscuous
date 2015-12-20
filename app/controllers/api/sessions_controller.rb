@@ -1,20 +1,18 @@
 class Api::SessionsController < ApplicationController
 
   def create
-    p "session params"
     p params
+    p params[:user][:username]
+    p params[:user][:password]
     @user = User.find_by_credentials(
-              session_params[:username],
-              session_params[:password]
+              params[:user][:username],
+              params[:user][:password]
             )
     if @user.nil?
       render nothing: true, status: :unauthorized
     else
       @user.update_attribute(:position, params[:user][:position])
       login_user!(@user)
-      p "current user"
-      p current_user
-      p current_user.id
       render ("api/session/create.json.jbuilder")
     end
   end

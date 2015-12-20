@@ -20,8 +20,7 @@ class Api::UsersController < ApplicationController
   def show
     p "show"
     p params
-    user = User.find(params.permit(:id)[:id])
-    render json: user
+    render json: User.find(params.permit(:id)[:id])
   end
 
   def update
@@ -72,9 +71,6 @@ class Api::UsersController < ApplicationController
   end
 
   def index
-    p "index current user"
-    p current_user
-    p current_user.id
     render json: current_user.users_in_queue
   end
 

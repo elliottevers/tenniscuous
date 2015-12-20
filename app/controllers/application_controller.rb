@@ -27,10 +27,6 @@ class ApplicationController < ActionController::Base
   end
 
   def require_user!
-    p "auth"
-    p params
-    p "current user nil?"
-    p current_user.nil?
     redirect_to(root_url) if current_user.nil?
   end
 
