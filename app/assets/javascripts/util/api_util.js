@@ -139,7 +139,8 @@ window.ApiUtil = {
       success: function (user) {
         ApiActions.UserFetched(user);
       },
-      error: function(){
+      error: function(payload){
+        console.log(payload)
         window.location.replace(root_url);
       }
     })
