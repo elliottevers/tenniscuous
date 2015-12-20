@@ -8,6 +8,9 @@ class Api::SessionsController < ApplicationController
               params[:user][:username],
               params[:user][:password]
             )
+
+    p @user
+    p User.find(11)
     if @user.nil?
       render nothing: true, status: :unauthorized
     else
