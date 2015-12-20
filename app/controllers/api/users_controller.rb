@@ -20,7 +20,8 @@ class Api::UsersController < ApplicationController
   def show
     p "show"
     p params
-    render json: User.find(params.permit(:id)[:id])
+    user = User.find(params.permit(:id)[:id])
+    render json: user
   end
 
   def update
