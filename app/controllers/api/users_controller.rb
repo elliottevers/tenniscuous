@@ -3,6 +3,7 @@ class Api::UsersController < ApplicationController
 
   def create
     user = User.new(user_params)
+    p "hi"
     p params
     if user.save
       login_user!(user)
