@@ -27,6 +27,7 @@ class ApplicationController < ActionController::Base
   end
 
   def require_user!
+    p "callback"
     render nothing: true, status: :unauthorized if current_user.nil?
   end
 
