@@ -6,9 +6,10 @@ class Api::SessionsController < ApplicationController
     p session_params[:username]
     p session_params[:password]
     @user = User.find_by_credentials(
-              params[:user][:username],
-              params[:user][:password]
+              session_params[:username],
+              session_params[:password]
             )
+    p @user
     if @user.nil?
       p "user was nil"
       render nothing: true, status: :unauthorized
