@@ -231,7 +231,7 @@ window.EditProfileObject = React.createClass({
     return (
        <div>
          <div id={"editWrapper"}>
-             <button onClick={this.updateUser} id={"goToProfileButton"}>Done Editting</button>
+             <button onClick={this.updateUser} id={"goToProfileButton"}>Done Editing</button>
              <img src={this.state.profile_picture_url} id={"editProfilePicture"}></img>
              <button onClick={this.uploadPicture} id={"changeProfilePicture"}>Change Profile Picture</button>
           </div>
