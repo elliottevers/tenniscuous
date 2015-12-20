@@ -18,6 +18,8 @@ class Api::UsersController < ApplicationController
   end
 
   def show
+    p "show"
+    p params
     render json: User.find(params.permit(:id)[:id])
   end
 
