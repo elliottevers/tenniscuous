@@ -72,6 +72,9 @@ class Api::UsersController < ApplicationController
   end
 
   def index
+    p "index current user"
+    p current_user
+    p current_user.id
     render json: current_user.users_in_queue
   end
 
