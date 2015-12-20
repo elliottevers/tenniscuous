@@ -1,19 +1,10 @@
 class Api::SessionsController < ApplicationController
 
   def create
-    p params
-    p params[:user][:username]
-    p params[:user][:password]
     @user = User.find_by_credentials(
-              params[:user][:username],
-              params[:user][:password]
+              session_params[:username],
+              session_params[:password]
             )
-
-    p @user
-    p User.find(11)
-    p BCrypt::Password.create("1732050808")
-    p BCrypt::Password.create(1732050808)
-    p BCrypt::Password.create(1732050808)
     if @user.nil?
       render nothing: true, status: :unauthorized
     else
