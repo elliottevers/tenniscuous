@@ -5,6 +5,8 @@ class Api::SessionsController < ApplicationController
               session_params[:username],
               session_params[:password]
             )
+            p "params"
+            p params
     if @user.nil?
       render nothing: true, status: :unauthorized
     else

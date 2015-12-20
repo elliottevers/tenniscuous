@@ -27,11 +27,12 @@ class ApplicationController < ActionController::Base
   end
 
   def require_user!
-    p "callback"
-    render nothing: true, status: :unauthorized if current_user.nil?
+    p "auth"
+    p params
+    redirect_to(root_url) if current_user.nil?
   end
 
   def require_no_user!
-    render nothing: true, status: :unauthorized unless current_user.nil?
+    redirect_to(root_url) unless current_user.nil?
   end
 end
