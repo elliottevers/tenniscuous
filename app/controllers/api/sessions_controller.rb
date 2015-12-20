@@ -5,10 +5,7 @@ class Api::SessionsController < ApplicationController
     p session_params
     p session_params[:username]
     p session_params[:password]
-    @user = User.find_by_credentials(
-      session_params[:username],
-      session_params[:password]
-    )
+    @user = User.find_by_credentials(session_params)
     if @user.nil?
       p "user was nil"
       p @user.errors
