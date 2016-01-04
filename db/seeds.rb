@@ -8,7 +8,7 @@
 
 ActiveRecord::Base.transaction do
   professional_players = [{
-    username: "Roger",
+    username: "FedExpress",
     profile_picture_url: "http://res.cloudinary.com/dax4cembx/image/upload/v1445667886/vc9vqt6liyfvgak7yp4z.jpg",
     password_digest: BCrypt::Password.create("Roger Federer"),
     session_token: SecureRandom.urlsafe_base64(16),
@@ -22,7 +22,7 @@ ActiveRecord::Base.transaction do
     accepted_users: [],
     seen_users: []
   }, {
-    username: "Rafael",
+    username: "DaKingOfClay",
     profile_picture_url: "http://res.cloudinary.com/dax4cembx/image/upload/v1445717904/v1h5cqsrq7txzwqfg4l2.jpg",
     password_digest: BCrypt::Password.create("Rafael Nadal"),
     session_token: SecureRandom.urlsafe_base64(16),
@@ -36,7 +36,7 @@ ActiveRecord::Base.transaction do
     accepted_users: [],
     seen_users: []
   }, {
-    username: "Novak",
+    username: "Djoker",
     profile_picture_url: "http://res.cloudinary.com/dax4cembx/image/upload/v1445718433/pagmwd4e5qjfe3vl0lfx.jpg",
     password_digest: BCrypt::Password.create("Novak Djokovic"),
     session_token: SecureRandom.urlsafe_base64(16),
@@ -50,7 +50,7 @@ ActiveRecord::Base.transaction do
     accepted_users: [],
     seen_users: []
   }, {
-    username: "Andy",
+    username: "Braveheart",
     profile_picture_url: "http://res.cloudinary.com/dax4cembx/image/upload/v1445841273/andy_murray_f94lfq.jpg",
     password_digest: BCrypt::Password.create("Andy Murray"),
     session_token: SecureRandom.urlsafe_base64(16),
@@ -64,7 +64,7 @@ ActiveRecord::Base.transaction do
     accepted_users: [],
     seen_users: []
   }, {
-    username: "Stanislas",
+    username: "StanTheMan",
     profile_picture_url: "http://res.cloudinary.com/dax4cembx/image/upload/v1445841309/stanislas_wawrinka_h9gi5a.jpg",
     password_digest: BCrypt::Password.create("Stanislas Wawrinka"),
     session_token: SecureRandom.urlsafe_base64(16),
@@ -78,9 +78,9 @@ ActiveRecord::Base.transaction do
     accepted_users: [],
     seen_users: []
   }, {
-    username: "Jerzy",
+    username: "JerzyBoy",
     profile_picture_url: "http://res.cloudinary.com/dax4cembx/image/upload/v1447971052/Jerzy-Janowicz-008_dsdeyg.jpg",
-    password_digest: BCrypt::Password.create("Jerzy Boy"),
+    password_digest: BCrypt::Password.create("JerzyBoy"),
     session_token: SecureRandom.urlsafe_base64(16),
     profile_description: "HOW MANY TIMES?!?",
     gender: "Male",
@@ -134,7 +134,7 @@ ActiveRecord::Base.transaction do
     accepted_users: [],
     seen_users: []
   }, {
-    username: "Gael",
+    username: "LaMonf",
     profile_picture_url: "http://res.cloudinary.com/dax4cembx/image/upload/v1447898564/monfils_jiawjf.jpg",
     password_digest: BCrypt::Password.create("Gael Monfils"),
     session_token: SecureRandom.urlsafe_base64(16),
