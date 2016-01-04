@@ -100,16 +100,16 @@ class User < ActiveRecord::Base
   def merge_with_seed_users(users)
 
     seed_users = [
-      User.find_by_username("Roger"),
-      User.find_by_username("Rafael"),
-      User.find_by_username("Andy"),
-      User.find_by_username("Novak"),
-      User.find_by_username("Stanislas"),
+      User.find_by_username("FedExpress"),
+      User.find_by_username("DaKingOfClay"),
+      User.find_by_username("Braveheart"),
+      User.find_by_username("Djoker"),
+      User.find_by_username("StanTheMan"),
       User.find_by_username("Grigor"),
       User.find_by_username("Alexandr"),
-      User.find_by_username("Gael"),
+      User.find_by_username("LaMonf"),
       User.find_by_username("Richard"),
-      User.find_by_username("Jerzy"),
+      User.find_by_username("JerzyBoy"),
       User.find_by_username("Elliott")
     ]
 
