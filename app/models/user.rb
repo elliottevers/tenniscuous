@@ -113,7 +113,7 @@ class User < ActiveRecord::Base
       User.find_by_username("Elliott")
     ]
 
-    users + seed_users
+    users + seed_users.compact
 
   end
 
