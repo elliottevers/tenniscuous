@@ -25,6 +25,7 @@ class Api::UsersController < ApplicationController
     user = User.find(user_params[:id])
     user = nil if not_current_user?(user)
     has_new_match = false
+
     if (params[:message] == "rejection")
       if user
         user.update(save_like_or_dislike)
@@ -56,7 +57,7 @@ class Api::UsersController < ApplicationController
     else
       if user
         user.update(save_like_or_dislike)
-        render json: user.id
+        render json: user
       else
         render nothing: true, status: :unauthorized
       end
