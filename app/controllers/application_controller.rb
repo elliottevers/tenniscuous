@@ -13,6 +13,10 @@ class ApplicationController < ActionController::Base
     @current_user ||= User.find_by_session_token(session[:session_token])
   end
 
+  def not_current_user?(user)
+    current_user != user
+  end
+
   def logged_in?
     !current_user.nil?
   end
