@@ -14,7 +14,7 @@ class ApplicationController < ActionController::Base
   end
 
   def not_current_user?(user)
-    current_user != user
+    current_user.id != user.id
   end
 
   def logged_in?
