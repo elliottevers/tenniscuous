@@ -57,6 +57,10 @@ class User < ActiveRecord::Base
     self.session_token
   end
 
+  def without_sensitive_data
+    self.attributes.reject{|k,_| k == "session_token" || k == "password_digest"}
+  end
+
   def users_in_queue
 
     all_other_users = User.where.not(id: self.id)
@@ -93,27 +97,19 @@ class User < ActiveRecord::Base
       self.seen_users.include?(user.id)
     end
 
-    filtered_by_previously_seen
+    filtered_by_previously_seen.map{|u| u.without_sensitive_data}
 
   end
 
   def merge_with_seed_users(users)
 
-    seed_users = [
-      User.find_by_username("FedExpress"),
-      User.find_by_username("DaKingOfClay"),
-      User.find_by_username("Braveheart"),
-      User.find_by_username("Djoker"),
-      User.find_by_username("StanTheMan"),
-      User.find_by_username("Grigor"),
-      User.find_by_username("Alexandr"),
-      User.find_by_username("LaMonf"),
-      User.find_by_username("Richard"),
-      User.find_by_username("JerzyBoy"),
-      User.find_by_username("Elliott")
-    ]
+    seed_users = User.where(
+      "username IN (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)","FedExpress",
+      "DaKingOfClay","Braveheart","Djoker","StanTheMan","Grigor",
+      "Alexandr","LaMonf","Richard","JerzyBoy","Elliott"
+    ).compact
 
-    users + seed_users.compact
+    users + seed_users
 
   end
 

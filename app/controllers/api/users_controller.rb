@@ -18,7 +18,7 @@ class Api::UsersController < ApplicationController
   end
 
   def show
-    render json: User.find(params.permit(:id)[:id])
+    render json: User.find(params.permit(:id)[:id]).without_sensitive_data
   end
 
   def update
@@ -31,7 +31,7 @@ class Api::UsersController < ApplicationController
         user.update(save_like_or_dislike)
         last_seen_user = User.find(user_params[:last_seen_user])
         user.add_to_seen_users(last_seen_user)
-        render json: user
+        render json: user.without_sensitive_data
       else
         render nothing: true, status: :unauthorized
       end
@@ -57,7 +57,7 @@ class Api::UsersController < ApplicationController
     else
       if user
         user.update(save_like_or_dislike)
-        render json: user
+        render json: user.without_sensitive_data
       else
         render nothing: true, status: :unauthorized
       end
