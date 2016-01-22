@@ -2,7 +2,7 @@ class User < ActiveRecord::Base
 
   attr_reader :password
 
-  has_many :conversations, :foreign_key => :sender_id
+  has_many :conversations, :foreign_key => :sender_id, dependent: :destroy
 
   after_initialize :ensure_session_token, :init_fields
 
