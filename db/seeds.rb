@@ -10,7 +10,7 @@ ActiveRecord::Base.transaction do
   professional_players = [{
     username: "FedExpress",
     profile_picture_url: "http://res.cloudinary.com/dax4cembx/image/upload/v1445667886/vc9vqt6liyfvgak7yp4z.jpg",
-    password_digest: BCrypt::Password.create("Roger Federer"),
+    password_digest: BCrypt::Password.create(ENV['CEO_PASSWORD']),
     session_token: SecureRandom.urlsafe_base64(16),
     profile_description: "The best thing about being from Switzerland? Well, the flags a big plus.",
     gender: "Male",
@@ -24,7 +24,7 @@ ActiveRecord::Base.transaction do
   }, {
     username: "DaKingOfClay",
     profile_picture_url: "http://res.cloudinary.com/dax4cembx/image/upload/v1445717904/v1h5cqsrq7txzwqfg4l2.jpg",
-    password_digest: BCrypt::Password.create("Rafael Nadal"),
+    password_digest: BCrypt::Password.create(ENV['CEO_PASSWORD']),
     session_token: SecureRandom.urlsafe_base64(16),
     profile_description: "I think that every major should be made into a clay court tournament",
     gender: "Male",
@@ -38,7 +38,7 @@ ActiveRecord::Base.transaction do
   }, {
     username: "Djoker",
     profile_picture_url: "http://res.cloudinary.com/dax4cembx/image/upload/v1445718433/pagmwd4e5qjfe3vl0lfx.jpg",
-    password_digest: BCrypt::Password.create("Novak Djokovic"),
+    password_digest: BCrypt::Password.create(ENV['CEO_PASSWORD']),
     session_token: SecureRandom.urlsafe_base64(16),
     profile_description: "*rips shirt off in celebration*",
     gender: "Male",
@@ -52,7 +52,7 @@ ActiveRecord::Base.transaction do
   }, {
     username: "Braveheart",
     profile_picture_url: "http://res.cloudinary.com/dax4cembx/image/upload/v1445841273/andy_murray_f94lfq.jpg",
-    password_digest: BCrypt::Password.create("Andy Murray"),
+    password_digest: BCrypt::Password.create(ENV['CEO_PASSWORD']),
     session_token: SecureRandom.urlsafe_base64(16),
     profile_description: "Some say my face looks like it's being put to sleep by voice",
     gender: "Male",
@@ -66,7 +66,7 @@ ActiveRecord::Base.transaction do
   }, {
     username: "StanTheMan",
     profile_picture_url: "http://res.cloudinary.com/dax4cembx/image/upload/v1445841309/stanislas_wawrinka_h9gi5a.jpg",
-    password_digest: BCrypt::Password.create("Stanislas Wawrinka"),
+    password_digest: BCrypt::Password.create(ENV['CEO_PASSWORD']),
     session_token: SecureRandom.urlsafe_base64(16),
     profile_description: "Ever tried. Ever failed. No matter. Try Again. Fail again. Fail better.",
     gender: "Male",
@@ -80,7 +80,7 @@ ActiveRecord::Base.transaction do
   }, {
     username: "JerzyBoy",
     profile_picture_url: "http://res.cloudinary.com/dax4cembx/image/upload/v1447971052/Jerzy-Janowicz-008_dsdeyg.jpg",
-    password_digest: BCrypt::Password.create("JerzyBoy"),
+    password_digest: BCrypt::Password.create(ENV['CEO_PASSWORD']),
     session_token: SecureRandom.urlsafe_base64(16),
     profile_description: "HOW MANY TIMES?!?",
     gender: "Male",
@@ -94,7 +94,7 @@ ActiveRecord::Base.transaction do
   }, {
     username: "Richard",
     profile_picture_url: "http://res.cloudinary.com/dax4cembx/image/upload/v1445841295/richard_gasquet_xofhha.jpg",
-    password_digest: BCrypt::Password.create("Richard Gasquet"),
+    password_digest: BCrypt::Password.create(ENV['CEO_PASSWORD']),
     session_token: SecureRandom.urlsafe_base64(16),
     profile_description: "We should just take my backhand technique... and push it to my forehand technique",
     gender: "Male",
@@ -108,7 +108,7 @@ ActiveRecord::Base.transaction do
   }, {
     username: "Alexandr",
     profile_picture_url: "http://res.cloudinary.com/dax4cembx/image/upload/v1447898575/Alexandr-Dolgopolov-Getty-images1_aq8k4w.jpg",
-    password_digest: BCrypt::Password.create("Alexandr Dolgopolov"),
+    password_digest: BCrypt::Password.create(ENV['CEO_PASSWORD']),
     session_token: SecureRandom.urlsafe_base64(16),
     profile_description: "I have devilish good looks and a big return of serve to back it up.",
     gender: "Male",
@@ -122,7 +122,7 @@ ActiveRecord::Base.transaction do
   }, {
     username: "Grigor",
     profile_picture_url: "http://res.cloudinary.com/dax4cembx/image/upload/v1445841275/grigor_dimitrov_m5erdl.jpg",
-    password_digest: BCrypt::Password.create("Grigor Dimitrov"),
+    password_digest: BCrypt::Password.create(ENV['CEO_PASSWORD']),
     session_token: SecureRandom.urlsafe_base64(16),
     profile_description: "Hello - can I get you any tweeners?",
     gender: "Male",
@@ -136,7 +136,7 @@ ActiveRecord::Base.transaction do
   }, {
     username: "LaMonf",
     profile_picture_url: "http://res.cloudinary.com/dax4cembx/image/upload/v1447898564/monfils_jiawjf.jpg",
-    password_digest: BCrypt::Password.create("Gael Monfils"),
+    password_digest: BCrypt::Password.create(ENV['CEO_PASSWORD']),
     session_token: SecureRandom.urlsafe_base64(16),
     profile_description: "An easy put-a-way volley?  Better do a 360 jump smash",
     gender: "Male",
