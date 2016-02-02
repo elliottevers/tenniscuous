@@ -1,12 +1,12 @@
 class Api::ConversationsController < ApplicationController
 
   def create
-    if Conversation.between(conversation_params[:sender_id],
-                             conversation_params[:recipient_id]
-                            ).present?
-      conversation = Conversation.between(conversation_params[:sender_id],
-                                            conversation_params[:recipient_id]
-                                          ).first
+    conversation = Conversation.between(
+      conversation_params[:sender_id],
+      conversation_params[:recipient_id]
+    )
+    if conversation.present?
+      conversation = conversation.first
     else
       conversation = Conversation.create!(conversation_params)
     end
@@ -15,13 +15,7 @@ class Api::ConversationsController < ApplicationController
   end
 
   def show
-    if params[:loadMoreMessages]
-      current_user[:num_displayed_messages] = current_user[:num_displayed_messages] + 10
-      current_user.save
-    else
-      current_user[:num_displayed_messages] = 10
-      current_user.save
-    end
+    display_more_messages?
 
     @conversation = Conversation.find(params[:id])
     @sender = current_user
@@ -45,6 +39,16 @@ class Api::ConversationsController < ApplicationController
 
   def conversation_params
     params.permit(:sender_id, :recipient_id)
+  end
+
+  def display_more_messages?
+    if params[:loadMoreMessages]
+      current_user[:num_displayed_messages] = current_user[:num_displayed_messages] + 10
+      current_user.save
+    else
+      current_user[:num_displayed_messages] = 10
+      current_user.save
+    end
   end
 
 end

@@ -3,11 +3,7 @@ class Api::MessagesController < ApplicationController
 
   def create
 
-    if message_params[:numMessages]
-      @num_messages = message_params[:numMessages]
-    else
-      @num_messages = 10
-    end
+    display_more_messages?
 
     Message.create(
       :body => message_params[:body],
@@ -29,6 +25,14 @@ class Api::MessagesController < ApplicationController
 
   def message_params
     params.permit(:num_messages, :body, :conversation_id, :user_id)
+  end
+
+  def display_more_messages?
+    if message_params[:numMessages]
+      @num_messages = message_params[:numMessages]
+    else
+      @num_messages = 10
+    end
   end
 
 end
